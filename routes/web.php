@@ -32,7 +32,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/dashboard', function () {
-    return Inertia::render('MasterLayout');
+    return Inertia::render('Dashboard');
     // return view('welcome');
 })->name('dashboard');
 
