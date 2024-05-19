@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+@import '../css/smartmedhris.css' ;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .btn-employee {
+        @apply bg-white px-3 py-2 text-sm text-gray-500 ring-1 ring-inset hover:bg-gray-300 focus:bg-gray-600 active:bg-gray-700 text-center shadow-lg shadow-gray-600/40 font-Abhaya_Libre font-extrabold
+
+      }
+}

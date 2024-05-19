@@ -1,0 +1,64 @@
+.navigation_sidebar_bg_color {
+    background-color: var(--navigation_sidebar_bg_color); /* Use custom property */
+}
+
+.navigation_logo_bg_color {
+    background-color: var(--navigation_logo_bg_color); /* Use custom property */
+}
+
+.navigation_logo_header_bg_color{
+  background-color: var(--navigation_logo_header_bg_color);
+}
+
+.navigation_category_bg_color{
+  background-color: var(--navigation_category_bg_color);
+}
+.navigation_category_txt_color{
+  color: var(--navigation_category_txt_color);
+}
+.navigation_sidebar_txt_color{
+  color: var(--navigation_sidebar_txt_color);
+}
+.navigation_sidebar_icon_txt_color{
+  color: var(--navigation_sidebar_icon_txt_color);
+}
+
+.navigation_sidebar_children_bg_color{
+  background-color: var(--navigation_sidebar_children_bg_color);
+}
+.navigation_sidebar_children_txt_color{
+color: var(--navigation_sidebar_children_txt_color);
+}
+
+.navigation_sidebar_children_focus_ring_color:focus{
+ --tw-ring-color: var(--navigation_sidebar_children_focus_ring_color);
+}
+
+.navigation_sidebar_active_bg_color{
+  background-color: var(--navigation_sidebar_active_bg_color);
+}
+
+.navigation_sidebar_active_txt_color{
+  color: var(--navigation_sidebar_active_txt_color);
+}
+
+.navigation_sidebar_children_active_header_bg_color:focus{
+  background-color: var(--navigation_sidebar_children_active_header_bg_color);
+}
+
+.navbar_bg_color{
+  background-color: var(--navbar_bg_color);
+}
+
+.navbar_txt_color{
+  color: var(--navbar_txt_color);
+}
+
+.pageheader_bg_color{
+  background-color: var(--pageheader_bg_color);
+}
+
+.pageheader_txt_color{
+  color: var(--pageheader_txt_color);
+
+}

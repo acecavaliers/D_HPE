@@ -1,0 +1,90 @@
+declare const _default: import("./utils").SFCWithInstall<import("vue").DefineComponent<{
+    sigOption: {
+        type: import("vue").PropType<import("signature_pad").Options>;
+        default: () => {
+            backgroundColor: string;
+            penColor: string;
+        };
+    };
+    w: {
+        type: StringConstructor;
+        default: string;
+    };
+    h: {
+        type: StringConstructor;
+        default: string;
+    };
+    clearOnResize: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    waterMark: {
+        type: import("vue").PropType<import("./utils").Watermark>;
+        default: () => {};
+    };
+    disabled: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    defaultUrl: {
+        type: StringConstructor;
+        default: string;
+    };
+}, {
+    save: (format?: "image/jpeg" | "image/svg+xml") => string;
+    clear: () => void;
+    isEmpty: () => boolean;
+    undo: () => void;
+    addWaterMark: (data: import("./utils").Watermark) => void;
+    fromDataURL: (url: string) => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    begin: (...args: any[]) => void;
+    end: (...args: any[]) => void;
+}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    sigOption: {
+        type: import("vue").PropType<import("signature_pad").Options>;
+        default: () => {
+            backgroundColor: string;
+            penColor: string;
+        };
+    };
+    w: {
+        type: StringConstructor;
+        default: string;
+    };
+    h: {
+        type: StringConstructor;
+        default: string;
+    };
+    clearOnResize: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    waterMark: {
+        type: import("vue").PropType<import("./utils").Watermark>;
+        default: () => {};
+    };
+    disabled: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    defaultUrl: {
+        type: StringConstructor;
+        default: string;
+    };
+}>> & {
+    onBegin?: (...args: any[]) => any;
+    onEnd?: (...args: any[]) => any;
+}, {
+    sigOption: {
+        backgroundColor: string;
+        penColor: string;
+    };
+    w: string;
+    h: string;
+    clearOnResize: boolean;
+    waterMark: {};
+    disabled: boolean;
+    defaultUrl: string;
+}>>;
+export default _default;
