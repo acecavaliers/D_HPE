@@ -30,6 +30,7 @@ return new class extends Migration
             $table->tinyInteger('ad_hearing')->default(0); //Normal = 0 hearingloss=1
             $table->tinyInteger('as_hearing')->default(0); //Normal = 0 hearingloss=1
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
