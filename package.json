@@ -32,6 +32,7 @@
         "pluralize": "^8.0.0",
         "primevue": "^3.52.0",
         "vue-spinner": "^1.0.4",
+        "vue3-form-wizard": "^0.2.3",
         "vue3-pdf-app": "^1.0.3",
         "vue3-signature": "^0.2.4"
     }
