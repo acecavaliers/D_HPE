@@ -4,27 +4,29 @@
       <template #title>Personal details</template>
 
       <tab-content title="Personal details">
+
         <PersonalInfo></PersonalInfo>
       </tab-content>
       <tab-content title="PATIENT CLINICAL INFORMATION" >
-        PART I : PATIENT CLINICAL INFORMATION
+        <!-- PART I : PATIENT CLINICAL INFORMATION -->
         <Part1></Part1>
       </tab-content>
       <tab-content title="PHYSICAL EXAMINATION" >
-        PART II: PHYSICAL EXAMINATION
+        <!-- PART II: PHYSICAL EXAMINATION -->
         <Part2></Part2>
       </tab-content>
       <tab-content title="ASSESSMENT & RECOMMENDATION" >
-        PART III: ASSESSMENT & RECOMMENDATION
-        <Part2></Part2>
+        <!-- PART III: ASSESSMENT & RECOMMENDATION -->
+        <Part3></Part3>
       </tab-content>
     </form-wizard>
   </template>
 
   <script setup>
-  import PersonalInfo from './PersonalInfo.vue'
-  import Part1 from './Part1.vue'
-  import Part2 from './Part2.vue'
+  import PersonalInfo from '@/Pages/Patient/PersonalInfo.vue'
+  import Part1 from '@/Pages/Patient/Part1.vue'
+  import Part2 from '@/Pages/Patient/Part2.vue'
+  import Part3 from '@/Pages/Patient/Part3.vue'
   </script>
 
   <script>

@@ -2,7 +2,9 @@
 <template>
     <Head title="Dashboard" />
     <MasterLayout>
-        <Form></Form>
+        <div>
+            SSSSSSSSSSSSSSSSS
+        </div>
     </MasterLayout>
 
 

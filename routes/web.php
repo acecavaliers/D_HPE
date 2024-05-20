@@ -31,10 +31,18 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-    // return view('welcome');
-})->name('dashboard');
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+        // return view('welcome');
+    })->name('dashboard');
+
+    Route::get('/patient', function () {
+        return Inertia::render('Patient/PatientMain');
+    })->name('patient');
+
+    Route::get('/account', function () {
+        return Inertia::render('Accounts/AccountMain');
+    })->name('account');
 
 
 
