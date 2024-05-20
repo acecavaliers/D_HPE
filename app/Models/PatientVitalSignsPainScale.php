@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class PatientVacinationHistory extends Model
+class PatientVitalSignsPainScale extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -17,8 +17,18 @@ class PatientVacinationHistory extends Model
     protected $fillable = [
 
         'patient_id',
-        'vaccination_id',
-        'last_dose_date',
+        'height',
+        'weight',
+        'bmi',
+        'sthenic',
+        'asthenic',
+        'hypersthenic',
+        'blood_pressure',
+        'pulse_rate',
+        'respiration_rate',
+        'Temperature',
+        'pain',
+        'is_active',
     ];
     public function getForeignKeys(){
         return $this->foreignKeys;
@@ -26,9 +36,5 @@ class PatientVacinationHistory extends Model
     public function patients()
     {
         return $this->belongsTo(Patient::class, 'patient_id');
-    }
-    public function vaccinations()
-    {
-        return $this->belongsTo(Vaccination::class, 'vaccination_id');
     }
 }
