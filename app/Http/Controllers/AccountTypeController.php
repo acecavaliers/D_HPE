@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AccountType;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class AccountTypeController extends Controller
 {
@@ -13,54 +14,55 @@ class AccountTypeController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Accounts/AccountMain');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        //
+        $file = $request->formdata;
+
+            $query = AccountType::create($file);
+
+        return 'success';
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(AccountType $accountType)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(AccountType $accountType)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, AccountType $accountType)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(AccountType $accountType)
     {
         //
+    }
+
+    public function getlist(Request $request){
+
+        $query = AccountType::where('is_active',1)->get();
+
+        return $query;
+
+
     }
 }
