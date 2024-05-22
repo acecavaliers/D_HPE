@@ -59,7 +59,8 @@ class AccountTypeController extends Controller
 
     public function getlist(Request $request){
 
-        $query = AccountType::where('is_active',1)->get();
+        // $query = AccountType::where('is_active',1)->get();
+        $query = AccountType::orderBy('id', 'desc')->paginate(10);
 
         return $query;
 
