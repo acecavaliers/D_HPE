@@ -38,14 +38,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
         // return view('welcome');
     })->name('dashboard');
 
-    // Route::get('/patient', function () {
-    //     return Inertia::render('Patient/PatientMain');
-    // })->name('patient');
+    Route::get('/patient/view', function () {
+        return Inertia::render('Patient/PatientView');
+    })->name('patient');
 
     // Route::get('/account', function () {
     //     return Inertia::render('Accounts/AccountMain');
     // })->name('account');
     Route::get('/account/getlist', [AccountTypeController::class, 'getlist'])->name('account.getlist');
+
+    Route::get('/patient/getlist', [PatientController::class, 'getlist'])->name('patient.getlist');
     Route::resources([
         '/account' => AccountTypeController::class,
         '/patient' => PatientController::class,

@@ -68,4 +68,14 @@ class PatientController extends Controller
     {
         //
     }
+
+    public function getlist(Request $request){
+
+        // $query = AccountType::where('is_active',1)->get();
+        $query = Patient::orderBy('id', 'desc')->paginate(10);
+
+        return $query;
+
+
+    }
 }

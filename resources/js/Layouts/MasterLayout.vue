@@ -78,6 +78,30 @@
                   </a>
               </li>
               <li>
+                <button type="button" class="flex items-center w-full p-2 text-gray-900 rounded-lg hover:bg-gray-100" aria-expanded="false" aria-controls="submenu-patients" onclick="toggleSubmenu('submenu-patients')">
+                    <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                        <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                        <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                    </svg>
+                    <span class="ms-3">Patients</span>
+                    <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 ms-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <ul id="submenu-patients" class="space-y-2 ps-5">
+                    <li>
+                        <a href="/patient" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
+                            <span class="ms-3">Add New</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/patient/view" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
+                            <span class="ms-3">View All</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+              <li>
                   <a href="/patient" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 ">
                   <svg class="w-5 h-5 text-gray-500 transition duration-75  group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
                       <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
@@ -90,11 +114,6 @@
       </div>
       </div>
 
-      <!-- <div class=" p-2 sm:ml-64">
-          <div class="border h-full bg-white rounded-lg mt-14">
-
-          </div>
-      </div> -->
       <main>
           <div class=" p-2 sm:ml-64">
             <div class="mx-auto px-4 sm:px-6 md:px-8 py-5 navbar_bg_color">
@@ -102,11 +121,10 @@
                 <slot name="header" />
               </h1>
             </div>
-            <!-- mx-auto px-4 sm:px-6 md:px-8 -->
+
             <div class="border h-full bg-white rounded-lg mt-14">
 
               <slot />
-              <!-- /End replace -->
 
             </div>
           </div>
@@ -116,30 +134,10 @@
     </div>
   </template>
 
-  <script setup>
-  import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-  import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-
-
-  const user = {
-    name: 'Tom Cook',
-    email: 'tom@example.com',
-    imageUrl:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  }
-  const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
-    { name: 'Reports', href: '#', current: false },
-  ]
-  const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: '#' },
-  ]
-  </script>
-  <script>
-  </script>
+<script>
+    function toggleSubmenu(id) {
+        const submenu = document.getElementById(id);
+        submenu.classList.toggle('hidden');
+    }
+</script>
 
