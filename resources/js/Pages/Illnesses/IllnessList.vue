@@ -99,7 +99,7 @@
                 <td class="px-6 py-4">{{ item.updated_at.substring(0,10) }}</td>
                 <td class="relative whitespace-nowrap px-2 py-4 text-right text-sm font-medium sm:pr-0">
                 <span class="isolate inline-flex">
-                    <button type="button" class="mr-2 rounded-lg relative inline-flex px-3 py-3 text-xs text-gray-900 hover:bg-gray-400 hover:text-white focus:z-10"><font-awesome-icon icon="fa-solid fa-eye" class="h-5 w-5" /></button>
+                    <a href="illnesschild" class="mr-2 rounded-lg relative inline-flex px-3 py-3 text-xs text-gray-900 hover:bg-gray-400 hover:text-white focus:z-10"><font-awesome-icon icon="fa-solid fa-eye" class="h-5 w-5" /></a>
                     <button type="button" class="mr-2 rounded-lg relative inline-flex px-3 py-3 text-xs text-blue-500 hover:bg-blue-500 hover:text-white focus:z-10"><font-awesome-icon icon="fa-solid fa-pen-to-square" class="h-5 w-5" /></button>
                     <button type="button" class="mr-2 rounded-lg relative inline-flex px-3 py-3 text-xs text-red-500 hover:bg-red-500 hover:text-white focus:z-10"><font-awesome-icon icon="fa-solid fa-trash" class="h-5 w-5" /></button>
                 </span>

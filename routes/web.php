@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountTypeController;
+use App\Http\Controllers\IllnessController;
 use App\Http\Controllers\IllnessGroupController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PatientController;
@@ -59,6 +60,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'account' => AccountTypeController::class,
         'patient' => PatientController::class,
         'illness' => IllnessGroupController::class,
+        'illnesschild' => IllnessController::class,
     ]);
 
 
