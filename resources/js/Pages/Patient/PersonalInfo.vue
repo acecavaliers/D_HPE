@@ -1,7 +1,7 @@
 <template>
     <div class="transition-colors duration-300">
-      <div class="container mx-auto p-4">
-        <div class="bg-white shadow rounded-lg p-6">
+
+        <div class="bg-white rounded-lg">
           <h1 class="text-md font-semibold text-gray-900">PATIENT INFORMATION</h1>
           <p class="text-sm text-gray-900 mb-6 bg-gray-200 p-2"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX. MINOR PATIENT TO BE ASSISTED BY A PARENT OR GUARDIAN.</p>
           <form @submit.prevent="submitForm">
@@ -115,7 +115,7 @@
             <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
           </form>
         </div>
-      </div>
+
     </div>
   </template>
 

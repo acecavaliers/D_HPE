@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-full bg-gray-100">
+    <div class="min-h-screen bg-gray-100">
       <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
           <div class="flex items-center justify-between">
@@ -228,7 +228,7 @@
         </div>
       </div>
 
-      <main>
+      <main class="bg-gray-100">
         <div class="p-2 sm:ml-64">
           <div class="mx-auto px-4 sm:px-6 md:px-8 py-5 navbar_bg_color">
             <h1 class="text-2xl font-semibold navbar_txt_color">
@@ -236,7 +236,7 @@
             </h1>
           </div>
 
-          <div class="border h-full bg-white rounded-lg mt-14">
+          <div class="mt-14">
             <slot />
           </div>
         </div>

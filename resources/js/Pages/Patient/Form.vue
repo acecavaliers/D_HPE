@@ -1,25 +1,28 @@
 
 <template>
-    <form-wizard @on-complete="onComplete" shape="tab" color="#094899">
-      <template #title>Personal details</template>
+    <div class="container mx-auto">
+        <form-wizard @on-complete="onComplete" shape="tab" color="#094899">
+        <!-- <template #title>Personal details</template> -->
 
-      <tab-content title="Personal details">
+        <tab-content title="Personal details">
 
-        <PersonalInfo></PersonalInfo>
-      </tab-content>
-      <tab-content title="PATIENT CLINICAL INFORMATION" >
-        <!-- PART I : PATIENT CLINICAL INFORMATION -->
-        <Part1></Part1>
-      </tab-content>
-      <tab-content title="PHYSICAL EXAMINATION" >
-        <!-- PART II: PHYSICAL EXAMINATION -->
-        <Part2></Part2>
-      </tab-content>
-      <tab-content title="ASSESSMENT & RECOMMENDATION" >
-        <!-- PART III: ASSESSMENT & RECOMMENDATION -->
-        <Part3></Part3>
-      </tab-content>
-    </form-wizard>
+            <PersonalInfo></PersonalInfo>
+        </tab-content>
+        <tab-content title="PATIENT CLINICAL INFORMATION" >
+            <!-- PART I : PATIENT CLINICAL INFORMATION -->
+            <Part1></Part1>
+        </tab-content>
+        <tab-content title="PHYSICAL EXAMINATION" >
+            <!-- PART II: PHYSICAL EXAMINATION -->
+            <Part2></Part2>
+        </tab-content>
+        <tab-content title="ASSESSMENT & RECOMMENDATION" >
+            <!-- PART III: ASSESSMENT & RECOMMENDATION -->
+            <Part3></Part3>
+        </tab-content>
+        </form-wizard>
+    </div>
+
   </template>
 
   <script setup>
