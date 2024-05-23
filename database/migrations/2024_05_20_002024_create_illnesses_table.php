@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('illnesses', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->tinyInteger('is_active')->default(0);
+            $table->tinyInteger('is_active')->default(1);
             $table->foreignIdFor(IllnessGroup::class)->constrained('illness_groups');
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();

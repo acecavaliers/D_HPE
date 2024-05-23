@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\AccountTypeController;
+use App\Http\Controllers\IllnessGroupController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ProfileController;
 use App\Models\IdentificationType;
+use App\Models\IllnessGroup;
 use App\Models\SalaryGrade;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -42,15 +45,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('Patient/PatientView');
     })->name('patient');
 
-    // Route::get('/account', function () {
-    //     return Inertia::render('Accounts/AccountMain');
-    // })->name('account');
+    Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+
     Route::get('/account/getlist', [AccountTypeController::class, 'getlist'])->name('account.getlist');
 
+
+    Route::get('/illness/getlist', [IllnessGroupController::class, 'getlist'])->name('illness.getlist');
+
     Route::get('/patient/getlist', [PatientController::class, 'getlist'])->name('patient.getlist');
+
     Route::resources([
-        '/account' => AccountTypeController::class,
-        '/patient' => PatientController::class,
+        'account' => AccountTypeController::class,
+        'patient' => PatientController::class,
+        'illness' => IllnessGroupController::class,
     ]);
 
 

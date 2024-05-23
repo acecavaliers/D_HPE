@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AccountType;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class AccountTypeController extends Controller
@@ -26,9 +27,9 @@ class AccountTypeController extends Controller
 
     public function store(Request $request)
     {
-        $file = $request->formdata;
-
-            $query = AccountType::create($file);
+        $arr = $request->formdata;
+        $arr['created_by'] = Auth::user()->name;
+        $query = AccountType::create($arr);
 
         return 'success';
     }

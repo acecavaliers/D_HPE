@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\IllnessGroup;
 use App\Http\Controllers\Controller;
+use App\Models\Illness;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class IllnessGroupController extends Controller
 {
@@ -13,7 +16,7 @@ class IllnessGroupController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Illnesses/IllnessMain');
     }
 
     /**
@@ -29,7 +32,34 @@ class IllnessGroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Extract the form data from the request
+        $formData = $request->formdata;
+
+        // Add the created_by field to the form data
+        $formData['created_by'] = Auth::user()->name;
+
+        // Create the IllnessGroup
+        $illnessGroup = IllnessGroup::create($formData);
+
+        // Check if the IllnessGroup was created successfully
+        if ($illnessGroup) {
+            // Iterate through each symptom and create the Illness
+            foreach ($formData['symptoms'] as $symptom) {
+                // Add the necessary fields to the symptom data
+                $symptom['created_by'] = Auth::user()->name;
+                $symptom['illness_group_id'] = $illnessGroup->id;
+
+                // Create the Illness
+                Illness::create($symptom);
+            }
+
+            // Return success response
+            return response()->json(['message' => 'success'], 200);
+        }
+
+        // Return error response if IllnessGroup creation failed
+        return response()->json(['message' => 'error'], 500);
+
     }
 
     /**
@@ -62,5 +92,15 @@ class IllnessGroupController extends Controller
     public function destroy(IllnessGroup $illnessGroup)
     {
         //
+    }
+
+    public function getlist(Request $request){
+
+        // $query = AccountType::where('is_active',1)->get();
+        $query = IllnessGroup::orderBy('id', 'desc')->paginate(10);
+
+        return $query;
+
+
     }
 }
