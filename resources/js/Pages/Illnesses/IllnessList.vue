@@ -125,38 +125,50 @@
                         <div class="relative w-full">
                             <label>{{ index+1 }}. {{ illness.name }}</label>
                         </div>
-                        <!-- <div class="relative w-full">
-                            <span v-if="illness.is_active == 1" class="inline-flex items-center gap-x-1.5 rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-700">
-                                <svg class="h-1.5 w-1.5 fill-green-500" viewBox="0 0 6 6" aria-hidden="true">
-                                <circle cx="3" cy="3" r="3" />
-                                </svg>
-                                Active
-                            </span>
-                            <span v-else class="inline-flex items-center gap-x-1.5 rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-700">
-                                <svg class="h-1.5 w-1.5 fill-red-500" viewBox="0 0 6 6" aria-hidden="true">
-                                <circle cx="3" cy="3" r="3" />
-                                </svg>
-                                Inactive
-                            </span>
-                        </div> -->
-                        <!-- <button type="button" @click="removeSymptom(index)" class="text-white ml-2 bg-red-500 hover:bg-red-800 font-medium rounded text-sm w-full sm:w-auto px-5 text-center">
-                            Set Active
-                        </button> -->
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input
-                                type="checkbox"
-                                class="sr-only peer"/>
-                            <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-2 peer-focus:ring-green-300 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
-                            <span class="ms-3 text-sm font-medium text-gray-700">Active</span>
-                        </label>
+
+                        <span v-if="illness.is_active == 1">
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input
+                                    checked
+                                    @click="confirm(illness.name)"
+                                    type="checkbox"
+                                    class="sr-only peer"/>
+                                <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-2 peer-focus:ring-blue-300 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                <span class="ms-3 text-sm font-medium text-gray-700">Active</span>
+                            </label>
+                        </span>
+                        <span v-else>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    @click="confirm(illness.name)"
+                                    class="sr-only peer"/>
+                                <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-2 peer-focus:ring-blue-300 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                <span class="ms-3 text-sm font-medium text-gray-700">Active</span>
+                            </label>
+                        </span>
                     </div>
 
+
                 </div>
+
 
             </div>
         </div>
         <div v-else><h2> <i> No Illness </i></h2></div>
+        <div class="mt-2 flex justify-end">
+            <button type="button" @click="removeSymptom(index)" class="text-white mr-2 bg-blue-500 hover:bg-blue-800 font-medium rounded text-sm w-24 p-2 text-center">
+                Save
+            </button>
+            <button type="button" @click="handleModalClose()" class="text-white ml-2 bg-gray-500 hover:bg-gray-800 font-medium rounded text-sm w-24 p-2 text-center">
+                Cancel
+            </button>
+        </div>
      </Modal>
+
+     <Confirmation :title="confirmitemName" :isOpen="confim" @close="confirm">
+
+    </Confirmation>
     </div>
   </template>
 
@@ -164,6 +176,7 @@
 import { ref } from 'vue';
 import axios from 'axios';
 import Modal from '@/Layouts/Modal.vue';
+import Confirmation from '@/Layouts/Confirmation.vue';
 
 const records = ref({
     data: [],
@@ -217,6 +230,8 @@ fetchAccounts();
     data() {
       return {
         records: [],
+        confim: false,
+        confirmitemName:'',
         // modalTitle:'',
       };
     },
@@ -224,6 +239,11 @@ fetchAccounts();
       this.fetchAccounts();
     },
     methods: {
+        confirm(name){
+            this.confirmitemName=name
+            this.confim = !this.confim;
+
+        },
       async fetchAccounts(url = null) {
         try {
           const response = await axios.get(url || route('illness.getlist'));
