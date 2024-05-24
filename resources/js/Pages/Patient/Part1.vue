@@ -1,36 +1,308 @@
 <template>
-    <div class="transition-colors duration-300">
-            <div class="container mx-auto p-4">
-                <div class="bg-white shadow rounded-lg p-6">
-                    <h1 class="text-md font-semibold text-gray-900">PART I : PATIENT CLINICAL INFORMATION</h1>
-                    <p class="text-sm text-gray-900 mb-6 bg-gray-200 p-2"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX. MINOR PATIENT TO BE ASSISTED BY A PARENT OR GUARDIAN.</p>
-                    <form>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <input type="text" placeholder="First name" class="border p-2 rounded w-full">
-                            <input type="text" placeholder="Last name" class="border p-2 rounded w-full">
-                        </div>
-                        <div class="mb-4">
-                            <input type="email" placeholder="Email address" class="border p-2 rounded w-full">
-                        </div>
-                        <div class="mb-4">
-                            <select class="border p-2 rounded w-full">
-                                <option>United States</option>
-                                <!-- Add more countries as needed -->
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <input type="text" placeholder="Street address" class="border p-2 rounded w-full">
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                            <input type="text" placeholder="City" class="border p-2 rounded w-full">
-                            <input type="text" placeholder="State / Province" class="border p-2 rounded w-full">
-                            <input type="text" placeholder="ZIP / Postal code" class="border p-2 rounded w-full">
-                        </div>
-                        <!-- <button type="button" id="theme-toggle" class="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:outline-none transition-colors">
-                            Toggle Theme
-                        </button> -->
-                    </form>
-                </div>
-            </div>
+    <div v-for="(title, index) in titles">
+      <div class="bg-gray-400 dark:bg-gray-500 border border-black">
+        <div>
+          <span class="text-xm text-black"> {{ title.A }}</span>
         </div>
-</template>
+      </div>
+      <!-- next Page -->
+      <div class="container">
+        <!--  -->
+        <div
+          v-for="(value, index) in illness"
+          :key="index"
+          class="border border-black grid grid-cols-12 gap-x-4"
+        >
+          <div
+            class="p-4 col-span-12 sm:col-span-2 overflow-y-auto text-center mt-10 dark:text-gray-100"
+          >
+            {{ value.name }}
+          </div>
+          <div class="p-4 col-span-12 sm:col-span-10">
+            <div class="pb-3 sm:flex sm:items-center justify-between">
+              <div class="flex">
+                <div class="flex-none w-64">
+                  <div>
+                    <input
+                      type="checkbox"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      class="text-sm text-gray-800 dark:text-gray-100 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >{{ value.none }}</label
+                    >
+                  </div>
+                </div>
+                <div class="flex-none w-64">
+                  <div>
+                    <input
+                      type="checkbox"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      class="text-sm text-gray-800 dark:text-gray-100 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >{{ value.illness1 }}</label
+                    >
+                  </div>
+                </div>
+                <div class="flex-none w-64">
+                  <div>
+                    <input
+                      type="checkbox"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      class="text-sm text-gray-800 dark:text-gray-100 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >{{ value.illness2 }}</label
+                    >
+                  </div>
+                </div>
+                <div class="flex-none w-64">
+                  <div>
+                    <input
+                      type="checkbox"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      class="text-sm text-gray-800 dark:text-gray-100 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >{{ value.illness3 }}</label
+                    >
+                  </div>
+                </div>
+                <div class="flex-none w-64">
+                  <div>
+                    <input
+                      type="checkbox"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      class="text-sm text-gray-800 dark:text-gray-100 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >{{ value.other }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-0 pb-3 sm:flex sm:items-center sm:justify-between">
+              <input
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                type="checkbox"
+              />
+
+              <label
+                class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                >{{ value.details }}
+              </label>
+              <div class="w-full">
+                <input
+                  class="w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-600 appearance-none dark:text-white dark:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+
+        <!-- Oncology -->
+        <div class="border border-black grid grid-cols-12 gap-x-4">
+          <div
+            class="p-4 col-span-12 sm:col-span-2 overflow-y-auto text-center mt-10 dark:text-gray-100"
+          >
+            Oncology
+          </div>
+          <div class="p-4 col-span-12 sm:col-span-10">
+            <div class="pb-3">
+              <div class="flex">
+                <div class="w-full flex">
+                  <div class="flex-none w-64">
+                    <div>
+                      <input
+                        type="checkbox"
+                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label
+                        class="text-sm text-gray-800 dark:text-gray-100 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                        >None</label
+                      >
+                    </div>
+                  </div>
+                  <div class="right-0 w-full pb-3 flex sm:items-center sm:justify-between">
+                    <input
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      type="checkbox"
+                    />
+
+                    <label
+                      class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >Cancertype:
+                    </label>
+                    <div class="w-full">
+                      <input
+                        class="w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-600 appearance-none dark:text-white dark:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pb-3">
+              <div class="flex">
+                <div class="right-0 w-full pb-3 flex sm:items-center sm:justify-between">
+                  <input
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    type="checkbox"
+                  />
+
+                  <label
+                    class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                    >Stage:
+                  </label>
+                  <div class="w-full">
+                    <input
+                      class="w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-600 appearance-none dark:text-white dark:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="flex-none w-64 ml-3">
+                  <div>
+                    <input
+                      id="none"
+                      type="checkbox"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      class="text-sm text-gray-800 dark:text-gray-100 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      for="none"
+                      >On Chemotherapy</label
+                    >
+                  </div>
+                </div>
+                <div class="right-0 w-full pb-3 flex sm:items-center sm:justify-between">
+                  <input
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    type="checkbox"
+                  />
+
+                  <label
+                    class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                    >Type:
+                  </label>
+                  <div class="w-full">
+                    <input
+                      class="w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-600 appearance-none dark:text-white dark:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+        <!-- Exposure -->
+        <div class="border border-black grid grid-cols-12 gap-x-4">
+          <div
+            class="p-4 col-span-12 sm:col-span-2 overflow-y-auto text-center mt-10 dark:text-gray-100"
+          >
+            Exposure
+          </div>
+          <div class="p-4 col-span-12 sm:col-span-10">
+            <div class="pb-3">
+              <div class="flex">
+                <div class="w-full flex col-span-3">
+                  <div class="flex-none flex w-6/12">
+                    <p
+                      class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                    >
+                      Have you ever engaged in any activity which has put you at risk of
+                      getting HIV/AIDS?
+                    </p>
+                  </div>
+                  <div class="right-0 w-20 pb-3 flex sm:items-center">
+                    <input
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      type="checkbox"
+                    />
+                    <label
+                      class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >No
+                    </label>
+                  </div>
+                  <div class="right-0 w-full pb-3 flex sm:items-center sm:justify-between">
+                    <input
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      type="checkbox"
+                    />
+                    <label
+                      class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >Yes
+                    </label>
+                    <div class="w-full">
+                      <input
+                        class="w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-600 appearance-none dark:text-white dark:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pb-3">
+              <div class="flex">
+                <div class="w-full flex">
+                  <div class="flex-none flex w-6/12">
+                    <p
+                      class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                    >
+                      Have you ever worked with chemicals or hazardous materials?
+                    </p>
+                  </div>
+                  <div class="right-0 w-20 pb-3 flex sm:items-center">
+                    <input
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      type="checkbox"
+                    />
+                    <label
+                      class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >No
+                    </label>
+                  </div>
+                  <div class="right-0 w-full pb-3 flex sm:items-center sm:justify-between">
+                    <input
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      type="checkbox"
+                    />
+                    <label
+                      class="text-xl text-gray-800 dark:text-gray-100 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >Yes; Type of Chemical
+                    </label>
+                    <div class="w-full">
+                      <input
+                        class="w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-600 appearance-none dark:text-white dark:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring-0 focus:border-gray-600 peer"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+      </div>
+    </div>
+  </template>
+
+  <script>
+  export default {
+    props: {
+      illness: Array,
+      titles: Array,
+    },
+  };
+  </script>
