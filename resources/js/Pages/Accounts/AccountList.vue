@@ -109,7 +109,7 @@
         </table>
       </div>
     </div>
-    <div class="flex justify-end items-center p-4">
+    <div class="flex justify-end items-center p-4 bg-white">
       <button :disabled="!accounts.prev_page_url" @click="fetchAccounts(accounts.prev_page_url)" class="px-3 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600" :class="{'opacity-50': !accounts.prev_page_url}">
         Previous
       </button>
@@ -137,7 +137,7 @@
       const response = await axios.get(url || route('account.getlist'));
       accounts.value = response.data;
     } catch (error) {
-      console.error('Error fetching accounts:', error);
+      // console.error('Error fetching accounts:', error);
     }
   };
 
@@ -153,17 +153,17 @@
       };
     },
     created() {
-      this.fetchAccounts();
+      // this.fetchAccounts();
     },
     methods: {
-      async fetchAccounts(url = null) {
-        try {
-          const response = await axios.get(url || route('account.getlist'));
-          this.accounts = response.data;
-        } catch (error) {
-          console.error('Error fetching accounts:', error);
-        }
-      },
+      // async fetchAccounts(url = null) {
+      //   try {
+      //     const response = await axios.get(url || route('account.getlist'));
+      //     this.accounts = response.data;
+      //   } catch (error) {
+      //     console.error('Error fetching accounts:', error);
+      //   }
+      // },
     },
   };
   </script>

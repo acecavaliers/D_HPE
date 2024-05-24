@@ -127,7 +127,7 @@
         </table>
       </div>
     </div>
-    <div class="flex justify-end items-center p-4">
+    <div class="flex justify-end items-center p-4 bg-white">
       <button :disabled="!patient.prev_page_url" @click="fetchAccounts(patient.prev_page_url)" class="px-3 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600" :class="{'opacity-50': !patient.prev_page_url}">
         Previous
       </button>
