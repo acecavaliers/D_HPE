@@ -203,7 +203,7 @@ const fetchIllnessData = async (id) => {
     selectedIllness.value = response.data;
     console.log('DDDDDDDDDD', this.selectedIllness)
   } catch (error) {
-    console.error('Error fetching illness data:', error);
+    // console.error('Error fetching illness data:', error);
   }
 };
 function openModal(item,id) {
@@ -236,7 +236,7 @@ fetchAccounts();
       };
     },
     created() {
-      this.fetchAccounts();
+
     },
     methods: {
         confirm(name){
@@ -247,14 +247,7 @@ fetchAccounts();
         openLayout(layout){
             this.emitter.emit('layOut', layout)
           },
-      async fetchAccounts(url = null) {
-        try {
-          const response = await axios.get(url || route('illness.getlist'));
-          this.records = response.data;
-        } catch (error) {
-          console.error('Error fetching records:', error);
-        }
-      },
+
     },
   };
   </script>

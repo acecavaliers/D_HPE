@@ -203,11 +203,12 @@ export default {
     },
 
     handleClickOutside(event) {
-        const modalElement = this.$refs.modalContainer; // Reference to the division modal container
+        this.isModalVisible = false; // Close division modal if clicked outside
+        // const modalElement = this.$refs.modalContainer; // Reference to the division modal container
 
-        if (!modalElement.contains(event.target)) {
-            this.isModalVisible = false; // Close division modal if clicked outside
-        }
+        // if (!modalElement.contains(event.target)) {
+        //     this.isModalVisible = false; // Close division modal if clicked outside
+        // }
     },
   },
 
