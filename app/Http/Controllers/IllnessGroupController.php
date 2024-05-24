@@ -107,7 +107,8 @@ class IllnessGroupController extends Controller
     public function getlistChild(Request $request){
 
         // $query = AccountType::where('is_active',1)->get();
-        $query = Illness::with('illness_groups')->orderBy('id', 'desc')->paginate(10);
+        // $query = Illness::with('illness_groups')->orderBy('id', 'desc')->paginate(10);
+        $query = Illness::where('illness_group_id', $request->search)->get();
 
         return $query;
 
