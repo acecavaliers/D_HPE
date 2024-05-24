@@ -88,9 +88,9 @@
             </thead>
             <tbody>
             <tr v-for="(item, index) in records.data" :key="index" class="bg-white border-b hover:bg-gray-50">
-                <td class="px-6 py-4">{{ item.illness_group_id.toString().padStart(6, '0') }}</td>
+                <td class="px-6 py-4">{{ item.id.toString().padStart(6, '0') }}</td>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{{ item.name }}</th>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{{ item.illness_group_id }}</th>
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{{ item.illness_groups.name }}</th>
                 <td class="px-6 py-4">
                 <span v-if="item.is_active == 1" class="inline-flex items-center gap-x-1.5 rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-700">
                     <svg class="h-1.5 w-1.5 fill-green-500" viewBox="0 0 6 6" aria-hidden="true">
@@ -163,6 +163,7 @@
     data() {
       return {
         records: [],
+
       };
     },
     created() {

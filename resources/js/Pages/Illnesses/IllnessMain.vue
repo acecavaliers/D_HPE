@@ -1,6 +1,11 @@
 <template>
     <!-- <Head title="Dashboard" /> -->
     <MasterLayout>
+
+        <div>
+             <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{ header }}</h2>
+        </div>
+
         <div class="mb-2">
             <nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -17,7 +22,7 @@
                         <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                         </svg>
-                        <Link href="#" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2">New List</Link>
+                        <a @click="openLayout('child')" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2">New List</a>
                     </div>
                     </li>
                     <li aria-current="page">
@@ -88,6 +93,7 @@ export default {
             showModal: false,
             listKey:0,
             layOut: 'IllnessList',
+            header:'',
         }
     },
     methods: {
@@ -99,6 +105,10 @@ export default {
         this.showModal = false;
     }
     },
+    openLayout(layout){
+        this.emitter.emit('layOut', layout)
+        },
+
     created(){
 
         this.emitter.on('layOut', (layout) => {
