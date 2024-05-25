@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="bg-gray-400 border border-black">
+      <div class="bg-gray-400 border border-gray-400 p-2">
         <div>
           <span class="text-xm text-black">RRRRRRRRRRR</span>
         </div>
@@ -9,7 +9,7 @@
       <div class="container">
         <!--  -->
         <div
-          class="border border-black grid grid-cols-12 gap-x-4"
+          class="border border-gray-300 grid grid-cols-12 gap-x-4"
         >
           <div
             class="p-4 col-span-12 sm:col-span-2 overflow-y-auto text-center mt-10"
@@ -82,25 +82,25 @@
               </div>
             </div>
 
-            <div class="right-0 pb-3 sm:flex sm:items-left sm:justify-between">
+            <div class="right-0 pb-1 sm:flex sm:items-left sm:justify-between">
               
                 <div class="flex-none mt-1.5">                  
-                    <input
+                    <!-- <input
                       class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                       type="checkbox"
-                    />
-                    <label
+                    /> -->
+                    <!-- <label
                       class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
                       >Details:
-                    </label>
+                    </label> -->
                 </div>
                 
               <div class="w-full">
-                <textarea rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                <textarea rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Details:"></textarea>
                 <!-- <input
                   type="text"
                   placeholder="ASASAS"
-                  class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b-2  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"/> -->
+                  class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"/> -->
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@
         <!-- end -->
 
         <!-- Oncology -->
-        <div class="border border-black grid grid-cols-12 gap-x-4">
+        <div class="border border-gray-300 grid grid-cols-12 gap-x-4">
           <div
             class="p-4 col-span-12 sm:col-span-2 overflow-y-auto text-center mt-10"
           >
@@ -119,7 +119,7 @@
               <div class="flex">
                 <div class="w-full flex">
                   <div class="flex-none w-64">
-                    <div>
+                    <div class="flex-none mt-1.5">
                       <input
                         type="checkbox"
                         class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
@@ -131,18 +131,22 @@
                     </div>
                   </div>
                   <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
-                    <input
-                      class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                      type="checkbox"
-                    />
+                    
+                    <div class="flex-none mt-1.5">                  
+                        <input
+                          class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                          type="checkbox"
+                        />
+                        <label
+                          class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                          >Cancertype:
+                        </label>
+                    </div>
 
-                    <label
-                      class="text-xl text-gray-800 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                      >Cancertype:
-                    </label>
+
                     <div class="w-full">
                       <input
-                        class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b-2  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         type="text"
                       />
                     </div>
@@ -151,52 +155,52 @@
               </div>
             </div>
 
-            <div class="pb-3">
+            <div class="pb-1">
               <div class="flex">
                 <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
-                  <input
-                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                    type="checkbox"
-                  />
-
-                  <label
-                    class="text-xl text-gray-800 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                    >Stage:
-                  </label>
+                  <div class="flex-none mt-1.5">                  
+                        <input
+                          class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                          type="checkbox"
+                        />
+                        <label
+                          class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                          >Stage:
+                        </label>
+                    </div>
                   <div class="w-full">
                     <input
-                      class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b-2  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       type="text"
                     />
                   </div>
                 </div>
                 <div class="flex-none w-64 ml-3">
-                  <div>
-                    <input
-                      id="none"
-                      type="checkbox"
-                      class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                    />
-                    <label
-                      class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                      for="none"
-                      >On Chemotherapy</label
-                    >
-                  </div>
+                  <div class="flex-none mt-1.5">                  
+                        <input
+                          class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                          type="checkbox"
+                        />
+                        <label
+                          class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                          >On Chemotherapy:
+                        </label>
+                    </div>
                 </div>
                 <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
-                  <input
-                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                    type="checkbox"
-                  />
-
-                  <label
-                    class="text-xl text-gray-800 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                    >Type:
-                  </label>
+                  <div class="flex-none mt-1.5">                  
+                        <input
+                          class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                          type="checkbox"
+                        />
+                        <label
+                          class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                          >Type:
+                        </label>
+                    </div>
                   <div class="w-full">
                     <input
-                      class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b-2  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       type="text"
                     />
                   </div>
@@ -207,7 +211,7 @@
         </div>
         <!-- end -->
         <!-- Exposure -->
-        <div class="border border-black grid grid-cols-12 gap-x-4">
+        <div class="border border-gray-300 grid grid-cols-12 gap-x-4">
           <div
             class="p-4 col-span-12 sm:col-span-2 overflow-y-auto text-center mt-10"
           >
@@ -226,27 +230,31 @@
                     </p>
                   </div>
                   <div class="right-0 w-20 pb-3 flex sm:items-left">
-                    <input
-                      class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                      type="checkbox"
-                    />
-                    <label
-                      class="text-xl text-gray-800 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                      >No
-                    </label>
+                    <div class="flex-none mt-1.5">                  
+                        <input
+                          class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                          type="checkbox"
+                        />
+                        <label
+                          class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                          >No:
+                        </label>
+                    </div>
                   </div>
                   <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
-                    <input
-                      class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                      type="checkbox"
-                    />
-                    <label
-                      class="text-xl text-gray-800 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                      >Yes
-                    </label>
+                    <div class="flex-none ml-5 mt-1.5">                  
+                        <input
+                          class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                          type="checkbox"
+                        />
+                        <label
+                          class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                          >Yes:
+                        </label>
+                    </div>
                     <div class="w-full">
                       <input
-                        class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b-2  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         type="text"
                       />
                     </div>
@@ -254,7 +262,7 @@
                 </div>
               </div>
             </div>
-            <div class="pb-3">
+            <div class="pb-1">
               <div class="flex">
                 <div class="w-full flex">
                   <div class="flex-none flex w-6/12">
@@ -265,27 +273,31 @@
                     </p>
                   </div>
                   <div class="right-0 w-20 pb-3 flex sm:items-left">
-                    <input
-                      class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                      type="checkbox"
-                    />
-                    <label
-                      class="text-xl text-gray-800 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                      >No
-                    </label>
+                    <div class="flex-none mt-1.5">                  
+                        <input
+                          class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                          type="checkbox"
+                        />
+                        <label
+                          class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                          >No:
+                        </label>
+                    </div>
                   </div>
                   <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
-                    <input
-                      class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                      type="checkbox"
-                    />
-                    <label
-                      class="text-xl text-gray-800 uration-300 transform scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                      >Yes; Type of Chemical
-                    </label>
+                    <div class="flex-none ml-5 mt-1.5">                  
+                        <input
+                          class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                          type="checkbox"
+                        />
+                        <label
+                          class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                          >Yes:
+                        </label>
+                    </div>
                     <div class="w-full">
                       <input
-                        class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b-2  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         type="text"
                       />
                     </div>
