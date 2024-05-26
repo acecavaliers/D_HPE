@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Patient;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class PatientController extends Controller
@@ -30,9 +31,11 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->formdata;
+        $arr = $request->formdata;
+        
+        $arr['created_by'] = Auth::user()->name;
 
-        $query = Patient::create($file);
+        $query = Patient::create($arr);
 
         return 'success';
     }

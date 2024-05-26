@@ -50,6 +50,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
     Route::get('/account/getlist', [AccountTypeController::class, 'getlist'])->name('account.getlist');
+    Route::get('/account/getAll', [AccountTypeController::class, 'getAll'])->name('account.getAll');
     
     Route::get('/vaccine/getlist', [VaccinationController::class, 'getlist'])->name('vaccine.getlist');
 

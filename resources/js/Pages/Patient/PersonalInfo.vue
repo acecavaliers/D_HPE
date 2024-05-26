@@ -14,8 +14,9 @@
                   placeholder=" "
                   v-model="form.last_name"
                 />
-                <label for="last_name" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-3 scale-80 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-80 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Last Name</label>
+                <label for="last_name" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Last Nameddd</label>
               </div>
+
               <div class="relative">
                 <input
                   type="text"
@@ -24,7 +25,7 @@
                   placeholder=" "
                   v-model="form.first_name"
                 />
-                <label for="first_name" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-3 scale-80 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-80 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">First Name</label>
+                <label for="first_name" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">First Name</label>
               </div>
               <div class="relative">
                 <input
@@ -34,7 +35,7 @@
                   placeholder=" "
                   v-model="form.middle_name"
                 />
-                <label for="middle_name" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-3 scale-80 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-80 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Middle Name</label>
+                <label for="middle_name" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Middle Name</label>
               </div>
               <div class="relative">
                 <input
@@ -45,7 +46,7 @@
                   v-model="form.birth_date"
                   @input="calculateAge"
                 />
-                <label for="birth_date" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-3 scale-70 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-70 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">BIRTHDAY (MM/DD/YYYY)<span class="text-red-600">*</span></label>
+                <label for="birth_date" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">BIRTHDAY (MM/DD/YYYY)<span class="text-red-600">*</span></label>
               </div>
               <!-- <div class="relative">
                 <input
@@ -59,7 +60,7 @@
                 <label for="age" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-3 scale-70 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-70 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Age</label>
               </div> -->
 
-              <div class="relative">
+              <!-- <div class="relative">
                 <input
                   type="text"
                   id="account_type_id"
@@ -67,7 +68,19 @@
                   placeholder=" "
                   v-model="form.account_type_id"
                 />
-                <label for="account_type_id" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-3 scale-80 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-80 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Account</label>
+                <label for="account_type_id" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Account</label>
+              </div> -->
+              <div class="relative">
+                <select
+                  type="number"
+                  id="acctypt"
+                  v-model="form.account_type_id"
+                  class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                        <option selected disabled>Select Accoun type</option>
+                        <option v-for="item in records" :key="item.id" :value="item.id">{{ item.name }}</option>
+                    </select>
+
+                <label for="acctypt" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-3 scale-70 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-70 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Account</label>
               </div>
 
               <div class="relative">
@@ -83,16 +96,7 @@
 
                 <label for="sex" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-3 scale-70 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-70 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Gender</label>
               </div>
-              <div class="relative">
-                <input
-                  type="text"
-                  id="created_by"
-                  class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  v-model="form.created_by"
-                />
-                <label for="created_by" class="absolute text-sm text-gray-700 duration-300 transform -translate-y-3 scale-80 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-80 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Created By</label>
-              </div>
+              
               <div class="relative">
                 <!-- <h3 class="mb-4 font-semibold text-gray-900">Identification</h3> -->
                     <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
@@ -119,18 +123,30 @@
     </div>
   </template>
 
-  <script>
 
+<script setup>
 import axios from 'axios';
+</script>
+
+<script>
   export default {
     data() {
         return {
-      form: {
-      },
+      records: [],
+      form: {},
       errors: {}
     };
     },
     methods: {
+      async getData() {
+        try {
+          const response = await axios.get(route('account.getAll'));
+          this.records = response.data;
+          console.log('AAAAA:', this.records);
+        } catch (error) {
+          // console.error('Error fetching records:', error);
+        }
+      },
       calculateAge() {
         if (this.form.birth_date) {
           const birthDate = new Date(this.form.birth_date);
@@ -159,6 +175,9 @@ import axios from 'axios';
           }
         });
       }
-    }
+    },
+    mounted() {
+      this.getData();
+    },
   };
-  </script>
+</script>
