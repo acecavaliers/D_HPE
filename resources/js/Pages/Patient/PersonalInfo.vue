@@ -40,7 +40,7 @@
                 </div>
             </div>
             <!-- Case no and Hospital -->
-            <div class="pb-3 grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <!-- <div class="pb-3 grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div class="relative">
                 <input
                   type="text"
@@ -62,9 +62,29 @@
                 <label for="hospital_no" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Hospital No.</label>
               </div>
 
-            </div>
+            </div> -->
             <!-- Gender DOB -->
-            <div class="pb-3 grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="pb-3 grid grid-cols-1 md:grid-cols-5 gap-6 mb-6">
+              <div class="relative">
+                <input
+                  type="text"
+                  id="case_no"
+                  class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  v-model="form.case_no"
+                />
+                <label for="case_no" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Case No.</label>
+              </div>
+              <div class="relative">
+                <input
+                  type="text"
+                  id="hospital_no"
+                  class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  v-model="form.hospital_no"
+                />
+                <label for="hospital_no" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Hospital No.</label>
+              </div>
               <div class="relative">
                 <select
                   type="number"
@@ -177,9 +197,7 @@
 
               </div>
 
-              <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-                
-
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 
                 <div class="relative">
                   <input
@@ -236,7 +254,11 @@
                     />
                     <label for="job_title" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Job Title</label>
                 </div>
+            </div>
 
+            <!-- Account Details -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+              
               <div class="relative">
                 <select
                   type="number"
@@ -253,6 +275,16 @@
 
                 <label for="acctypt" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-white px-2 ">Account</label>
               </div>
+              <div class="relative">
+                    <input
+                        type="text"
+                        id="account_detail"
+                        class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                        v-model="form.account_detail"
+                    />
+                    <label for="account_detail" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Account Detail</label>
+                </div>
 
             </div>
             
