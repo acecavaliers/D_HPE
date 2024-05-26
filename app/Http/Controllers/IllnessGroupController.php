@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Illness;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class IllnessGroupController extends Controller
@@ -118,7 +119,20 @@ class IllnessGroupController extends Controller
 
         return $query;
 
+    }
 
+    public function getListSympV2()
+    {
+        $query = IllnessGroup::with('illnesses')->orderBy('id')->get();
 
+        return $query;
+
+        // $query = DB::table('illnesses as t0')
+        //     ->join('illness_groups as t1', 't0.illness_group_id', '=', 't1.id')
+        //     ->select('t1.name as group_name', 't0.illness_group_id', 't0.id', 't0.name as symp')
+        //     ->orderBy('t1.id')
+        //     ->get();
+
+        //     return $query;
     }
 }

@@ -17,4 +17,8 @@ class IllnessGroup extends Model
         'updated_by',
         'deleted_by',
     ];
+    public function illnesses()
+    {
+        return $this->hasMany(Illness::class, 'illness_group_id');
+    }
 }

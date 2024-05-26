@@ -155,7 +155,7 @@
       const response = await axios.get(url || route('patient.getlist'));
       patient.value = response.data;
     } catch (error) {
-      console.error('Error fetching accounts:', error);
+      // console.error('Error fetching accounts:', error);
     }
   };
 
@@ -171,17 +171,17 @@
       };
     },
     created() {
-      this.fetchAccounts();
+      // this.fetchAccounts();
     },
     methods: {
-      async fetchAccounts(url = null) {
-        try {
-          const response = await axios.get(url || route('patient.getlist'));
-          this.accounts = response.data;
-        } catch (error) {
-          console.error('Error fetching accounts:', error);
-        }
-      },
+      // async fetchAccounts(url = null) {
+      //   try {
+      //     const response = await axios.get(url || route('patient.getlist'));
+      //     this.accounts = response.data;
+      //   } catch (error) {
+      //     console.error('Error fetching accounts:', error);
+      //   }
+      // },
     },
   };
   </script>
