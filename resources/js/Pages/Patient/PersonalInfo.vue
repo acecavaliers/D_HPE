@@ -5,7 +5,7 @@
           <h1 class="text-md font-semibold text-gray-900">PATIENT INFORMATION</h1>
           <p class="text-sm text-gray-900 mb-6 bg-gray-200 p-2"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX. MINOR PATIENT TO BE ASSISTED BY A PARENT OR GUARDIAN.</p>
           <form @submit.prevent="submitForm">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="py-3 grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <div class="relative">
                     <input
                         type="text"
@@ -39,8 +39,8 @@
                     <label for="middle_name" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Middle Name</label>
                 </div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <!-- Case no and Hospital -->
+            <div class="pb-3 grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div class="relative">
                 <input
                   type="text"
@@ -63,8 +63,8 @@
               </div>
 
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <!-- Gender DOB -->
+            <div class="pb-3 grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div class="relative">
                 <select
                   type="number"
@@ -87,7 +87,7 @@
                   v-model="form.birth_date"
                   @input="calculateAge"
                 />
-                <label for="birth_date" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">BIRTHDAY (MM/DD/YYYY)<span class="text-red-600">*</span></label>
+                <label for="birth_date" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Birthday (mm/dd/yyyy)<span class="text-red-600">*</span></label>
               </div>
               <div class="relative">
                 <input
@@ -102,24 +102,140 @@
               </div>
 
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <!-- Address -->
+            <div class="pb-3">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="country"
+                    class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    v-model="form.country"
+                  />
+                  <label for="country" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Country</label>
+                </div>
+                
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="region"
+                    class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    v-model="form.region"
+                  />
+                  <label for="region" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Region</label>
+                </div>
+                
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="province"
+                    class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    v-model="form.province"
+                  />
+                  <label for="province" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Province</label>
+                </div>
+
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="city"
+                    class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    v-model="form.city"
+                  />
+                  <label for="city" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">City</label>
+                </div>
+
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="barangay"
+                    class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    v-model="form.barangay"
+                  />
+                  <label for="barangay" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Barangay</label>
+                </div>
+
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="zipcode"
+                    class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    disabled
+                    v-model="form.zipcode"
+                  />
+                  <label for="zipcode" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Zip code</label>
+                </div>
+
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                
+
+                
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="bldgsubd"
+                    class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    v-model="form.bldgsubd"
+                  />
+                  <label for="bldgsubd" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">House/ Unit No</label>
+                </div>
+
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="street"
+                    class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder=" "
+                    v-model="form.street"
+                  />
+                  <label for="street" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Street</label>
+                </div>
+
+                
+
+              </div>
+            </div>
+            <!-- Pre-Emp Job Tittle -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div class="relative">
                 <!-- <h3 class="mb-4 font-semibold text-gray-900">Identification</h3> -->
-                    <ul class="flex justify-between w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg">
+                    <ul class="flex justify-between w-full text-xs font-medium text-gray-900 bg-white">
                         <li class="w-full rounded-l-lg border border-gray-200">
                             <div class="flex items-center ps-3">
                                 <input id="is_pre_employment_0" type="radio" value="0" v-model="form.is_pre_employment" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
-                                <label for="is_pre_employment_0" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">PRE-EMPLOYMENT </label>
+                                <label for="is_pre_employment_0" class="w-full py-3 ms-2 text-xs font-medium text-gray-900">PRE-EMPLOYMENT </label>
                             </div>
                         </li>
                         <li class="w-full rounded-r-lg border border-gray-200">
                             <div class="flex items-center ps-3">
                                 <input id="is_pre_employment_1" type="radio" value="1" v-model="form.is_pre_employment" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
-                                <label for="is_pre_employment_1" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">ANNUAL EXECUTIVE CHECK-UP</label>
+                                <label for="is_pre_employment_1" class="w-full py-3 ms-2 text-xs font-medium text-gray-900">ANNUAL EXECUTIVE CHECK-UP</label>
                             </div>
                         </li>
                     </ul>
               </div>
+              <div class="relative">
+                    <input
+                        type="text"
+                        id="job_title"
+                        class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                        v-model="form.job_title"
+                    />
+                    <label for="job_title" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Job Title</label>
+                </div>
 
               <div class="relative">
                 <select
@@ -139,6 +255,7 @@
               </div>
 
             </div>
+            
             <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
           </form>
         </div>
