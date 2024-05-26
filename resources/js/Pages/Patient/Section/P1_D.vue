@@ -19,7 +19,7 @@
             </label>
         </div>
       </div>
-      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
+      <div class="right-0 w-full flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
             <input
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
@@ -37,7 +37,7 @@
         </div>
       </div>
       
-      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
+      <div class="right-0 w-full flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
             <input
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
@@ -55,7 +55,7 @@
         </div>
       </div>
       
-      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
+      <div class="right-0 w-full flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
             <input
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"

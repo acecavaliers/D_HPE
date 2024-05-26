@@ -3,11 +3,11 @@
       <P1_A/>
       <P1_B/>
       <P1_C/>
-      <div class="flex border border-gray-400">
+      <div class="flex border border-gray-400 pb-5">
         <P1_D/>
         <P1_E/>
       </div>
-      <div class="flex border border-gray-400">
+      <div class="flex border border-gray-400 pb-5">
         <P1_F/>
         <P1_G/>
         <P1_H/>
