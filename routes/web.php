@@ -6,6 +6,7 @@ use App\Http\Controllers\IllnessGroupController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VaccinationController;
 use App\Models\IdentificationType;
 use App\Models\IllnessGroup;
 use App\Models\SalaryGrade;
@@ -49,6 +50,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
     Route::get('/account/getlist', [AccountTypeController::class, 'getlist'])->name('account.getlist');
+    
+    Route::get('/vaccine/getlist', [VaccinationController::class, 'getlist'])->name('vaccine.getlist');
 
 
     Route::get('/illness/getlist', [IllnessGroupController::class, 'getlist'])->name('illness.getlist');
@@ -63,6 +66,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'patient' => PatientController::class,
         'illness' => IllnessGroupController::class,
         'illnesschild' => IllnessController::class,
+        'vaccine' => VaccinationController::class,
     ]);
 
 
