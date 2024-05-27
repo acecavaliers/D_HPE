@@ -335,7 +335,6 @@
 
 <script setup>
 import axios from 'axios';
-
 </script>
 
 <script>
@@ -385,6 +384,7 @@ import P1_B from './Section/P1_B.vue';
       submitForm() {
 
         console.log('RRRRRR:', this.pa);
+        console.log('xxxxxx:', this.pb);
         axios.post('patient',
           {formdata:this.form,
             padata:this.pa,

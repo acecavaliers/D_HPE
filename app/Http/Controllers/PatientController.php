@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Patient;
 use App\Http\Controllers\Controller;
 use App\Models\PatientMedIllnessPrevHosptlznSurgery;
+use App\Models\PatientPastIllness;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -32,11 +33,21 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        $arr = $request->formdata;
+        $arr = $request->pa;
+        $pa = $request->padata;
         $pb = $request->pbdata;
 
         $arr['created_by'] = Auth::user()->name;
         $patient= Patient::create($arr);
+
+        if ($patient) {
+            foreach ($pa as $illness) {
+                $illness['patient_id'] = $patient->id;
+
+                // Create the Illness
+                PatientPastIllness::create($illness);
+            }
+        }
 
         if (isset($pb['med_illness']) || isset($pb['hospt_surgery'])) {
             // Create a new PatientHistory record
@@ -46,6 +57,7 @@ class PatientController extends Controller
             'hospt_surgery' => $pb['hospt_surgery'],
         ]);
         }
+
         return 'success';
     }
 
