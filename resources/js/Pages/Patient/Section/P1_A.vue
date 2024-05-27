@@ -48,6 +48,7 @@
             <div>
               <div class="w-full">
                 <textarea
+                @focusout="checkAllItems"
                 v-model="othersDetails[illness_group.id]"
                 :disabled="!othersChecked[illness_group.id]"
                 rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Details:"></textarea>
@@ -176,8 +177,67 @@
       </div>
     </div>
     </template>
+<script>
+import { ref } from 'vue';
+import axios from 'axios';
 
-    <script setup>
+export default {
+    props: { pa: Array },
+  data() {
+    return {
+      records: [],
+      checkedItems: [],
+      othersChecked: {},
+      othersDetails: {},
+      pa:{},
+    };
+  },
+  methods: {
+    updateCheckItem(illness_group_id, illness_id, type, isChecked) {
+      const item = { illness_group_id, illness_id };
+
+      if (isChecked) {
+        this.checkedItems.push(item);
+      } else {
+        this.checkedItems = this.checkedItems.filter(
+          (i) => !(i.illness_group_id === illness_group_id && i.illness_id === illness_id)
+        );
+
+        // if (type === 'others') {
+        //   this.$delete(this.othersDetails, illness_group_id);
+        // }
+      }
+
+      this.checkAllItems()
+    },
+    async getData() {
+      try {
+        const response = await axios.get(route('illness.getlistSympV2'));
+        this.records = response.data;
+        console.log('Response data:', this.records);
+      } catch (error) {
+        console.error('Error fetching records:', error);
+      }
+    },
+    checkAllItems() {
+      const result = this.checkedItems.map((item) => {
+        if (item.illness_id === 0 && this.othersChecked[item.illness_group_id]) {
+          return { ...item, details: this.othersDetails[item.illness_group_id] || '' };
+        }
+        return item;
+      });
+      this.pa.pa = result
+
+      console.log('XXXXXXXXXX:', this.pa.pa );
+    }
+  },
+  mounted() {
+    this.getData();
+  }
+};
+</script>
+
+    <!-- <script setup>
     import { ref } from 'vue';
     import axios from 'axios';
 
@@ -234,5 +294,24 @@
     };
 
     getData();
-    </script>
+    </script> -->
 
+    <!-- <script>
+    export default {
+      props: {
+        pa: Array,
+      },
+      methods: {
+        checkAllItems() {
+      const result = this.checkedItems.map((item) => {
+        if (item.illness_id === 0 && this.othersChecked[item.illness_group_id]) {
+          return { ...item, details: this.othersDetails[item.illness_group_id] || '' };
+        }
+        return item;
+      });
+
+      console.log('All checked items with details:', result);
+    },
+    },
+    };
+    </script> -->

@@ -266,7 +266,7 @@
             </div>
             <hr>
             <h1> P1 </h1>
-            <P1_A/>
+            <P1_A :pa="pa" @checked-items-updated="handleCheckedItemsUpdate"/>
             <P1_B :pb="pb"/>
             <!-- <div>
                 <div class="bg-gray-400 border border-gray-400 p-2">
@@ -353,10 +353,12 @@ import P1_B from './Section/P1_B.vue';
       age:'',
       form: {},
       pb: {},
+      pa: {},
       errors: {}
     };
     },
     methods: {
+
       async getData() {
         try {
           const response = await axios.get(route('account.getAll'));
@@ -381,8 +383,11 @@ import P1_B from './Section/P1_B.vue';
         }
       },
       submitForm() {
+
+        console.log('RRRRRR:', this.pa);
         axios.post('patient',
           {formdata:this.form,
+            padata:this.pa,
             pbdata:this.pb
           }
          )
