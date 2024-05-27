@@ -6,9 +6,9 @@
       <div>
         <span class="text-xm text-black"> B. MEDICAL ILLNESSES AND PREVIOUS HOSPITALIZATIONS AND SURGERIES</span>
       </div>
-    </div> 
+    </div>
     <div class="border border-gray-300 p-2">
-      <div class="flex-none mt-1.5">                  
+      <div class="flex-none mt-1.5">
           <input
             class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
             type="checkbox"
@@ -20,7 +20,7 @@
       </div>
       <!-- other illness -->
       <div>
-        <div class="flex-none mt-1.5">                  
+        <div class="flex-none mt-1.5">
             <input
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
@@ -31,14 +31,14 @@
             </label>
         </div>
         <div class="pt-2 w-full">
-          <textarea rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Details:"></textarea>
+          <textarea v-model="pb.med_illness" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Details:"></textarea>
         </div>
 
       </div>
-      
+
       <!-- hospitalizations -->
       <div>
-        <div class="flex-none mt-1.5">                  
+        <div class="flex-none mt-1.5">
             <input
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
@@ -49,14 +49,20 @@
             </label>
         </div>
         <div class="pt-2 w-full">
-          <textarea rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Details:"></textarea>
+          <textarea v-model="pb.hospt_surgery"  rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Details:"></textarea>
         </div>
 
       </div>
 
     </div>
 
-  </div>   
+  </div>
 </template>
-  
+
+<script>
+  export default {
+    props: { pb: Array },
+  }
+</script>
+
 

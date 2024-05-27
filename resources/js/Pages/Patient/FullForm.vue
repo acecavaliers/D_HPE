@@ -1,4 +1,5 @@
 <template>
+    <h1 class="text-md font-semibold text-gray-900">Full Form</h1>
     <div class="transition-colors duration-300">
 
         <div class="bg-white rounded-lg">
@@ -39,31 +40,7 @@
                     <label for="middle_name" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Middle Name</label>
                 </div>
             </div>
-            <!-- Case no and Hospital -->
-            <!-- <div class="pb-3 grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              <div class="relative">
-                <input
-                  type="text"
-                  id="case_no"
-                  class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  v-model="form.case_no"
-                />
-                <label for="case_no" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Case No.</label>
-              </div>
-              <div class="relative">
-                <input
-                  type="text"
-                  id="hospital_no"
-                  class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  v-model="form.hospital_no"
-                />
-                <label for="hospital_no" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-100 -top-1 z-10 origin-[0] bg-transaparent px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:-top-1 peer-focus:scale-100 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Hospital No.</label>
-              </div>
-
-            </div> -->
-            <!-- Gender DOB -->
+            <!-- Gender DOB / Case no and Hospital -->
             <div class="pb-3 grid grid-cols-1 md:grid-cols-5 gap-6 mb-6">
               <div class="relative">
                 <input
@@ -287,8 +264,68 @@
                 </div>
 
             </div>
+            <hr>
+            <h1> P1 </h1>
+            <P1_A/>
+            <P1_B :pb="pb"/>
+            <!-- <div>
+                <div class="bg-gray-400 border border-gray-400 p-2">
+                    <div>
+                        <span class="text-xm text-black"> B. MEDICAL ILLNESSES AND PREVIOUS HOSPITALIZATIONS AND SURGERIES</span>
+                    </div>
+                    </div>
+                    <div class="border border-gray-300 p-2">
+                    <div class="flex-none mt-1.5">
+                        <input
+                            class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                            type="checkbox"
+                        />
+                        <label
+                            class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                            >None
+                        </label>
+                    </div>
 
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+                    <div>
+                        <div class="flex-none mt-1.5">
+                            <input
+                            class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                            type="checkbox"
+                            />
+                            <label
+                            class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                            >Other Medical Illnesses
+                            </label>
+                        </div>
+                        <div class="pt-2 w-full">
+                        <textarea v-model="pb.med_illness" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Details:"></textarea>
+                        </div>
+
+                    </div>
+
+
+                    <div>
+                        <div class="flex-none mt-1.5">
+                            <input
+                            class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                            type="checkbox"
+                            />
+                            <label
+                            class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                            >Hospitalizations and Surgeries (include dates and diagnoses)
+                            </label>
+                        </div>
+                        <div class="pt-2 w-full">
+                        <textarea v-model="pb.hospt_surgery" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Details:"></textarea>
+                        </div>
+
+                    </div>
+
+                    </div>
+
+             </div> -->
+            <hr>
+            <button type="submit" class="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
           </form>
         </div>
 
@@ -298,15 +335,21 @@
 
 <script setup>
 import axios from 'axios';
+import P1_A from './Section/P1_A.vue';
+import P1_B from './Section/P1_B.vue';
+
 </script>
 
 <script>
+
   export default {
+    // props: { pb: Array },
     data() {
         return {
       records: [],
       age:'',
       form: {},
+      pb: {},
       errors: {}
     };
     },
@@ -335,7 +378,11 @@ import axios from 'axios';
         }
       },
       submitForm() {
-        axios.post('patient',{formdata:this.form})
+        axios.post('patient',
+          {formdata:this.form,
+            pbdata:this.pb
+          }
+         )
         .then(response => {
           console.log(response.data);
           if (response.data === 'success') {
