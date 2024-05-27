@@ -189,7 +189,7 @@ export default {
       checkedItems: [],
       othersChecked: {},
       othersDetails: {},
-      pa:{},
+
     };
   },
   methods: {
