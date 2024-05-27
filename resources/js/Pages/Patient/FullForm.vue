@@ -335,15 +335,18 @@
 
 <script setup>
 import axios from 'axios';
-import P1_A from './Section/P1_A.vue';
-import P1_B from './Section/P1_B.vue';
 
 </script>
 
 <script>
+import P1_A from './Section/P1_A.vue';
+import P1_B from './Section/P1_B.vue';
 
   export default {
     // props: { pb: Array },
+    components: {
+        P1_A,P1_B,
+  },
     data() {
         return {
       records: [],
