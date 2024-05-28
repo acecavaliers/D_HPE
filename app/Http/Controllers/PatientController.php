@@ -33,9 +33,10 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        $arr = $request->pa;
+        $arr = $request->formdata;
         $pa = $request->padata;
         $pb = $request->pbdata;
+
 
         $arr['created_by'] = Auth::user()->name;
         $patient= Patient::create($arr);
@@ -43,19 +44,21 @@ class PatientController extends Controller
         if ($patient) {
             foreach ($pa as $illness) {
                 $illness['patient_id'] = $patient->id;
-
+                // return  $illness;
                 // Create the Illness
                 PatientPastIllness::create($illness);
+
             }
         }
 
         if (isset($pb['med_illness']) || isset($pb['hospt_surgery'])) {
-            // Create a new PatientHistory record
-        PatientMedIllnessPrevHosptlznSurgery::create([
-            'patient_id' => $patient->id,
-            'med_illness' => $pb['med_illness'],
-            'hospt_surgery' => $pb['hospt_surgery'],
-        ]);
+
+            PatientMedIllnessPrevHosptlznSurgery::create([
+                'patient_id' => $patient->id,
+                'med_illness' => $pb['med_illness'],
+                'hospt_surgery' => $pb['hospt_surgery'],
+
+            ]);
         }
 
         return 'success';

@@ -265,8 +265,7 @@
 
             </div>
             <hr>
-            <h1> P1 </h1>
-            <P1_A :pa="pa" @checked-items-updated="handleCheckedItemsUpdate"/>
+            <P1_A :pa="pa" @update-pa="updatePa" />
             <P1_B :pb="pb"/>
             <!-- <div>
                 <div class="bg-gray-400 border border-gray-400 p-2">
@@ -352,11 +351,14 @@ import P1_B from './Section/P1_B.vue';
       age:'',
       form: {},
       pb: {},
-      pa: {},
+      pa: [],
       errors: {}
     };
     },
     methods: {
+        updatePa(newPa) {
+      this.pa = newPa;
+    },
 
       async getData() {
         try {
@@ -383,8 +385,8 @@ import P1_B from './Section/P1_B.vue';
       },
       submitForm() {
 
-        console.log('RRRRRR:', this.pa);
-        console.log('xxxxxx:', this.pb);
+        // console.log('RRRRRR:', this.pa);
+        // console.log('xxxxxx:', this.pb);
         axios.post('patient',
           {formdata:this.form,
             padata:this.pa,

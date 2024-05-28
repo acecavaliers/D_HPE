@@ -56,8 +56,6 @@
             </div>
           </div>
         </div>
-        <button type="button" @click="checkAllItems" class="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Check</button>
-
         <!-- Oncology -->
         <div class="border border-gray-300 grid grid-cols-12 gap-x-4">
           <div class="p-2 col-span-12 sm:col-span-2 overflow-y-auto text-left align-center">
@@ -227,8 +225,11 @@ export default {
         return item;
       });
       this.pa.pa = result
+      this.$emit('update-pa', result);
 
-      console.log('XXXXXXXXXX:', this.pa.pa );
+      console.log('Updated pa:', result);
+
+    //   console.log('XXXXXXXXXX:', this.pa.pa );
     }
   },
   mounted() {
@@ -237,81 +238,3 @@ export default {
 };
 </script>
 
-    <!-- <script setup>
-    import { ref } from 'vue';
-    import axios from 'axios';
-
-    const records = ref([]);
-    const checkedItems = ref([]);
-    const othersChecked = ref({});
-    const othersDetails = ref({});
-
-    const updateCheckItem = (illness_group_id, illness_id, type, isChecked) => {
-      const item = { illness_group_id, illness_id };
-
-      if (type === 'others') {
-        othersChecked.value[illness_group_id] = isChecked;
-        if (!isChecked) {
-          delete othersDetails.value[illness_group_id];
-        }
-      }
-
-      if (isChecked) {
-        checkedItems.value.push(item);
-      } else {
-        checkedItems.value = checkedItems.value.filter(
-          (i) => !(i.illness_group_id === illness_group_id && i.illness_id === illness_id)
-        );
-
-        if (type === 'others') {
-          delete othersDetails.value[illness_group_id];
-        }
-      }
-
-      console.log(`Updated checked items: ${JSON.stringify(checkedItems.value)}`);
-      console.log(`Others details: ${JSON.stringify(othersDetails.value)}`);
-    };
-
-    const getData = async () => {
-      try {
-        const response = await axios.get(route('illness.getlistSympV2'));
-        records.value = response.data;
-        console.log('Response data:', records.value);
-      } catch (error) {
-        console.error('Error fetching records:', error);
-      }
-    };
-
-    const checkAllItems = () => {
-      const result = checkedItems.value.map((item) => {
-        if (item.illness_id === 0 && othersChecked.value[item.illness_group_id]) {
-          return { ...item, details: othersDetails.value[item.illness_group_id] || '' };
-        }
-        return item;
-      });
-
-      console.log('All checked items with details:', result);
-    };
-
-    getData();
-    </script> -->
-
-    <!-- <script>
-    export default {
-      props: {
-        pa: Array,
-      },
-      methods: {
-        checkAllItems() {
-      const result = this.checkedItems.map((item) => {
-        if (item.illness_id === 0 && this.othersChecked[item.illness_group_id]) {
-          return { ...item, details: this.othersDetails[item.illness_group_id] || '' };
-        }
-        return item;
-      });
-
-      console.log('All checked items with details:', result);
-    },
-    },
-    };
-    </script> -->
