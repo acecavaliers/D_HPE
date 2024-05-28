@@ -72,6 +72,124 @@
         </div>
       </div>
     </div>
+
+    <!-- Oncology -->
+    <div class="border border-gray-300 grid grid-cols-12 gap-x-4">
+    <div class="p-2 col-span-12 sm:col-span-2 overflow-y-auto text-left align-center">
+    Oncology
+    </div>
+    <div class="p-2 col-span-12 sm:col-span-10">
+    <div class="pb-3">
+        <div class="flex flex-wrap">
+        <div class="flex-none w-full sm:w-64 mt-1.5">
+            <input type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+            <label class="text-sm text-gray-800 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2">
+            None
+            </label>
+        </div>
+        <div class="flex w-full sm:w-auto pb-3 sm:justify-between items-center">
+            <div class="flex-none mt-1.5">
+            <input type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+            <label class="text-sm text-gray-800 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2">
+                Cancertype:
+            </label>
+            </div>
+            <div class="flex-grow sm:ml-3">
+            <input type="text" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" />
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="pb-1">
+        <div class="flex flex-wrap">
+        <div class="flex w-full sm:w-auto pb-3 sm:justify-between items-center">
+            <div class="flex-none mt-1.5">
+            <input type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+            <label class="text-sm text-gray-800 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2">
+                Stage:
+            </label>
+            </div>
+            <div class="flex-grow sm:ml-3">
+            <input type="text" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" />
+            </div>
+        </div>
+        <div class="flex-none w-full sm:w-64 mt-1.5 sm:ml-3">
+            <input type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+            <label class="text-sm text-gray-800 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2">
+            On Chemotherapy:
+            </label>
+        </div>
+        <div class="flex w-full sm:w-auto pb-3 sm:justify-between items-center mt-1.5 sm:ml-3">
+            <div class="flex-none mt-1.5">
+            <input type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+            <label class="text-sm text-gray-800 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2">
+                Type:
+            </label>
+            </div>
+            <div class="flex-grow sm:ml-3">
+            <input type="text" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" />
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- end -->
+
+    <!-- Exposure -->
+    <div class="border border-gray-300 grid grid-cols-12 gap-x-4">
+    <div class="p-2 col-span-12 sm:col-span-2 overflow-y-auto text-left align-center">
+        Exposure
+    </div>
+    <div class="p-2 col-span-12 sm:col-span-10">
+        <div class="pb-3">
+        <div class="flex flex-wrap">
+            <div class="flex w-full sm:w-6/12 mt-1.5">
+            <p class="text-sm text-gray-800 px-2">
+                Have you ever engaged in any activity which has put you at risk of getting HIV/AIDS?
+            </p>
+            </div>
+            <div class="flex items-center w-full sm:w-20 mt-1.5 sm:justify-start">
+            <input type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+            <label class="text-sm text-gray-800 px-2">No</label>
+            </div>
+            <div class="flex flex-wrap w-full sm:w-auto pb-3 sm:justify-between mt-1.5 sm:ml-5">
+            <div class="flex-none mt-1.5">
+                <input type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                <label class="text-sm text-gray-800 px-2">Yes</label>
+            </div>
+            <div class="flex-grow sm:ml-3">
+                <input type="text" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" />
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="pb-1">
+        <div class="flex flex-wrap">
+            <div class="flex w-full sm:w-6/12 mt-1.5">
+            <p class="text-sm text-gray-800 px-2">
+                Have you ever worked with chemicals or hazardous materials?
+            </p>
+            </div>
+            <div class="flex items-center w-full sm:w-20 mt-1.5 sm:justify-start">
+            <input type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+            <label class="text-sm text-gray-800 px-2">No</label>
+            </div>
+            <div class="flex flex-wrap w-full sm:w-auto pb-3 sm:justify-between mt-1.5 sm:ml-5">
+            <div class="flex-none mt-1.5">
+                <input type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                <label class="text-sm text-gray-800 px-2">Yes</label>
+            </div>
+            <div class="flex-grow sm:ml-3">
+                <input type="text" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" />
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <!-- end -->
+
   </template>
 <script>
 import { ref } from 'vue';

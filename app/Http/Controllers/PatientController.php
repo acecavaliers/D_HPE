@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Patient;
 use App\Http\Controllers\Controller;
+use App\Models\PatientCurrAndMaintnceMedication;
 use App\Models\PatientMedIllnessPrevHosptlznSurgery;
 use App\Models\PatientPastIllness;
 use Illuminate\Http\Request;
@@ -37,6 +38,7 @@ class PatientController extends Controller
         $arr = $request->formdata;
         $pa = $request->padata;
         $pb = $request->pbdata;
+        $pc = $request->pcdata;
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -61,6 +63,11 @@ class PatientController extends Controller
                         'med_illness' => $pb['med_illness'],
                         'hospt_surgery' => $pb['hospt_surgery'],
                     ]);
+                }
+                //Insert  Patient Curr And Maintnce Medication
+                if (isset($pc['name'])) {
+                    $pc['patient_id'] = $patient->id;
+                    PatientCurrAndMaintnceMedication::create($pc);
                 }
             }
 
