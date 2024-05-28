@@ -268,6 +268,10 @@
             <P1_A :pa="pa" @update-pa="updatePa" />
             <P1_B :pb="pb"/>
             <P1_C :pc="pc"/>
+            <div class="grid grid-cols-1 md:grid-cols-2  mb-6 border border-gray-400 ">
+                <P1_D/>
+                <P1_E/>
+            </div>
 
             <button type="submit" class="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
           </form>
@@ -285,10 +289,12 @@ import axios from 'axios';
 import P1_A from './Section/P1_A.vue';
 import P1_B from './Section/P1_B.vue';
 import P1_C from './Section/P1_C.vue';
+import P1_D from './Section/P1_D.vue';
+import P1_E from './Section/P1_E.vue';
 
   export default {
     components: {
-        P1_A,P1_B,P1_C,
+        P1_A,P1_B,P1_C,P1_D,P1_E,
   },
     data() {
         return {
