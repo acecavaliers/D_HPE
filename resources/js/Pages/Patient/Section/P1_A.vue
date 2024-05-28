@@ -85,13 +85,13 @@
                             <ul class="flex justify-between w-full text-sm font-medium text-gray-900 bg-white">
                                 <li class="w-full">
                                     <div class="flex items-center w-24">
-                                        <input id="cancer_0" name="cancer" type="radio" value="0" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="cancer_0" name="cancer" type="radio" value="0" class=" rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="cancer_0" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">None </label>
                                     </div>
                                 </li>
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="cancer_1" name="cancer" type="radio" value="1" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="cancer_1" name="cancer" type="radio" value="1" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="cancer_1"  class="w-full py-3 ms-2 text-sm font-medium text-gray-900">Cancer</label>
                                     </div>
                                 </li>
@@ -161,13 +161,13 @@
                             <ul class="flex justify-between w-full text-sm font-medium text-gray-900 bg-white">
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="hiv_0" name="aaa" type="radio" value="0" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="hiv_0" name="aaa" type="radio" value="0" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="hiv_0" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">No </label>
                                     </div>
                                 </li>
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="hiv_1" name="aaa" type="radio" value="1" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="hiv_1" name="aaa" type="radio" value="1" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="hiv_1"  class="w-full py-3 ms-2 text-sm font-medium text-gray-900">Yes</label>
                                     </div>
                                 </li>
@@ -190,13 +190,13 @@
                             <ul class="flex justify-between w-full text-sm font-medium text-gray-900 bg-white">
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="chemical_0" name="chm_aaa" type="radio" value="0" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="chemical_0" name="chm_aaa" type="radio" value="0" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="chemical_0" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">No </label>
                                     </div>
                                 </li>
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="chemical_1" name="chm_aaa" type="radio" value="1" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="chemical_1" name="chm_aaa" type="radio" value="1" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="chemical_1"  class="w-full py-3 ms-2 text-sm font-medium text-gray-900">Yes</label>
                                     </div>
                                 </li>
