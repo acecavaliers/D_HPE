@@ -12,7 +12,7 @@ class PatientPastIllness extends Model
 
     protected $foreignKeys = ['patients'=>'patient_id',
                             'illness_groups'=>'illness_group_id',
-                            'illnesses'=>'illnes_id',
+                            // 'illnesses'=>'illnes_id',
                             ];
 
     protected $fillable = [
@@ -37,8 +37,12 @@ class PatientPastIllness extends Model
     {
         return $this->belongsTo(IllnessGroup::class, 'illness_group_id');
     }
+    // public function illnesses()
+    // {
+    //     return $this->belongsTo(Illness::class, 'illnes_id')->withDefault();
+    // }
     public function illnesses()
     {
-        return $this->belongsTo(Illness::class, 'illnes_id');
+        return $this->belongsTo(Illness::class, 'illnes_id')->withDefault();
     }
 }

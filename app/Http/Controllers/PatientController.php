@@ -8,6 +8,7 @@ use App\Models\PatientMedIllnessPrevHosptlznSurgery;
 use App\Models\PatientPastIllness;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class PatientController extends Controller
@@ -37,32 +38,75 @@ class PatientController extends Controller
         $pa = $request->padata;
         $pb = $request->pbdata;
 
-
         $arr['created_by'] = Auth::user()->name;
-        $patient= Patient::create($arr);
 
-        if ($patient) {
-            foreach ($pa as $illness) {
-                $illness['patient_id'] = $patient->id;
-                // return  $illness;
-                // Create the Illness
-                PatientPastIllness::create($illness);
+        DB::beginTransaction();
 
+        try {
+            // Create the patient
+            $patient = Patient::create($arr);
+
+            // Check if patient creation was successful
+            if ($patient) {
+                // Create past illnesses
+                foreach ($pa as $illness) {
+                    $illness['patient_id'] = $patient->id;
+                    PatientPastIllness::create($illness);
+                }
+
+                // Create medical illness and previous hospitalization/surgery
+                if (isset($pb['med_illness']) || isset($pb['hospt_surgery'])) {
+                    PatientMedIllnessPrevHosptlznSurgery::create([
+                        'patient_id' => $patient->id,
+                        'med_illness' => $pb['med_illness'],
+                        'hospt_surgery' => $pb['hospt_surgery'],
+                    ]);
+                }
             }
+
+            // Commit the transaction if everything is successful
+            DB::commit();
+
+            return response()->json(['message' => 'Success'], 200);
+        } catch (\Exception $e) {
+            // Rollback the transaction in case of an error
+            DB::rollBack();
+
+            return response()->json(['message' => 'Error occurred', 'error' => $e->getMessage()], 500);
         }
-
-        if (isset($pb['med_illness']) || isset($pb['hospt_surgery'])) {
-
-            PatientMedIllnessPrevHosptlznSurgery::create([
-                'patient_id' => $patient->id,
-                'med_illness' => $pb['med_illness'],
-                'hospt_surgery' => $pb['hospt_surgery'],
-
-            ]);
-        }
-
-        return 'success';
     }
+    // public function store(Request $request)
+    // {
+    //     $arr = $request->formdata;
+    //     $pa = $request->padata;
+    //     $pb = $request->pbdata;
+
+
+    //     $arr['created_by'] = Auth::user()->name;
+    //     $patient= Patient::create($arr);
+
+    //     if ($patient) {
+    //         foreach ($pa as $illness) {
+    //             $illness['patient_id'] = $patient->id;
+    //             // return  $illness;
+    //             // Create the Illness
+    //             PatientPastIllness::create($illness);
+
+    //         }
+    //     }
+
+    //     if (isset($pb['med_illness']) || isset($pb['hospt_surgery'])) {
+
+    //         PatientMedIllnessPrevHosptlznSurgery::create([
+    //             'patient_id' => $patient->id,
+    //             'med_illness' => $pb['med_illness'],
+    //             'hospt_surgery' => $pb['hospt_surgery'],
+
+    //         ]);
+    //     }
+
+    //     return 'success';
+    // }
 
     /**
      * Display the specified resource.
