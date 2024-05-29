@@ -3,7 +3,7 @@
     <div class="flex-1">
       <div class="bg-gray-400 border border-gray-400 p-2">
         <div>
-          <span class="text-xm text-black"> F. FAMILY HISTORY {{ fh_checked }}</span>
+          <span class="text-xm text-black"> F. FAMILY HISTORY</span>
         </div>
       </div>
       <div class="p-2">
@@ -41,7 +41,7 @@
               <input
                 v-model="fh.inputValue"
                 :disabled="!fh.checked"
-                @input="updateChecked(fh)"
+                @focusout="updateChecked(fh)"
                 :class="{'bg-white': fh.checked , 'bg-gray-100': !fh.checked}"
                 class="w-full text-sm text-gray-900 border-0 border-b pb-0 mt-0.5 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600"
                 type="text"
@@ -66,7 +66,7 @@
             <input
               v-model="othersInput"
               :disabled="!othersChecked"
-              @input="updateOthersChecked"
+              @focusout="updateOthersChecked"
               :class="{'bg-white': othersChecked , 'bg-gray-100': !othersChecked}"
               class="w-full text-sm text-gray-900 border-0 border-b pb-0 mt-0.5 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600"
               type="text"
@@ -103,7 +103,7 @@
           }
         },
         updateChecked(fh) {
-          const index = this.fh_checked.findIndex(item => item.id === fh.id);
+          const index = this.fh_checked.findIndex(item => item.family_history_id === fh.id);
           if (fh.checked) {
             if (fh.with_input === 0) {
               if (index === -1) {
@@ -113,7 +113,7 @@
               if (index === -1) {
                 this.fh_checked.push({ family_history_id: fh.id, details: fh.inputValue });
               } else {
-                this.fh_checked[index].value = fh.inputValue;
+                this.fh_checked[index].details = fh.inputValue;
               }
             }
           } else {
@@ -124,21 +124,26 @@
               fh.inputValue = "";
             }
           }
+        this.$emit('update-pf', this.fh_checked);
+
         },
         updateOthersChecked() {
-          const index = this.fh_checked.findIndex(item => item.id === 'others');
+          const index = this.fh_checked.findIndex(item => item.family_history_id === '');
           if (this.othersChecked) {
             if (index === -1) {
               this.fh_checked.push({ family_history_id: '', details: this.othersInput });
             } else {
-              this.fh_checked[index].value = this.othersInput;
+              this.fh_checked[index].details = this.othersInput;
             }
+
           } else {
             if (index !== -1) {
               this.fh_checked.splice(index, 1);
+                console.log('xxxxxxxxx',this.fh_checked)
             }
             this.othersInput = "";
           }
+        this.$emit('update-pf', this.fh_checked);
         }
       },
       mounted() {

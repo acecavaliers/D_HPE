@@ -6,6 +6,7 @@ use App\Models\Patient;
 use App\Http\Controllers\Controller;
 use App\Models\PatientAllergy;
 use App\Models\PatientCurrAndMaintnceMedication;
+use App\Models\PatientFamHistory;
 use App\Models\PatientMedIllnessPrevHosptlznSurgery;
 use App\Models\PatientPastIllness;
 use App\Models\PatientPersonalSocialHistory;
@@ -43,6 +44,7 @@ class PatientController extends Controller
         $pc = $request->pcdata;
         $pd = $request->pddata;
         $pe = $request->pedata;
+        $pf = $request->pfdata;
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -93,6 +95,14 @@ class PatientController extends Controller
                     $pe['created_by'] = $patient->created_by;
                     PatientPersonalSocialHistory::create($pe);
 
+                }
+
+
+                // Create past illnesses
+                foreach ($pf as $fh) {
+                    $fh['patient_id'] = $patient->id;
+                    $fh['created_by'] = $patient->created_by;
+                    PatientFamHistory::create($fh);
                 }
             }
 

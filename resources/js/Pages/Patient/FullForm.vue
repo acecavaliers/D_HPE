@@ -272,7 +272,7 @@
                 <P1_D :pd="pd"/>
                 <P1_E :pe="pe"/>
             </div>
-                <P1_F/>
+                <P1_F :pf="pf" @update-pf="updatePF"/>
 
             <button type="submit" class="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
           </form>
@@ -308,13 +308,17 @@ import P1_F from './Section/P1_F.vue';
       pc:{},
       pd:{},
       pe:{},
+      pf:[],
       errors: {}
     };
     },
     methods: {
         updatePa(newPa) {
-      this.pa = newPa;
-    },
+            this.pa = newPa;
+        },
+        updatePF(newPf) {
+            this.pf = newPf;
+        },
 
       async getData() {
         try {
@@ -341,8 +345,8 @@ import P1_F from './Section/P1_F.vue';
       },
       submitForm() {
 
-        // console.log('RRRRRR:', this.pa);
-        console.log('xxxxxx:', this.pd);
+        console.log('RRRRRR:', this.pa);
+        console.log('FFFFFFFFFFFF:', this.pf);
         axios.post('patient',
           {formdata:this.form,
             padata:this.pa,
@@ -350,6 +354,7 @@ import P1_F from './Section/P1_F.vue';
             pcdata:this.pc,
             pddata:this.pd,
             pedata:this.pe,
+            pfdata:this.pf,
 
           }
          )
