@@ -269,7 +269,7 @@
                 <P1_B :pb="pb"/>
                 <P1_C :pc="pc"/>
             <div class="grid grid-cols-1 md:grid-cols-2  mb-6 border border-gray-400">
-                <P1_D/>
+                <P1_D :pd="pd"/>
                 <P1_E/>
             </div>
 
@@ -304,6 +304,7 @@ import P1_E from './Section/P1_E.vue';
       pa: [],
       pb: {},
       pc:{},
+      pd:{},
       errors: {}
     };
     },
@@ -338,12 +339,13 @@ import P1_E from './Section/P1_E.vue';
       submitForm() {
 
         // console.log('RRRRRR:', this.pa);
-        // console.log('xxxxxx:', this.pc);
+        console.log('xxxxxx:', this.pd);
         axios.post('patient',
           {formdata:this.form,
             padata:this.pa,
             pbdata:this.pb,
             pcdata:this.pc,
+            pddata:this.pd,
 
           }
          )
