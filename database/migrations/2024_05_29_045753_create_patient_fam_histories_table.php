@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('patient_fam_histories', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Patient::class)->constrained('patients');
-            $table->foreignIdFor(FamilyHistory::class)->constrained('family_histories');
+            $table->bigInteger('family_history_id')->nullable();
             $table->string('details')->nullable();
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();

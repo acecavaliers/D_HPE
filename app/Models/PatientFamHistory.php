@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\FamilyHistoryController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -10,7 +11,7 @@ class PatientFamHistory extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $foreignKeys = ['patients'=>'patient_id','family_histories'=>'family_history_id',];
+    protected $foreignKeys = ['patients'=>'patient_id'];
 
     protected $fillable = [
 
@@ -31,6 +32,7 @@ class PatientFamHistory extends Model
     }
     public function family_histories()
     {
-        return $this->belongsTo(Patient::class, 'family_history_id');
+        // return $this->belongsTo(Patient::class, 'family_history_id');
+        return $this->belongsTo(FamilyHistory::class, 'family_history_id')->withDefault();
     }
 }

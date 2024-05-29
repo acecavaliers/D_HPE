@@ -18,13 +18,13 @@
               />
               <label
                   for="d_none"
-                  class="text-sm text-gray-800"
+                  class="ml-2 text-sm text-gray-800"
               >None:</label>
           </div>
         </div>
 
         <div class="right-0 w-full flex sm:items-left sm:justify-between">
-          <div class="flex-none mt-1.5">
+          <div class="flex-none w-20 mt-1.5">
               <input
                   v-model="pd.is_food"
                   id="d_food"
@@ -34,7 +34,7 @@
               />
               <label
                   for="d_food"
-                class="text-sm text-gray-800"
+                class="ml-2 text-sm text-gray-800"
                 >Food:
               </label>
           </div>
@@ -49,7 +49,7 @@
         </div>
 
         <div class="right-0 w-full flex sm:items-left sm:justify-between">
-          <div class="flex-none mt-1.5">
+          <div class="flex-none w-20 mt-1.5">
               <input
                   v-model="pd.is_drugs"
                   id="d_drugs"
@@ -59,7 +59,7 @@
               />
               <label
                   for="d_drugs"
-                class="text-sm text-gray-800"
+                class="ml-2 text-sm text-gray-800"
                 >Drugs:
               </label>
           </div>
@@ -74,7 +74,7 @@
         </div>
 
         <div class="right-0 w-full flex sm:items-left sm:justify-between">
-          <div class="flex-none mt-1.5">
+          <div class="flex-none w-20 mt-1.5">
               <input
                   v-model="pd.is_other"
                   id="d_others"
@@ -84,7 +84,7 @@
               />
               <label
                   for ="d_others"
-                class="text-sm text-gray-800"
+                class="ml-2 text-sm text-gray-800"
                 >Others:
               </label>
           </div>
