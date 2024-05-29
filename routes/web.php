@@ -56,6 +56,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/vaccine/getlist', [VaccinationController::class, 'getlist'])->name('vaccine.getlist');
 
     Route::get('/fh/getlist', [FamilyHistoryController::class, 'getlist'])->name('fh.getlist');
+    Route::get('/fh/getlistAdd', [FamilyHistoryController::class, 'getlistAdd'])->name('fh.getlistAdd');
 
 
     Route::get('/illness/getlist', [IllnessGroupController::class, 'getlist'])->name('illness.getlist');

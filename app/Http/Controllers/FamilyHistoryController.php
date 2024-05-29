@@ -80,4 +80,14 @@ class FamilyHistoryController extends Controller
 
 
     }
+
+    public function getlistAdd(Request $request){
+
+        // $query = AccountType::where('is_active',1)->get();
+        $query = FamilyHistory::orderBy('id', 'asc')->get();
+
+        return $query;
+
+
+    }
 }

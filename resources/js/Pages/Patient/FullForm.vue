@@ -272,6 +272,7 @@
                 <P1_D :pd="pd"/>
                 <P1_E/>
             </div>
+                <P1_F/>
 
             <button type="submit" class="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
           </form>
@@ -291,10 +292,11 @@ import P1_B from './Section/P1_B.vue';
 import P1_C from './Section/P1_C.vue';
 import P1_D from './Section/P1_D.vue';
 import P1_E from './Section/P1_E.vue';
+import P1_F from './Section/P1_F.vue';
 
   export default {
     components: {
-        P1_A,P1_B,P1_C,P1_D,P1_E,
+        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,
   },
     data() {
         return {
