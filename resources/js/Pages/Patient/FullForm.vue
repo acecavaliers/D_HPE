@@ -265,14 +265,21 @@
 
             </div>
             <hr>
+            <div class="grid grid-cols-1 border border-gray-400">
                 <P1_A :pa="pa" @update-pa="updatePa" />
                 <P1_B :pb="pb"/>
                 <P1_C :pc="pc"/>
-            <div class="grid grid-cols-1 md:grid-cols-2  mb-6 border border-gray-400">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 border border-gray-400">
                 <P1_D :pd="pd"/>
                 <P1_E :pe="pe"/>
             </div>
+            <div class="grid grid-cols-1 md:grid-cols-3  mb-6 border border-gray-400">
                 <P1_F :pf="pf" @update-pf="updatePF"/>
+                <P1_G/>
+                <P1_H/>
+            </div>
 
             <button type="submit" class="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
           </form>
@@ -293,10 +300,12 @@ import P1_C from './Section/P1_C.vue';
 import P1_D from './Section/P1_D.vue';
 import P1_E from './Section/P1_E.vue';
 import P1_F from './Section/P1_F.vue';
+import P1_G from './Section/P1_G.vue';
+import P1_H from './Section/P1_H.vue';
 
   export default {
     components: {
-        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,
+        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,
   },
     data() {
         return {

@@ -7,10 +7,10 @@
         </div>
       </div>
       <!-- next Page -->
-      <div class="container">
-        <div v-for="(illness_group, index) in records" :key="index" >
+      <div class="">
+        <div v-for="(illness_group, index) in records" :key="index" class="border-0 border-b border-gray-300 ">
 
-            <div v-if="illness_group.name !== 'Oncology' && illness_group.name !== 'Exposure'" class="border border-gray-300 grid grid-cols-12 gap-x-4">
+            <div v-if="illness_group.name !== 'Oncology' && illness_group.name !== 'Exposure'" class="grid grid-cols-12 gap-x-4">
                 <div class="p-2 col-span-12 sm:col-span-2 overflow-y-auto text-left align-center">
                     {{ illness_group.id }}. {{ illness_group.name }}
                 </div>
@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <div v-else-if="illness_group.name === 'Oncology'" class="border border-gray-300 p-4">
+            <div v-else-if="illness_group.name === 'Oncology'" class="p-4">
                 <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
                     <div class="col-span-12 sm:col-span-2">
                         {{ illness_group.id }}. {{ illness_group.name }}
@@ -132,7 +132,7 @@
                 </div>
             </div>
 
-            <div v-else-if="illness_group.name == 'Exposure'" class="border border-gray-300 grid grid-cols-12 gap-x-4">
+            <div v-else-if="illness_group.name == 'Exposure'" class="grid grid-cols-12 gap-x-4">
                 <div class="p-2 col-span-12 sm:col-span-2 overflow-y-auto text-left align-center">
                     {{ illness_group.id }}. {{ illness_group.name }}
                 </div>
