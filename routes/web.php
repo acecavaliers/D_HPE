@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountTypeController;
+use App\Http\Controllers\FamilyHistoryController;
 use App\Http\Controllers\IllnessController;
 use App\Http\Controllers\IllnessGroupController;
 use App\Http\Controllers\LogoutController;
@@ -51,8 +52,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/account/getlist', [AccountTypeController::class, 'getlist'])->name('account.getlist');
     Route::get('/account/getAll', [AccountTypeController::class, 'getAll'])->name('account.getAll');
-    
+
     Route::get('/vaccine/getlist', [VaccinationController::class, 'getlist'])->name('vaccine.getlist');
+
+    Route::get('/fh/getlist', [FamilyHistoryController::class, 'getlist'])->name('fh.getlist');
 
 
     Route::get('/illness/getlist', [IllnessGroupController::class, 'getlist'])->name('illness.getlist');
@@ -68,6 +71,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'illness' => IllnessGroupController::class,
         'illnesschild' => IllnessController::class,
         'vaccine' => VaccinationController::class,
+        'fh' => FamilyHistoryController::class,
     ]);
 
 

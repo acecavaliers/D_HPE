@@ -72,7 +72,7 @@ class PatientController extends Controller
                     $pc['created_by'] = $patient->created_by;
                     PatientCurrAndMaintnceMedication::create($pc);
                 }
-                //Insert  Patient Curr And Maintnce Medication
+                //Insert  Patient Allergies
                 if (isset($pd['food_details']) || isset($pd['drugs_details']) || isset($pd['other_details'])
                 || isset($pd['is_food']) || isset($pd['is_drugs']) || isset($pd['is_other'])
                 ) {
