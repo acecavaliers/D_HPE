@@ -76,69 +76,56 @@
             <div v-else-if="illness_group.name === 'Oncology'" class="border border-gray-300 p-4">
                 <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
                     <div class="col-span-12 sm:col-span-2">
-                    {{ illness_group.id }}. {{ illness_group.name }}
+                        {{ illness_group.id }}. {{ illness_group.name }}
                     </div>
-                    <div class="col-span-12 sm:col-span-10">
-                    <!-- None Checkbox -->
-                    <div class="flex col-span-2">
-                        <div>
-                            <ul class="flex justify-between w-full text-sm font-medium text-gray-900 bg-white">
-                                <li class="w-full">
+                    <div @focusout="handleCancerRadioChange(illness_group.id, 'cancer')"  class="col-span-12 sm:col-span-10">
+                        <!-- None Checkbox -->
+                        <div class="flex col-span-2">
+                            <div>
+                                <ul class="flex justify-between w-full text-sm font-medium text-gray-900 bg-white">
+                                    <li class="w-full">
                                     <div class="flex items-center w-24">
-                                        <input id="cancer_0" name="cancer" type="radio" value="0" class=" rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
-                                        <label for="cancer_0" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">None </label>
+                                        <input id="cancer_0" v-model="isCancer" type="radio" value="0" @change="handleCancerRadioChange(illness_group.id, 'cancer')" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <label for="cancer_0" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">None</label>
                                     </div>
-                                </li>
-                                <li class="w-full">
+                                    </li>
+                                    <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="cancer_1" name="cancer" type="radio" value="1" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
-                                        <label for="cancer_1"  class="w-full py-3 ms-2 text-sm font-medium text-gray-900">Cancer</label>
+                                        <input id="cancer_1" v-model="isCancer" type="radio" value="1"  class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <label for="cancer_1" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">Cancer</label>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="flex-grow sm:ml-3">
-                            <input type="text" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Cancer type" />
-                        </div>
-                        <!-- <div class="flex items-center">
-                            <input
-                            id="none-{{ index }}"
-                            type="checkbox"
-                            :checked="isNoneChecked(illness_group.id)"
-                            @change="handleNoneChange(illness_group.id, $event.target.checked)"
-                            class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2" />
-                            <label for="none-{{ index }}" class="text-sm text-gray-800">None</label>
-                        </div>
-                        <div class="ml-5 w-full flex items-center">
-                            <input id="cancr" type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2" />
-                            <label for="cancr" class="text-sm text-gray-800 mr-2">Cancer type:</label>
-
-                            <input type="text" class="flex-grow text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-0 focus:border-blue-500" />
-                        </div> -->
-                    </div>
-
-                    <div class="mt-3 flex col-span-2">
-                        <!-- Stage -->
-                        <div class="flex items-center">
-                            <input id="stage" type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2" />
-                            <label for="stage" class="text-sm text-gray-800 mr-2">Stage:</label>
-
-                            <input type="text" class="flex-grow text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-0 focus:border-blue-500" />
-                        </div>
-
-                        <!-- On Chemotherapy and Type -->
-                        <div class="ml-5 w-full flex flex-wrap items-center">
-                            <div class="flex items-center mr-4">
-                                <input id="chemo" type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2" />
-                                <label for="chemo" class="text-sm text-gray-800">On Chemotherapy</label>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="flex w-96 items-center">
-                                <input id="type" type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2" />
-                                <label for="type" class="text-sm text-gray-800 mr-2">Type:</label>
-                                <input type="text" class="flex-grow text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-0 focus:border-blue-500" />
+                            <div class="flex-grow mt-1.5 sm:ml-3">
+                                <input type="text" v-model="cancerDetails"   :disabled="isCancer !== '1'" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Cancer type">
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3 flex col-span-2">
+                            <!-- Stage -->
+                            <div class="flex items-center">
+                                <input id="stage" type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2" />
+                                <label for="stage" class="text-sm text-gray-800 mr-2">Stage:</label>
+
+                                <input type="text" v-model="cancerStage"    class="flex-grow text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-0 focus:border-blue-500" />
+                            </div>
+
+                            <!-- On Chemotherapy and Type -->
+                            <div class="ml-5 w-full flex flex-wrap items-center">
+                                <div class="flex items-center mr-4">
+                                    <input id="chemo" v-model="isChemo" type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2" />
+                                    <label for="chemo" class="text-sm text-gray-800">On Chemotherapy</label>
+                                </div>
+                                <div class="flex w-96 items-center">
+                                    <input id="type" type="checkbox" class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2" />
+                                    <label for="type" class="text-sm text-gray-800 mr-2">Type:</label>
+
+                                    <input type="text" v-model="chemoType"    class="flex-grow text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-0 focus:border-blue-500" />
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
                     </div>
@@ -151,7 +138,7 @@
                 </div>
                 <div class="p-2 col-span-12 sm:col-span-10">
                     <div class="pb-3">
-                    <div class="flex flex-wrap">
+                    <div @focusout="handleCancerRadioChange(illness_group.id, 'hiv')" class="flex flex-wrap">
                         <div class="flex w-full sm:w-6/12 mt-1.5">
                         <p class="text-sm text-gray-800 px-2">
                             Have you ever engaged in any activity which has put you at risk of getting HIV/AIDS?
@@ -161,26 +148,26 @@
                             <ul class="flex justify-between w-full text-sm font-medium text-gray-900 bg-white">
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="hiv_0" name="aaa" type="radio" value="0" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="hiv_0" v-model="isHIV" type="radio" value="0" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="hiv_0" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">No </label>
                                     </div>
                                 </li>
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="hiv_1" name="aaa" type="radio" value="1" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="hiv_1" v-model="isHIV" type="radio" value="2" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="hiv_1"  class="w-full py-3 ms-2 text-sm font-medium text-gray-900">Yes</label>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="flex-grow sm:ml-3">
-                            <input type="text" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" />
+                            <input type="text" v-model="hivDetails"  class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" />
                         </div>
 
                     </div>
                     </div>
                     <div class="pb-1">
-                    <div class="flex flex-wrap">
+                    <div @focusout="handleCancerRadioChange(illness_group.id, 'hiv')" class="flex flex-wrap">
                         <div class="flex w-full sm:w-6/12 mt-1.5">
                         <p class="text-sm text-gray-800 px-2">
                             Have you ever worked with chemicals or hazardous materials?
@@ -190,20 +177,20 @@
                             <ul class="flex justify-between w-full text-sm font-medium text-gray-900 bg-white">
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="chemical_0" name="chm_aaa" type="radio" value="0" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="chemical_0" v-model="isChemical" type="radio" value="0" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="chemical_0" class="w-full py-3 ms-2 text-sm font-medium text-gray-900">No </label>
                                     </div>
                                 </li>
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="chemical_1" name="chm_aaa" type="radio" value="1" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="chemical_1" v-model="isChemical" type="radio" value="2" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="chemical_1"  class="w-full py-3 ms-2 text-sm font-medium text-gray-900">Yes</label>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="flex-grow sm:ml-3">
-                            <input type="text" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Type of chemical" />
+                            <input type="text" v-model="chemicalType" class="w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Type of chemical" />
                         </div>
                     </div>
                     </div>
@@ -227,6 +214,16 @@ export default {
       checkedItems: [],
       othersChecked: {},
       othersDetails: {},
+      isCancer: 0,
+      cancerDetails: '',
+      cancerStage :'',
+      isChemo : false,
+      chemoType:'',
+      isHIV: 0,
+      hivDetails: '',
+      isChemical : '',
+      chemicalType:'',
+
     };
   },
   methods: {
@@ -242,19 +239,15 @@ export default {
     },
     handleNoneChange(illness_group_id, isChecked) {
       if (isChecked) {
-        // Uncheck all other checkboxes in this group
         this.checkedItems = this.checkedItems.filter(
           (item) => item.illness_group_id !== illness_group_id
         );
-
-        // Uncheck "Others" checkbox and clear its details
         this.othersChecked[illness_group_id] = false;
         this.othersDetails[illness_group_id] = '';
       }
     },
     updateCheckItem(illness_group_id, illness_id, type, isChecked) {
       if (isChecked) {
-        // Remove "none" if a symptom or "others" is checked
         this.checkedItems = this.checkedItems.filter(
           (item) => item.illness_group_id !== illness_group_id || item.illness_id !== 'none'
         );
@@ -268,7 +261,6 @@ export default {
           this.othersDetails[illness_group_id] = '';
         }
       }
-
       this.checkAllItems();
     },
     async getData() {
@@ -292,9 +284,60 @@ export default {
 
       console.log('Updated pa:', result);
     },
+    handleCancerRadioChange(illness_group_id, type) {
+        if(type=== 'cancer'){
+            if (this.isCancer === '1') {
+                this.checkedItems = this.checkedItems.filter(
+                (item) => item.illness_group_id !== illness_group_id
+                );
+                this.checkedItems.push({
+                illness_group_id,
+                is_cancer_or_hiv: 1,
+                is_cancer_or_hiv: this.isCancer,
+                details: this.cancerDetails,
+                stage: this.cancerStage,
+                on_chemo_or_chemical: this.isChemo,
+                remarks: this.chemoType,
+                });
+            } else {
+                this.cancerDetails = '';
+                this.checkedItems = this.checkedItems.filter(
+                (item) => item.illness_group_id !== illness_group_id
+                );
+            }
+
+        }else{
+            if (this.isHIV === '1' || this.isChemical === '1') {
+                this.checkedItems = this.checkedItems.filter(
+                (item) => item.illness_group_id !== illness_group_id
+                );
+                this.checkedItems.push({
+                illness_group_id,
+                is_cancer_or_hiv: 1,
+                is_cancer_or_hiv: this.isHIV,
+                details: this.hivDetails,
+                on_chemo_or_chemical: this.isChemical,
+                remarks: this.chemicalType,
+                });
+            } else {
+                this.cancerDetails = '';
+                this.checkedItems = this.checkedItems.filter(
+                (item) => item.illness_group_id !== illness_group_id
+                );
+            }
+
+        }
+
+
+
+
+      this.checkAllItems();
+    },
   },
+
   mounted() {
     this.getData();
   },
 };
 </script>
+

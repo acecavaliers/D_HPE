@@ -19,7 +19,8 @@ return new class extends Migration
             $table->foreignIdFor(Patient::class)->constrained('patients');
             $table->foreignIdFor(IllnessGroup::class)->constrained('illness_groups');
             $table->bigInteger('illness_id')->nullable();
-            $table->tinyInteger('is_cancer_or_hiv')->default(0);
+            $table->tinyInteger('is_cancer')->default(0);
+            $table->tinyInteger('is_hiv')->default(0);
             $table->string('details')->nullable();
             $table->string('stage')->nullable();
             $table->tinyInteger('on_chemo_or_chemical')->default(0);
