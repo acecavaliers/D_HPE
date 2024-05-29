@@ -154,7 +154,7 @@
                                 </li>
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="hiv_1" v-model="isHIV" type="radio" value="2" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="hiv_1" v-model="isHIV" type="radio" value="1" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="hiv_1"  class="w-full py-3 ms-2 text-sm font-medium text-gray-900">Yes</label>
                                     </div>
                                 </li>
@@ -183,7 +183,7 @@
                                 </li>
                                 <li class="w-full">
                                     <div class="flex items-center w-24 ps-3">
-                                        <input id="chemical_1" v-model="isChemical" type="radio" value="2" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                                        <input id="chemical_1" v-model="isChemical" type="radio" value="1" class="rounded w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                         <label for="chemical_1"  class="w-full py-3 ms-2 text-sm font-medium text-gray-900">Yes</label>
                                     </div>
                                 </li>
@@ -292,8 +292,7 @@ export default {
                 );
                 this.checkedItems.push({
                 illness_group_id,
-                is_cancer_or_hiv: 1,
-                is_cancer_or_hiv: this.isCancer,
+                is_cancer: this.isCancer,
                 details: this.cancerDetails,
                 stage: this.cancerStage,
                 on_chemo_or_chemical: this.isChemo,
@@ -313,8 +312,7 @@ export default {
                 );
                 this.checkedItems.push({
                 illness_group_id,
-                is_cancer_or_hiv: 1,
-                is_cancer_or_hiv: this.isHIV,
+                is_hiv: this.isHIV,
                 details: this.hivDetails,
                 on_chemo_or_chemical: this.isChemical,
                 remarks: this.chemicalType,

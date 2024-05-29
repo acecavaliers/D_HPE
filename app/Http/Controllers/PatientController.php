@@ -67,6 +67,7 @@ class PatientController extends Controller
                 //Insert  Patient Curr And Maintnce Medication
                 if (isset($pc['name'])) {
                     $pc['patient_id'] = $patient->id;
+                    $pc['created_by'] = $patient->created_by;
                     PatientCurrAndMaintnceMedication::create($pc);
                 }
             }
