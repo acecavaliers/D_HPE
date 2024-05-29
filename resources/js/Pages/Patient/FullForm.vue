@@ -278,7 +278,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3  mb-6 border border-gray-400">
                 <P1_F :pf="pf" @update-pf="updatePF"/>
                 <P1_G/>
-                <P1_H/>
+                <P1_H :ph="ph" @update-ph="updatePH"/>
             </div>
 
             <button type="submit" class="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
@@ -318,6 +318,7 @@ import P1_H from './Section/P1_H.vue';
       pd:{},
       pe:{},
       pf:[],
+      ph:[],
       errors: {}
     };
     },
@@ -327,6 +328,9 @@ import P1_H from './Section/P1_H.vue';
         },
         updatePF(newPf) {
             this.pf = newPf;
+        },
+        updatePH(newPh) {
+            this.ph = newPh;
         },
 
       async getData() {
@@ -354,8 +358,7 @@ import P1_H from './Section/P1_H.vue';
       },
       submitForm() {
 
-        console.log('RRRRRR:', this.pa);
-        console.log('FFFFFFFFFFFF:', this.pf);
+        console.log('RRRRRR:', this.ph);
         axios.post('patient',
           {formdata:this.form,
             padata:this.pa,
@@ -364,6 +367,7 @@ import P1_H from './Section/P1_H.vue';
             pddata:this.pd,
             pedata:this.pe,
             pfdata:this.pf,
+            pfdata:this.ph,
 
           }
          )

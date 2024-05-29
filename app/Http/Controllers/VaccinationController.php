@@ -79,4 +79,13 @@ class VaccinationController extends Controller
 
 
     }
+
+    public function getlistAdd(Request $request){
+
+        // $query = AccountType::where('is_active',1)->get();
+        $query = Vaccination::orderBy('id', 'asc')->get();
+        return $query;
+
+
+    }
 }

@@ -1,39 +1,114 @@
 <template>
-  <!-- Section H -->
-  <div class="flex-1">
-    <div class="bg-gray-400 border border-gray-400 p-2">
-      <div>
-        <span class="text-xm text-black">H. VACCINATION HISTORY (Indicate Date of Last Dose)</span>
-      </div>
-    </div> 
-    <div class="grid grid-cols-12 gap-x-4">
-      <div>
-        <div class="p-2 col-span-6 sm:col-span-10">
-          <div class="flex justify-between">
-            
-            <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
-              <div class="flex-none mt-1.5">                  
-                  <input
-                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                    type="checkbox"
-                  />
-                  <label
-                    class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                    >BCG
-                  </label>
-              </div>
-              <div class="w-full">
-                <input
-                  class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  type="text"/>
-              </div>
-            </div>
-            
-          </div>
-          
+    <!-- Section H -->
+    <div class="flex-1">
+      <div class="bg-gray-400 border border-gray-400 p-2">
+        <div>
+          <span class="text-xm text-black">H. VACCINATION HISTORY (Indicate Date of Last Dose) {{ ph }}</span>
         </div>
       </div>
-      
+      <div class="grid grid-cols-12 gap-x-4 p-2">
+        <div class="col-span-6">
+          <div v-for="(vacc, index) in recordsLeft" :key="index" class="flex justify-between mb-2">
+            <div class="flex items-center">
+              <input
+                v-model="vacc.checked"
+                @change="updateChecked(vacc)"
+                class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2"
+                type="checkbox"
+              />
+              <label class="text-sm text-gray-800">{{ vacc.name }}</label>
+            </div>
+            <div class="w-1/2 ml-2">
+              <input
+                v-model="vacc.inputValue"
+                :disabled="!vacc.checked"
+                @change="updateChecked(vacc)"
+                :class="{'bg-white': vacc.checked , 'bg-gray-200': !vacc.checked}"
+                class="w-full text-sm text-gray-900 bg-transparent border-0 border-b pb-0 mt-0.5 border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600"
+                type="text"
+                placeholder="Date"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6">
+          <div v-for="(vacc, index) in recordsRight" :key="index" class="flex justify-between mb-2">
+            <div class="flex items-center">
+              <input
+                v-model="vacc.checked"
+                @change="updateChecked(vacc)"
+                class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2"
+                type="checkbox"
+              />
+              <label class="text-sm text-gray-800">{{ vacc.name }}</label>
+            </div>
+            <div class="w-1/2 ml-2">
+              <input
+                v-model="vacc.inputValue"
+                :disabled="!vacc.checked"
+                @focusout="updateChecked(vacc)"
+                :class="{'bg-white': vacc.checked , 'bg-gray-200': !vacc.checked}"
+                class="w-full text-sm text-gray-900 bg-transparent border-0 border-b pb-0 mt-0.5 border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600"
+                type="text"
+                placeholder="Date"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div> 
-</template>
+  </template>
+
+  <script>
+  export default {
+    props: { ph: Array },
+    data() {
+      return {
+        records: [],
+        recordsLeft: [],
+        recordsRight: [],
+        othersChecked: false,
+        othersInput: ""
+      };
+    },
+    methods: {
+      async getData() {
+        try {
+          const response = await axios.get(route('vaccine.getlistAdd'));
+          this.records = response.data.map(record => ({
+            ...record,
+            checked: false,
+            inputValue: ""
+          }));
+          this.splitRecords();
+        } catch (error) {
+          console.error('Error fetching records:', error);
+        }
+      },
+      splitRecords() {
+        const midpoint = Math.ceil(this.records.length / 2);
+        this.recordsLeft = this.records.slice(0, midpoint);
+        this.recordsRight = this.records.slice(midpoint);
+      },
+      updateChecked(vacc) {
+        const index = this.ph.findIndex(item => item.vaccination_id === vacc.id);
+        if (vacc.checked) {
+          if (index === -1) {
+            this.ph.push({ vaccination_id: vacc.id, last_dose_date: vacc.inputValue });
+          } else {
+            this.ph[index].last_dose_date = vacc.inputValue;
+          }
+        } else {
+          if (index !== -1) {
+            this.ph.splice(index, 1);
+          }
+          vacc.inputValue = "";
+        }
+        this.$emit('update-ph', this.ph); // Emit updated ph to parent component
+      }
+    },
+    mounted() {
+      this.getData();
+    }
+  }
+  </script>
