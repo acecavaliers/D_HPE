@@ -270,7 +270,7 @@
                 <P1_C :pc="pc"/>
             <div class="grid grid-cols-1 md:grid-cols-2  mb-6 border border-gray-400">
                 <P1_D :pd="pd"/>
-                <P1_E/>
+                <P1_E :pe="pe"/>
             </div>
                 <P1_F/>
 
@@ -307,6 +307,7 @@ import P1_F from './Section/P1_F.vue';
       pb: {},
       pc:{},
       pd:{},
+      pe:{},
       errors: {}
     };
     },
@@ -348,6 +349,7 @@ import P1_F from './Section/P1_F.vue';
             pbdata:this.pb,
             pcdata:this.pc,
             pddata:this.pd,
+            pedata:this.pe,
 
           }
          )

@@ -11,10 +11,11 @@
             <div v-if="fh.with_input == 0" class="right-0 w-full">
                 <div class="flex-none mt-1.5">
                     <input
+                    :id="`fh-${fh.id}`"
                     class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                     type="checkbox"
                     />
-                    <label
+                    <label :for="`fh-${fh.id}`"
                     class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
                     > {{  fh.name }}
                     </label>
@@ -23,12 +24,13 @@
             <div v-else class="right-0 w-full flex sm:items-left sm:justify-between">
                 <div class="flex-none mt-1.5">
                     <input
+                    :id="`fh-${fh.id}`"
                     class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                     type="checkbox"
                     />
-                    <label
+                    <label :for="`fh-${fh.id}`"
                     class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                    >{{  fh.name }}:
+                    >{{  fh.name }} :
                     </label>
                 </div>
                 <div class="w-full">

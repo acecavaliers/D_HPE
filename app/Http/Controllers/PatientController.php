@@ -8,6 +8,7 @@ use App\Models\PatientAllergy;
 use App\Models\PatientCurrAndMaintnceMedication;
 use App\Models\PatientMedIllnessPrevHosptlznSurgery;
 use App\Models\PatientPastIllness;
+use App\Models\PatientPersonalSocialHistory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -41,6 +42,7 @@ class PatientController extends Controller
         $pb = $request->pbdata;
         $pc = $request->pcdata;
         $pd = $request->pddata;
+        $pe = $request->pedata;
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -79,6 +81,17 @@ class PatientController extends Controller
                     $pd['patient_id'] = $patient->id;
                     $pd['created_by'] = $patient->created_by;
                     PatientAllergy::create($pd);
+
+                }
+                //Insert  Patient Social History
+                if (isset($pe['[is_caffeine]']) || isset($pe['caffeine_details']) || isset($pe['is_tobacco'])
+                || isset($pe['tobacco_pack_per_day']) || isset($pe['tobacco_year']) || isset($pe['is_alcohol'])
+                || isset($pe['alcohol_last_use']) || isset($pe['is_illegal_drugs']) || isset($pe['illegal_drugs_type'])
+                || isset($pe['illegal_drugs_last_use'])
+                ) {
+                    $pe['patient_id'] = $patient->id;
+                    $pe['created_by'] = $patient->created_by;
+                    PatientPersonalSocialHistory::create($pe);
 
                 }
             }

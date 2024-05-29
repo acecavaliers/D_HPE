@@ -10,6 +10,7 @@
       <div class="right-0 w-full flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
+                v-model="pe.is_caffeine"
                 id="e_coffee"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
@@ -21,6 +22,7 @@
         </div>
         <div class="w-full">
           <input
+            v-model="pe.caffeine_details"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
@@ -29,6 +31,7 @@
       <div class="right-0 w-full flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
+                v-model="pe.is_tobacco"
                 id="e_cig"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
@@ -40,6 +43,7 @@
         </div>
         <div class="w-full">
           <input
+            v-model="pe.tobacco_pack_per_day"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
@@ -52,6 +56,7 @@
         </div>
         <div class="w-full">
           <input
+            v-model="pe.tobacco_year"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
@@ -67,6 +72,7 @@
         <div class="flex-none mt-1.5">
             <input
                 id="e_alchol"
+                v-model="pe.is_alcohol"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -77,6 +83,7 @@
         </div>
         <div class="w-full">
           <input
+            v-model="pe.alcohol_last_use"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
@@ -85,7 +92,8 @@
       <div class="right-0 w-full flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
-            id="e_drugs"
+                id="e_drugs"
+                v-model="pe.is_illegal_drugs"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -97,6 +105,7 @@
         </div>
         <div class="w-full">
           <input
+            v-model="pe.illegal_drugs_type"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
@@ -108,15 +117,11 @@
             </label>
         </div>
         <div class="w-full">
-          <input
+          <input v-model="pe.illegal_drugs_last_use"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
       </div>
-
-
-
-
     </div>
   </div>
 </template>
@@ -125,24 +130,11 @@ export default {
   props: { pe: Object },
   data() {
     return {
-      e_none: false,
+
     };
   },
   methods: {
-    e_NoneChange() {
-      if (this.e_none) {
-      }
-    },
-    e_CheckboxChange(type) {
-      this.e_none = false;
-      if (type === 'food' && !this.pd.is_food) {
-        this.pd.fooe_details = "";
-      } else if (type === 'drugs' && !this.pd.is_drugs) {
-        this.pd.drugs_details = "";
-      } else if (type === 'other' && !this.pd.is_other) {
-        this.pd.other_details = "";
-      }
-    }
+
   }
 };
 </script>
