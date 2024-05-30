@@ -11,7 +11,7 @@
         <div class="col-span-6">
           <div v-for="(vacc, index) in recordsLeft" :key="index" class=" mb-2  divide-y">
             <div class="flex justify-between" 
-                :class="{'text-gray-700': vacc.checked , 'text-gray-400': !vacc.checked}">
+                :class="{'text-gray-700': vacc.checked , 'text-gray-500': !vacc.checked}">
               <div class="flex items-center mb-2 sm:mb-0 sm:w-48" >
                 <input
                   :id="`vax-${vacc.id}`"
@@ -39,7 +39,7 @@
         <div class="col-span-6">
           <div v-for="(vacc, index) in recordsRight" :key="index" class=" mb-2  divide-y">
             <div class="flex justify-between" 
-                :class="{'text-gray-700': vacc.checked , 'text-gray-400': !vacc.checked}">
+                :class="{'text-gray-700': vacc.checked , 'text-gray-500': !vacc.checked}">
               <div class="flex items-center mb-2 sm:mb-0 sm:w-48" >
                 <input
                   :id="`vax-${vacc.id}`"
