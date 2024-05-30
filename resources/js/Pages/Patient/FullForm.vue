@@ -275,11 +275,15 @@
                 <P1_D :pd="pd"/>
                 <P1_E :pe="pe"/>
             </div>
+            <!-- <div class="grid grid-cols-1 md:grid-cols-2  mb-6 border border-gray-400"> -->
             <div class="grid grid-cols-1 md:grid-cols-3  mb-6 border border-gray-400">
                 <P1_F :pf="pf" @update-pf="updatePF"/>
                 <P1_G/>
                 <P1_H :ph="ph" @update-ph="updatePH"/>
             </div>
+            <!-- <div class="grid grid-cols-1  mb-6 border border-gray-400">
+                <P1_H :ph="ph" @update-ph="updatePH"/>
+            </div> -->
 
             <button type="submit" class="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
           </form>

@@ -3,37 +3,75 @@
     <div class="flex-1">
       <div class="bg-gray-400 border border-gray-400 p-2">
         <div>
-          <span class="text-xm text-black">H. VACCINATION HISTORY (Indicate Date of Last Dose) {{ ph }}</span>
+          <span class="text-xm text-black">H. VACCINATION HISTORY (Indicate Date of Last Dose)</span>
         </div>
       </div>
-      <div class="grid grid-cols-12 gap-x-4 p-2">
+      <div class="grid grid-cols-12 gap-x-2 p-2">
+
         <div class="col-span-6">
-          <div v-for="(vacc, index) in recordsLeft" :key="index" class="flex justify-between mb-2">
-            <div class="flex items-center">
-              <input
-                v-model="vacc.checked"
-                @change="updateChecked(vacc)"
-                class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2"
-                type="checkbox"
-              />
-              <label class="text-sm text-gray-800">{{ vacc.name }}</label>
-            </div>
-            <div class="w-1/2 ml-2">
-              <input
-                v-model="vacc.inputValue"
-                :disabled="!vacc.checked"
-                @change="updateChecked(vacc)"
-                :class="{'bg-white': vacc.checked , 'bg-gray-200': !vacc.checked}"
-                class="w-full text-sm text-gray-900 bg-transparent border-0 border-b pb-0 mt-0.5 border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600"
-                type="date"
-                placeholder="Date"
-              />
+          <div v-for="(vacc, index) in recordsLeft" :key="index" class=" mb-2  divide-y">
+            <div class="flex justify-between" 
+                :class="{'text-gray-700': vacc.checked , 'text-gray-400': !vacc.checked}">
+              <div class="flex items-center mb-2 sm:mb-0 sm:w-48" >
+                <input
+                  :id="`vax-${vacc.id}`"
+                  v-model="vacc.checked"
+                  @change="updateChecked(vacc)"
+                  class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2"
+                  type="checkbox"
+                />
+                <label :for="`vax-${vacc.id}`" :class="{'font-bold': vacc.checked , 'font-regular': !vacc.checked}" class="w-full text-sm">{{ vacc.name }}</label>
+              </div>
+              <div class="w-full">
+                <input
+                  v-model="vacc.inputValue"
+                  :disabled="!vacc.checked"
+                  @change="updateChecked(vacc)"
+                  :class="{'bg-white ': vacc.checked , 'bg-gray-200': !vacc.checked}"
+                  class="w-full rounded text-sm bg-transparent border  mt-0.5 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600"
+                  type="date"
+                  placeholder="Date"
+                />
+              </div>
             </div>
           </div>
         </div>
         <div class="col-span-6">
-          <div v-for="(vacc, index) in recordsRight" :key="index" class="flex justify-between mb-2">
-            <div class="flex items-center">
+          <div v-for="(vacc, index) in recordsRight" :key="index" class=" mb-2  divide-y">
+            <div class="flex justify-between" 
+                :class="{'text-gray-700': vacc.checked , 'text-gray-400': !vacc.checked}">
+              <div class="flex items-center mb-2 sm:mb-0 sm:w-48" >
+                <input
+                  :id="`vax-${vacc.id}`"
+                  v-model="vacc.checked"
+                  @change="updateChecked(vacc)"
+                  class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2"
+                  type="checkbox"
+                />
+                <label :for="`vax-${vacc.id}`" :class="{'font-bold': vacc.checked , 'font-regular': !vacc.checked}" class="w-full text-sm">{{ vacc.name }}</label>
+              </div>
+              <div class="w-full">
+                <input
+                  v-model="vacc.inputValue"
+                  :disabled="!vacc.checked"
+                  @change="updateChecked(vacc)"
+                  :class="{'bg-white ': vacc.checked , 'bg-gray-200': !vacc.checked}"
+                  class="w-full rounded text-sm bg-transparent border  mt-0.5 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600"
+                  type="date"
+                  placeholder="Date"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- <div class="col-span-6">
+          <div v-for="(vacc, index) in recordsRight" :key="index" class="flex flex-col sm:flex-row justify-between mb-2 border p-2 rounded-lg">
+            <div class="flex items-center sm:mb-0 sm:w-48">
               <input
                 v-model="vacc.checked"
                 @change="updateChecked(vacc)"
@@ -42,19 +80,20 @@
               />
               <label class="text-sm text-gray-800">{{ vacc.name }}</label>
             </div>
-            <div class="w-1/2 ml-2">
+            <div class="w-full ml-2">
               <input
                 v-model="vacc.inputValue"
                 :disabled="!vacc.checked"
                 @focusout="updateChecked(vacc)"
                 :class="{'bg-white': vacc.checked , 'bg-gray-200': !vacc.checked}"
-                class="w-full text-sm text-gray-900 bg-transparent border-0 border-b pb-0 mt-0.5 border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600"
+                class="w-full text-sm text-gray-900 bg-transparent border-0 border-b pb-0 mt-0.5 border-gray-400 focus:outline-none focus:ring-0 focus:border-blue-600"
                 type="date"
                 placeholder="Date"
               />
             </div>
           </div>
-        </div>
+        </div> -->
+
       </div>
     </div>
   </template>
