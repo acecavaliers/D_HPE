@@ -25,7 +25,7 @@
                 @change="updateChecked(vacc)"
                 :class="{'bg-white': vacc.checked , 'bg-gray-200': !vacc.checked}"
                 class="w-full text-sm text-gray-900 bg-transparent border-0 border-b pb-0 mt-0.5 border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600"
-                type="text"
+                type="date"
                 placeholder="Date"
               />
             </div>
@@ -49,7 +49,7 @@
                 @focusout="updateChecked(vacc)"
                 :class="{'bg-white': vacc.checked , 'bg-gray-200': !vacc.checked}"
                 class="w-full text-sm text-gray-900 bg-transparent border-0 border-b pb-0 mt-0.5 border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600"
-                type="text"
+                type="date"
                 placeholder="Date"
               />
             </div>

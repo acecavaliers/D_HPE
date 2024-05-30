@@ -367,7 +367,7 @@ import P1_H from './Section/P1_H.vue';
             pddata:this.pd,
             pedata:this.pe,
             pfdata:this.pf,
-            pfdata:this.ph,
+            phdata:this.ph,
 
           }
          )
