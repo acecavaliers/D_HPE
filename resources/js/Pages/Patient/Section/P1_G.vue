@@ -96,7 +96,7 @@
           <input
             placeholder=" "
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            type="text"/>
+            type="date"/>
         </div>
       </div>
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
@@ -110,7 +110,7 @@
           <input
             placeholder="Last Menstrual Period"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            type="text"/>
+            type="date"/>
         </div>
       </div>
 
@@ -125,7 +125,7 @@
           <input
             placeholder="Previous Menstrual Period"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            type="text"/>
+            type="date"/>
         </div>
       </div>
 
