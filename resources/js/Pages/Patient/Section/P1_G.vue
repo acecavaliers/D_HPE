@@ -73,56 +73,82 @@
         </div>
       </div>
 
-      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-start">    
-        
-        <div class="mt-1.5">
-          <label
-              class="text-sm text-gray-800"
+      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">    
+        <div class="flex-none mt-1.5">                  
+           <label
+              class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Age of Gestation
             </label>
-        </div>     
+        </div>    
        <div class="w-full px-1">
           <input
-            placeholder="Age of Gestation"
+            placeholder=" "
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
-        
-        <div class="mt-1.5">
-          <label
-              class="text-sm text-gray-800"
+        <div class="flex-none mt-1.5">                  
+           <label
+              class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Expected Delivery Date:
             </label>
-        </div>
+        </div> 
         <div class="w-full px-1">
           <input
-            placeholder="Expected Delivery Date:"
+            placeholder=" "
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
       </div>
-      
-      <div class="w-full px-1">
+      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
+        <div class="flex-none mt-1.5">                  
+           <label
+              class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+              > Last Menstrual Period
+            </label>
+        </div> 
+        <div class="w-full px-1">
           <input
             placeholder="Last Menstrual Period"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
-      
-      <div class="w-full px-1">
+      </div>
+
+      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
+        <div class="flex-none mt-1.5">                  
+           <label
+              class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+              > Previous Menstrual Period
+            </label>
+        </div> 
+        <div class="w-full px-1">
           <input
             placeholder="Previous Menstrual Period"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
+      </div>
 
-      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
-       <div class="w-full px-1">
+      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
+        <div class="flex-none mt-1.5">                  
+           <label
+              class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+              > Age of menarche
+            </label>
+        </div> 
+        <div class="w-full px-1">
           <input
-            placeholder="Age of menarche "
+            placeholder="Age of menarche"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
+
+        <div class="flex-none mt-1.5">                  
+           <label
+              class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+              > Menopausal Age
+            </label>
+        </div> 
         <div class="w-full px-1">
           <input
             placeholder="Menopausal Age"
