@@ -110,7 +110,7 @@ class PatientController extends Controller
                 // Patient Vaccine
                 foreach ($ph as $vac) {
                     $vac['patient_id'] = $patient->id;
-                    PatientVacinationHistory::create($vac);
+                    PatientVacinationHistory::create($vac); 
                 }
             }
 

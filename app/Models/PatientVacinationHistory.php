@@ -18,7 +18,7 @@ class PatientVacinationHistory extends Model
 
         'patient_id',
         'vaccination_id',
-        'last_dose_date',
+        'last_dose_date', 
     ];
     public function getForeignKeys(){
         return $this->foreignKeys;

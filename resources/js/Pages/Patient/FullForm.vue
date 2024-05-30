@@ -318,6 +318,7 @@ import P1_H from './Section/P1_H.vue';
       pd:{},
       pe:{},
       pf:[],
+      pg:[],
       ph:[],
       errors: {}
     };
