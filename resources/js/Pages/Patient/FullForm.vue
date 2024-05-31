@@ -276,10 +276,14 @@
                 <P1_E :pe="pe"/>
             </div>
             <!-- <div class="grid grid-cols-1 md:grid-cols-2  mb-6 border border-gray-400"> -->
-            <div class="grid grid-cols-1 md:grid-cols-3  mb-6 border border-gray-400">
+            <div class="grid grid-cols-1 md:grid-cols-3 border border-gray-400">
                 <P1_F :pf="pf" @update-pf="updatePF"/>
                 <P1_G :pg="pg"/>
                 <P1_H :ph="ph" @update-ph="updatePH"/>
+            </div>
+            
+            <div class="grid grid-cols-1 border border-gray-400">               
+                <P1_I :pi="pi"/>
             </div>
             <!-- <div class="grid grid-cols-1  mb-6 border border-gray-400">
                 <P1_H :ph="ph" @update-ph="updatePH"/>
@@ -306,10 +310,11 @@ import P1_E from './Section/P1_E.vue';
 import P1_F from './Section/P1_F.vue';
 import P1_G from './Section/P1_G.vue';
 import P1_H from './Section/P1_H.vue';
+import P1_I from './Section/P1_I.vue';
 
   export default {
     components: {
-        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,
+        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,P1_I,
   },
     data() {
         return {
@@ -324,6 +329,7 @@ import P1_H from './Section/P1_H.vue';
       pf:[],
       pg:{},
       ph:[],
+      pi: {},
       errors: {}
     };
     },
@@ -373,6 +379,7 @@ import P1_H from './Section/P1_H.vue';
             pedata:this.pe,
             pfdata:this.pf,
             phdata:this.ph,
+            pidata:this.pi,
 
           }
          )

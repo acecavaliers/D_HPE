@@ -10,6 +10,7 @@ use App\Models\PatientFamHistory;
 use App\Models\PatientMedIllnessPrevHosptlznSurgery;
 use App\Models\PatientPastIllness;
 use App\Models\PatientPersonalSocialHistory;
+use App\Models\PatientPresentIllness;
 use App\Models\PatientVacinationHistory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,6 +48,7 @@ class PatientController extends Controller
         $pe = $request->pedata;
         $pf = $request->pfdata;
         $ph = $request->phdata;
+        $pi = $request->pidata;
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -111,6 +113,14 @@ class PatientController extends Controller
                 foreach ($ph as $vac) {
                     $vac['patient_id'] = $patient->id;
                     PatientVacinationHistory::create($vac); 
+                }
+
+                // patient pressent illness
+                if (isset($pi['details'])) {
+                    PatientPresentIllness::create([
+                        'patient_id' => $patient->id,
+                        'details' => $pi['details'],
+                    ]);
                 }
             }
 

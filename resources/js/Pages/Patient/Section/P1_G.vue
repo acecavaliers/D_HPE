@@ -9,6 +9,7 @@
     <div class="p-2">
       <div class="flex-none mt-1.5">                  
             <input
+              v-model="g_none"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -17,7 +18,7 @@
               > None
             </label>
         </div>
-      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
+      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between" v-if="!g_none">         
         <div class="flex-none mt-1.5">                  
             <input
               v-model="pg.gyne_surgery"
@@ -188,8 +189,7 @@
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
-      </div>
-      
+      </div>      
 
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
@@ -210,8 +210,7 @@
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
-      </div>
-     
+      </div>     
 
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
@@ -292,8 +291,18 @@ export default {
   props: { pg: Object },
   data() {
     return {
+      g_none:false,
 
     };
   },
+  watch: {
+    g_none(newVal) {
+      if (newVal) {
+        // Clear other input fields if "None" checkbox is checked
+        this.pg.gyne_surgery = false;
+        // Clear other fields similarly
+      }
+    }
+  }
 };
 </script>
