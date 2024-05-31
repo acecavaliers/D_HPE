@@ -20,6 +20,7 @@
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
             <input
+              v-model="pg.gyne_surgery"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -39,6 +40,7 @@
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
             <input
+              v-model="pg.is_pregnant"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -55,6 +57,7 @@
         </div>
         <div class="w-full px-1">
           <input
+            v-model="pg.g"
             placeholder="G"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
@@ -67,6 +70,7 @@
         </div>
         <div class="w-full px-1">
           <input
+            v-model="pg.p"
             placeholder="P"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
@@ -82,10 +86,12 @@
         </div>    
        <div class="w-full px-1">
           <input
+            v-model="pg.age_of_gestation"
             placeholder=" "
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
+
         <div class="flex-none mt-1.5">                  
            <label
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
@@ -94,11 +100,13 @@
         </div> 
         <div class="w-full px-1">
           <input
+            v-model="pg.expected_delivery"
             placeholder=" "
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="date"/>
         </div>
       </div>
+
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">                  
            <label
@@ -108,6 +116,7 @@
         </div> 
         <div class="w-full px-1">
           <input
+            v-model="pg.last_menstrual_period"
             placeholder="Last Menstrual Period"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="date"/>
@@ -123,6 +132,7 @@
         </div> 
         <div class="w-full px-1">
           <input
+            v-model="pg.prev_menstrual_period"
             placeholder="Previous Menstrual Period"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="date"/>
@@ -138,6 +148,7 @@
         </div> 
         <div class="w-full px-1">
           <input
+            v-model="pg.age_of_menarche"
             placeholder="Age of menarche"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
@@ -151,6 +162,7 @@
         </div> 
         <div class="w-full px-1">
           <input
+            v-model="pg.age_of_menopausal"
             placeholder="Menopausal Age"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
@@ -160,6 +172,7 @@
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
             <input
+              v-model="pg.is_birth_control"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -170,6 +183,7 @@
         </div>
         <div class="w-full">
           <input
+            v-model="pg.bc_type"
             placeholder="Type"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
@@ -180,6 +194,7 @@
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
             <input
+              v-model="pg.pap_smear"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -190,35 +205,18 @@
         </div>
         <div class="w-full">
           <input
+            
             placeholder="(Date last done)"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
       </div>
+     
 
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
         <div class="flex-none mt-1.5">                  
             <input
-              class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-              type="checkbox"
-            />
-            <label
-              class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-              > Pap smear:
-            </label>
-        </div>
-        <div class="w-full">
-          <input
-            placeholder="(Date last done)"
-            class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            type="text"/>
-        </div>
-      </div>
-      
-
-      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">         
-        <div class="flex-none mt-1.5">                  
-            <input
+              v-model="pg.mammography"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -238,6 +236,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 ">         
         <div class="flex-none mt-1.5">                  
             <input
+              v-model="pg.is_dysmenorrhea"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -248,6 +247,7 @@
         </div>
         <div class="flex-none mt-1.5">                  
             <input
+              v-model="pg.is_pain_viginal_sex"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -261,6 +261,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 ">         
         <div class="flex-none mt-1.5">                  
             <input
+              v-model="pg.is_viginal_discharge"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -271,6 +272,7 @@
         </div>
         <div class="flex-none mt-1.5">                  
             <input
+              v-model="pg.is_vaginal_lesions_mass_warts"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -280,6 +282,18 @@
             </label>
         </div>
       </div>
+
     </div>
   </div> 
 </template>
+
+<script>
+export default {
+  props: { pg: Object },
+  data() {
+    return {
+
+    };
+  },
+};
+</script>

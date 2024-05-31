@@ -278,7 +278,7 @@
             <!-- <div class="grid grid-cols-1 md:grid-cols-2  mb-6 border border-gray-400"> -->
             <div class="grid grid-cols-1 md:grid-cols-3  mb-6 border border-gray-400">
                 <P1_F :pf="pf" @update-pf="updatePF"/>
-                <P1_G/>
+                <P1_G :pg="pg"/>
                 <P1_H :ph="ph" @update-ph="updatePH"/>
             </div>
             <!-- <div class="grid grid-cols-1  mb-6 border border-gray-400">
@@ -322,7 +322,7 @@ import P1_H from './Section/P1_H.vue';
       pd:{},
       pe:{},
       pf:[],
-      pg:[],
+      pg:{},
       ph:[],
       errors: {}
     };
