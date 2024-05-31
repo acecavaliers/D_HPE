@@ -283,7 +283,7 @@
             </div>
             
             <div class="grid grid-cols-1 border border-gray-400">               
-                <P1_I :pi="pi"/>
+                <P1_I :pi="pi" :pj="pj"/>
             </div>
             <!-- <div class="grid grid-cols-1  mb-6 border border-gray-400">
                 <P1_H :ph="ph" @update-ph="updatePH"/>
@@ -330,6 +330,7 @@ import P1_I from './Section/P1_I.vue';
       pg:{},
       ph:[],
       pi: {},
+      pj: {},
       errors: {}
     };
     },

@@ -11,7 +11,6 @@ class PatientVitalSignsPainScale extends Model
     use HasFactory, SoftDeletes;
 
     protected $foreignKeys = ['patients'=>'patient_id',
-                            'vaccinations'=>'vaccination_id',
                             ];
 
     protected $fillable = [
