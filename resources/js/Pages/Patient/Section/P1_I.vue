@@ -169,37 +169,37 @@
 
     </div>
 
-    <div class="p-4">
-  <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
-    <div class="text-center col-span-12 sm:col-span-2 flex items-center justify-center">
-      Pain
-    </div>
-    <div class="p-2 col-span-12 sm:col-span-10">
-      <div class="pb-3">
-        <div class="flex justify-between">
-          <!-- Modified v-for loop -->
-          <div v-for="(pain, index) in painvalues" :key="index" class="flex w-full">
-            <div class=" w-full flex items-center">
-                <!-- <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
-                <label for="bordered-radio-1" class="w-full py-4 ms-2 text-sm font-medium text-gray-900">{{ index }}</label> -->
-                <button class="w-full h-10 border border-gray-200 hover:bg-gray-200">{{ index }}</button>
+    <div class="">
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-1">
+            <div class="border text-center col-span-12 sm:col-span-2 flex items-center justify-center">
+            Pain
             </div>
-          </div>
+            <div class="p-2 col-span-12 sm:col-span-10">
+            <div class="pb-3">
+                <div class="flex justify-between">
+                <!-- Modified v-for loop -->
+                <div v-for="(pain, index) in painvalues" :key="index" class="flex w-full">
+                    <div class=" w-full flex items-center">
+                        <!-- <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                        <label for="bordered-radio-1" class="w-full py-4 ms-2 text-sm font-medium text-gray-900">{{ index }}</label> -->
+                        <button class="w-full h-10 border border-gray-200 hover:bg-gray-200">{{ index }}</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Temperature input field -->
+            <div class="col-span-12 lg:col-span-3">
+                <div class="pt-2">
+                <input
+                    type="text"
+                    class="block p-2.5 w-full text-sm text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="TEMPERATURE (C)"
+                >
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
-      <!-- Temperature input field -->
-      <div class="col-span-12 lg:col-span-3">
-        <div class="pt-2">
-          <input
-            type="text"
-            class="block p-2.5 w-full text-sm text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-            placeholder="TEMPERATURE (C)"
-          >
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 
 
 
