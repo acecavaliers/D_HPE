@@ -179,10 +179,16 @@
                 <div class="flex justify-between">
                 <!-- Modified v-for loop -->
                 <div v-for="(pain, index) in painvalues" :key="index" class="flex w-full">
-                    <div class=" w-full flex items-center">
+                  <div class=" w-full flex justify-center items-center">
                         <!-- <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                         <label for="bordered-radio-1" class="w-full py-4 ms-2 text-sm font-medium text-gray-900">{{ index }}</label> -->
                         <button class="w-full h-10 border border-gray-200 hover:bg-gray-200">{{ index }}</button>
+                    </div>
+
+                    <div class=" w-full flex items-center">
+                        <!-- <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                        <label for="bordered-radio-1" class="w-full py-4 ms-2 text-sm font-medium text-gray-900">{{ index }}</label> -->
+                        <button class="w-full h-10 border border-gray-200 hover:bg-gray-200">B-{{ index }}</button>
                     </div>
                 </div>
                 </div>
