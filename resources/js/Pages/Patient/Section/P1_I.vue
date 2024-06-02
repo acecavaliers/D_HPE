@@ -231,7 +231,7 @@
         </div>        
     </div>
 
-    <div class="flex justify-end p-2">
+    <div class="flex justify-end mt-5 p-2">
       <div class="mr-4">
         <input id="nursename" type="text" class="border-0 border-b w-full">
         <label for="nursename" class="block text-center">
@@ -240,9 +240,9 @@
       </div>
       
       <div>
-        <input id="nurse_date" type="text" class="border-0 border-b w-full">
+        <input id="nurse_date" type="datetime-local" class="border-0 border-b w-full">
         <label for="nurse_date" class="block text-center">
-          Date (MMM/DD/YYYY) and Time
+          Date (MM/DD/YYYY) and Time
         </label>
       </div>
     </div>
