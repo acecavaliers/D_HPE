@@ -264,7 +264,10 @@
                 </div>
 
             </div>
-            <hr>
+            <div class="bg-gray-200 border border-gray-800 flex justify-start">
+                    <div  class="bg-gray-800 text-md font-black text-white p-2">PART I : PATIENT CLINICAL INFORMATION</div>
+                    <div class="p-2 text-sm"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX. MINOR PATIENT TO BE ASSISTED BY A PARENT OR GUARDIAN.</div>
+            </div>
             <div class="grid grid-cols-1 border border-gray-400">
                 <P1_A :pa="pa" @update-pa="updatePa" />
                 <P1_B :pb="pb"/>
@@ -281,13 +284,21 @@
                 <P1_G :pg="pg"/>
                 <P1_H :ph="ph" @update-ph="updatePH"/>
             </div>
-            
-            <div class="grid grid-cols-1 border border-gray-400">               
+
+            <div class="grid grid-cols-1 border border-gray-400">
                 <P1_I :pi="pi" :pj="pj"/>
             </div>
             <!-- <div class="grid grid-cols-1  mb-6 border border-gray-400">
                 <P1_H :ph="ph" @update-ph="updatePH"/>
             </div> -->
+
+            <div class="bg-gray-200 border border-gray-800 flex justify-start">
+                    <div  class="bg-gray-800 text-md font-black text-white p-2">PART II: PHYSICAL EXAMINATION</div>
+                    <div class="p-2 text-sm"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</div>
+            </div>
+            <div class="grid grid-cols-1 border border-gray-400">
+                <P2_A :p2a="p2a"/>
+            </div>
 
             <button type="submit" class="text-white mt-5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
           </form>
@@ -311,10 +322,11 @@ import P1_F from './Section/P1_F.vue';
 import P1_G from './Section/P1_G.vue';
 import P1_H from './Section/P1_H.vue';
 import P1_I from './Section/P1_I.vue';
+import P2_A from './Section/P2_A.vue';
 
   export default {
     components: {
-        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,P1_I,
+        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,P1_I,P2_A,
   },
     data() {
         return {
@@ -331,6 +343,7 @@ import P1_I from './Section/P1_I.vue';
       ph:[],
       pi: {},
       pj: {},
+      p2a:{},
       errors: {}
     };
     },
