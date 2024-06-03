@@ -2,7 +2,7 @@
     <h1 class="text-md font-semibold text-gray-900">Full Form</h1>
     <div class="transition-colors duration-300">
         <!-- Step Header Tabs -->
-      <div class="flex justify-between mb-6">
+      <!-- <div class="flex justify-between mb-6">
         <button
           v-for="(step, index) in steps"
           :key="index"
@@ -12,7 +12,41 @@
         >
           {{ step.name }}
         </button>
-      </div>
+      </div> -->
+
+      <ol class="items-center mb-5 w-full flex justify-between">
+        <li class="border p-4"><button>PP</button></li>
+        <li  v-for="(step, index) in steps" :key="index"
+            :class="{'text-blue-600': currentStep >= index, 'text-gray-500': currentStep < index}"
+            class="flex w-full border p-2 items-center ">
+            <span v-if="currentStep > index"
+            :class="{'border-blue-600 bg-blue-600 text-white': currentStep >= index, 'border-gray-600 ': currentStep < index}"
+            class="flex items-center mr-2 justify-center w-8 h-8 border rounded-full shrink-0">
+                ✓
+            </span>
+
+            <span v-else-if="currentStep == index"
+            :class="{'border-blue-600': currentStep >= index, 'border-gray-600 ': currentStep < index}"
+            class="flex items-center mr-2 justify-center w-8 h-8 border rounded-full shrink-0">
+                {{ index + 1 }}
+            </span>
+
+            <span v-else
+
+            class="flex items-center mr-2 justify-center w-8 h-8 border rounded-full shrink-0">
+                {{ index + 1 }}
+            </span>
+
+            <span>
+                <h3 class="font-medium leading-tight">{{ step.name }}</h3>
+                <p class="text-sm">Step details here</p>
+            </span>
+        </li>
+        <li class="border p-4"><button>NN</button></li>
+      </ol>
+
+
+
         <div class="bg-white rounded-lg">
 
           <form @submit.prevent="submitForm">
@@ -80,7 +114,7 @@
               type="button"
               v-if="currentStep > 0"
               @click="currentStep--"
-              class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+              class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-2 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
             >
               Previous
             </button>
@@ -88,14 +122,14 @@
               type="button"
               v-if="currentStep < steps.length - 1"
               @click="currentStep++"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ml-auto"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ml-auto"
             >
               Next
             </button>
             <button
               type="submit"
               v-if="currentStep === steps.length - 1"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ml-auto"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ml-auto"
             >
               Submit
             </button>
@@ -116,11 +150,11 @@ import { ref } from 'vue';
 const currentStep = ref(0);
 const steps = ref([
   { name: 'Patient Information' },
-  { name: 'P1 A' },
-  { name: 'P1 B-E' },
-  { name: 'P1 F-H' },
-  { name: 'P1 I' },
-  { name: 'P1 J' },
+  { name: 'P1A' },
+  { name: 'P1B-E' },
+  { name: 'P1F-H' },
+  { name: 'P1I' },
+  { name: 'P1J' },
   { name: 'Part II' }
 ]);
 
