@@ -1,5 +1,5 @@
 <template>
-    <h1 class="text-md font-semibold text-gray-900">Full Form</h1>
+    <!-- <h1 class="text-md font-semibold text-gray-900">Full Form</h1> -->
     <div class="transition-colors duration-300">
         <!-- Step Header Tabs -->
       <!-- <div class="flex justify-between mb-6">
