@@ -1,12 +1,12 @@
 <template>
     <!-- Section F -->
     <div class="flex-1">
-      <div class="bg-gray-400 border border-gray-400 p-2">
+      <div class="bg-gray-400  rounded-tl-lg p-2">
         <div>
           <span class="text-xm text-black"> F. FAMILY HISTORY</span>
         </div>
       </div>
-      <div class="p-2">
+      <div class="p-2 pb-5">
         <div v-for="(fh, index) in records" :key="index">
           <div v-if="fh.with_input == 0" class="right-0 w-full">
             <div class="flex-none mt-1.5">

@@ -6,7 +6,7 @@
         <span class="text-xm text-black">E. PERSONAL/SOCIAL HISTORY</span>
       </div>
     </div>
-    <div class="p-2">
+    <div class="p-2 pb-10">
       <div class="right-0 w-full flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input

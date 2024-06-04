@@ -1,12 +1,12 @@
 <template>
     <!-- Section B -->
     <div>
-      <div class="bg-gray-400 border border-gray-400 p-2">
+      <div class="bg-gray-400 rounded-t-lg p-2">
         <div>
           <span class="text-xm text-black"> B. MEDICAL ILLNESSES AND PREVIOUS HOSPITALIZATIONS AND SURGERIES</span>
         </div>
       </div>
-      <div class="border border-gray-300 p-2">
+      <div class="border border-gray-300 p-2 pb-5">
         <div class="flex-none mt-1.5">
           <input
             id="none"

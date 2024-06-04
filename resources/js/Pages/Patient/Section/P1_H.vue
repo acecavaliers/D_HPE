@@ -6,11 +6,11 @@
           <span class="text-xm text-black">H. VACCINATION HISTORY (Indicate Date of Last Dose)</span>
         </div>
       </div>
-      <div class="grid grid-cols-12 gap-x-2 p-2">
+      <div class="grid grid-cols-12 gap-x-2 p-2 pb-5">
 
         <div class="col-span-6">
           <div v-for="(vacc, index) in recordsLeft" :key="index" class=" mb-2  divide-y">
-            <div class="flex justify-between" 
+            <div class="flex justify-between"
                 :class="{'text-gray-700': vacc.checked , 'text-gray-500': !vacc.checked}">
               <div class="flex items-center mb-2 sm:mb-0 sm:w-48" >
                 <input
@@ -38,7 +38,7 @@
         </div>
         <div class="col-span-6">
           <div v-for="(vacc, index) in recordsRight" :key="index" class=" mb-2  divide-y">
-            <div class="flex justify-between" 
+            <div class="flex justify-between"
                 :class="{'text-gray-700': vacc.checked , 'text-gray-500': !vacc.checked}">
               <div class="flex items-center mb-2 sm:mb-0 sm:w-48" >
                 <input

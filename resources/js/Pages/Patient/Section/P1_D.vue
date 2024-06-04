@@ -6,7 +6,7 @@
           <span class="text-xm text-black">D. ALLERGIES</span>
         </div>
       </div>
-      <div class="p-2">
+      <div class="p-2 pb-10">
         <div>
           <div class="flex-none mt-1.5">
               <input
