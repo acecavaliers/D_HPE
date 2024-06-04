@@ -64,7 +64,7 @@
 
 
                     <div v-if="currentStep === 5" class="border mx-auto bg-white rounded-lg">
-                        <div class="bg-gray-200 border border-gray-800 flex justify-start">
+                        <div class="bg-gray-200 flex justify-start">
                             <div  class="bg-gray-800 text-md font-black text-white p-2">PART II: PHYSICAL EXAMINATION</div>
                             <div class="p-2 text-sm"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</div>
                         </div>
@@ -115,11 +115,11 @@ import { ref } from 'vue';
 const currentStep = ref(0);
 const steps = ref([
   { name: 'Patient Information' },
-  { name: 'P1A' },
-  { name: 'P1B-E' },
-  { name: 'P1F-H' },
-  { name: 'P1I' },
-  { name: 'P1J' },
+  { name: 'P1-A Past Illness' },
+  { name: 'P1-B to E' },
+  { name: 'P1-F to H' },
+  { name: 'P1-I Present Illness' },
+  { name: 'P2 Physical Examination' },
   { name: 'Part II' }
 ]);
 
