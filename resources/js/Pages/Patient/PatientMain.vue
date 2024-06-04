@@ -36,7 +36,7 @@
             </nav>
 
         </div>
-        <div class="border  mx-auto bg-white rounded-lg p-5">
+        <div class="">
             <FullForm></FullForm>
             <!-- <Form></Form> -->
         </div>
