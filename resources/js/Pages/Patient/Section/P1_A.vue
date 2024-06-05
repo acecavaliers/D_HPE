@@ -8,14 +8,14 @@
       </div>
       <!-- next Page -->
       <div class="">
-        <div v-for="(illness_group, index) in records" :key="index" class="pb-5">
+        <div v-for="(illness_group, index) in records" :key="index" class="">
 
             <div v-if="illness_group.name !== 'Oncology' && illness_group.name !== 'Exposure'" class="border-0 border-b border-gray-300 grid grid-cols-12 gap-x-4">
                 <div class="p-2 col-span-12 sm:col-span-2 overflow-y-auto text-left align-center">
                     {{ illness_group.id }}. {{ illness_group.name }}
                 </div>
                 <div class="p-2 col-span-12 sm:col-span-10">
-                    <div class="pb-3 sm:flex sm:items-left justify-between">
+                    <div class="sm:flex sm:items-left justify-between">
                         <div class="flex flex-wrap">
                             <div class="flex-none w-full sm:w-64">
                             <div>
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="w-full">
+                        <div class="w-full py-5">
                             <textarea
                             @focusout="checkAllItems"
                             v-model="othersDetails[illness_group.id]"
@@ -73,8 +73,8 @@
                 </div>
             </div>
 
-            <div v-else-if="illness_group.name === 'Oncology'" class="border-0 border-b border-gray-300 p-4">
-                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+            <div v-else-if="illness_group.name === 'Oncology'" class="border-0 border-b border-gray-300 p-2">
+                <div class="grid grid-cols-1 sm:grid-cols-12 ">
                     <div class="col-span-12 sm:col-span-2">
                         {{ illness_group.id }}. {{ illness_group.name }}
                     </div>
@@ -132,7 +132,7 @@
                 </div>
             </div>
 
-            <div v-else-if="illness_group.name == 'Exposure'" class="pb-2 grid grid-cols-12 gap-x-4">
+            <div v-else-if="illness_group.name == 'Exposure'" class="pb-2 grid grid-cols-12 gap-x-2">
                 <div class="p-2 col-span-12 sm:col-span-2 overflow-y-auto text-left align-center">
                     {{ illness_group.id }}. {{ illness_group.name }}
                 </div>
@@ -140,7 +140,7 @@
                     <div class="pb-3">
                     <div @focusout="handleCancerRadioChange(illness_group.id, 'hiv')" class="flex flex-wrap">
                         <div class="flex w-full sm:w-6/12 mt-1.5">
-                        <p class="text-sm text-gray-800 px-2">
+                        <p class="text-sm text-gray-800 ">
                             Have you ever engaged in any activity which has put you at risk of getting HIV/AIDS?
                         </p>
                         </div>
@@ -169,7 +169,7 @@
                     <div class="pb-1">
                     <div @focusout="handleCancerRadioChange(illness_group.id, 'hiv')" class="flex flex-wrap">
                         <div class="flex w-full sm:w-6/12 mt-1.5">
-                        <p class="text-sm text-gray-800 px-2">
+                        <p class="text-sm text-gray-800">
                             Have you ever worked with chemicals or hazardous materials?
                         </p>
                         </div>
