@@ -56,6 +56,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
     Route::get('/physicalExam/getlist', [PhysicalExamController::class, 'getlist'])->name('physicalExam.getlist');
+    Route::get('/physicalExam/getAll', [PhysicalExamController::class, 'getAll'])->name('physicalExam.getAll');
 
     Route::get('/vaccine/getlist', [VaccinationController::class, 'getlist'])->name('vaccine.getlist');
     Route::get('/vaccine/getlistAdd', [VaccinationController::class, 'getlistAdd'])->name('vaccine.getlistAdd');

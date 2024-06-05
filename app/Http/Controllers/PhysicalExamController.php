@@ -75,4 +75,11 @@ class PhysicalExamController extends Controller
         return $query;
 
     }
+
+    public function getAll(Request $request){
+        // $query = AccountType::where('is_active',1)->get();
+        $query = PhysicalExam::orderBy('id', 'asc')->get();
+        return $query;
+
+    }
 }

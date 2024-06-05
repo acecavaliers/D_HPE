@@ -216,10 +216,10 @@
         </div>
     </div>
     <!-- PE -->
-    <div class="grid md:grid-cols-6 border-b ">
+    <div v-for="(pex, index) in records_pe" :key="pex.id" class="grid md:grid-cols-6 border-b ">
         <div class="col-span-1  text-left">
             <div class="py-2">
-                <label class="text-sm font-bold text-gray-900 w-full px-5">SKIN</label>
+                <label class="text-sm font text-gray-900 w-full px-5">{{ index+1 }}. {{ pex.name }}</label>
             </div>
         </div>
         <div class="col-span-5 w-full flex justify-start p-2  border-x">
@@ -242,7 +242,7 @@
             <div class="w-full">
                 <textarea
                 rows="2"
-                class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Details:"></textarea>
             </div>
         </div>
@@ -434,22 +434,25 @@
     props: { p2a: Object},
     data() {
       return {
-        formData: {
-          uncorrectedFarVisionOD: "",
-          correctedFarVisionOD: "",
-          uncorrectedFarVisionOS: "",
-          correctedFarVisionOS: "",
-          uncorrectedNearVisionOD: "",
-          correctedNearVisionOD: "",
-          uncorrectedNearVisionOS: "",
-          correctedNearVisionOS: "",
-          ishihara: "",
-          hearingAD: "",
-          hearingAS: "",
-          clarityOfSpeech: ""
-        }
+        records_pe:[],
       };
-    }
+    },
+    methods:{
+        async getData() {
+        try {
+          const response = await axios.get(route('physicalExam.getAll'));
+          this.records_pe = response.data;
+          console.log('PEEEEEEEE:', this.records_pe);
+        } catch (error) {
+          // console.error('Error fetching records_pe:', error);
+        }
+      },
+
+    },
+
+    mounted() {
+      this.getData();
+    },
   };
   </script>
 
