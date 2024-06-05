@@ -260,42 +260,167 @@
         </div>
     </div>
 
-   <div class="grid md:grid-cols-6 border-b ">
+   <div class="grid md:grid-cols-6 ">
         <div class="col-span-1  text-left">
-            <div class="py-2 ">
-                <div class="w-32 mt-2 p-2">
+            <div class="py-2">
+                <div class="w-full mt-2 p-2">
                     <input
                     type="checkbox"
                     class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
                     <label  class="px-2 text-sm text-gray-800  w-full">
-                        Normal
+                        Not Applicable
                     </label>
                 </div>
-                <div class="w-32 mt-2 p-2">
+                <div class="w-full mt-2 p-2">
                     <input
                     type="checkbox"
                     class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
                     <label  class="px-2 text-sm text-gray-800  w-full">
-                        Normal
+                        Previously Positive
                     </label>
                 </div>
-                <div class="w-32 mt-2 p-2">
+                <div class="w-full mt-2 p-2">
                     <input
                     type="checkbox"
                     class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
                     <label  class="px-2 text-sm text-gray-800  w-full">
-                        Normal
+                        Refused
                     </label>
                 </div>
             </div>
         </div>
-        <div class="col-span-5 w-full flex justify-start border-x">
+        <div class="col-span-5 w-full border-x">
             <div class="flex justify-between">
-                <div>
-                    <label class="text-sm text-gray-900 py-2 w-full px-5"> <b>TO DMC LWC NURSE:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</label>
+                <div class="border-r border-b w-full text-center">
+                    <label class="text-md font-bold text-gray-900 w-full px-5">FIRST STEP PPD SKIN TEST</label>
+                    <div class="border-t">
+                        <div class="flex justify-between border-b">
+                            <div class="w-full border-r text-center">
+                                <div class="px-2 py-1">
+                                    <div>
+                                        <label for="nurse_date" class="block text-left font-medium text-sm ">
+                                            DATE AND TIME ADMINISTERED
+                                        </label>
+                                        <input id="nurse_date" type="datetime-local" class="text-sm border border-gray-400 rounded-md bg-gray-50 w-full">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full text-left">
+                                <div class="space-x-2 py-1 px-4">
+                                    <input
+                                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                                    type="checkbox"
+                                    />
+                                    <label
+                                    class="text-sm text-gray-800"
+                                    > Positive (mm)
+                                    </label>
+                                </div>
+                                <div class="space-x-2 px-4">
+                                    <input
+                                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                                    type="checkbox"
+                                    />
+                                    <label
+                                    class="text-sm text-gray-800"
+                                    > Negative (mm)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <div class="w-full border-r text-center">
+                                <div class="px-2 py-1">
+                                    <div>
+                                        <label for="nurse_date" class="block text-left font-medium text-sm ">
+                                            ADMINISTERED BY
+                                        </label>
+                                        <input id="nurse_date" type="text" class="text-sm border border-gray-400 rounded-md bg-gray-50  w-full">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="w-full text-center">
+                                <div class="px-2 py-1">
+                                    <div>
+                                        <label for="nurse_date" class="block text-left font-medium text-sm ">
+                                            INTERPRETED BY
+                                        </label>
+                                        <input id="nurse_date" type="text" class="text-sm border border-gray-400 rounded-md bg-gray-50  w-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div>
-                    <label class="text-sm text-gray-900 py-2 w-full px-5"> <b>TO DMC LWC NURSE:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</label>
+                <div class="border-b w-full text-center">
+                    <label class="text-md font-bold text-gray-900 w-full px-5">SECOND STEP PPD SKIN TEST</label>
+                    <div class="border-t">
+                        <div class="flex justify-between border-b">
+                            <div class="w-full border-r text-center">
+                                <div class="px-2 py-1">
+                                    <div>
+                                        <label for="nurse_date" class="block text-left font-medium text-sm ">
+                                            DATE AND TIME ADMINISTERED
+                                        </label>
+                                        <input id="nurse_date" type="datetime-local" class="text-sm border border-gray-400 rounded-md bg-gray-50 w-full">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full text-left">
+                                <div class="space-x-2 py-1 px-4">
+                                    <input
+                                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                                    type="checkbox"
+                                    />
+                                    <label
+                                    class="text-sm text-gray-800"
+                                    > Positive (mm)
+                                    </label>
+                                </div>
+                                <div class="space-x-2 px-4">
+                                    <input
+                                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                                    type="checkbox"
+                                    />
+                                    <label
+                                    class="text-sm text-gray-800"
+                                    > Negative (mm)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <div class="w-full border-r text-center">
+                                <div class="px-2 py-1">
+                                    <div>
+                                        <label for="nurse_date" class="block text-left font-medium text-sm ">
+                                            ADMINISTERED BY
+                                        </label>
+                                        <input id="nurse_date" type="text" class="text-sm border border-gray-400 rounded-md bg-gray-50  w-full">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="w-full text-center">
+                                <div class="px-2 py-1">
+                                    <div>
+                                        <label for="nurse_date" class="block text-left font-medium text-sm ">
+                                            INTERPRETED BY
+                                        </label>
+                                        <input id="nurse_date" type="text" class="text-sm border border-gray-400 rounded-md bg-gray-50  w-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
