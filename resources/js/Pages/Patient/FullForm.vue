@@ -176,7 +176,7 @@ import Personal_Info from './Section/Personal_Info.vue';
 
       submitForm() {
 
-        console.log('RRRRRR:', this.ph);
+        console.log('RRRRRR:', this.pg);
         axios.post('patient',
           {formdata:this.form,
             padata:this.pa,
@@ -185,6 +185,7 @@ import Personal_Info from './Section/Personal_Info.vue';
             pddata:this.pd,
             pedata:this.pe,
             pfdata:this.pf,
+            pgdata:this.pg,
             phdata:this.ph,
             pidata:this.pi,
 

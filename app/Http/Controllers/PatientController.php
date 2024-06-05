@@ -8,6 +8,7 @@ use App\Models\PatientAllergy;
 use App\Models\PatientCurrAndMaintnceMedication;
 use App\Models\PatientFamHistory;
 use App\Models\PatientMedIllnessPrevHosptlznSurgery;
+use App\Models\PatientObGyneHistory;
 use App\Models\PatientPastIllness;
 use App\Models\PatientPersonalSocialHistory;
 use App\Models\PatientPresentIllness;
@@ -47,6 +48,7 @@ class PatientController extends Controller
         $pd = $request->pddata;
         $pe = $request->pedata;
         $pf = $request->pfdata;
+        $pg = $request->pgdata;
         $ph = $request->phdata;
         $pi = $request->pidata;
 
@@ -109,10 +111,25 @@ class PatientController extends Controller
                     PatientFamHistory::create($fh);
                 }
 
+                // patient Ob-gyne
+                if (isset($pg['gyne_surgery']) || isset($pg['is_pregnant']) || isset($pg['g']) || isset($pg['p'])
+                || isset($pg['age_of_gestation']) || isset($pg['expected_delivery']) || isset($pg['last_menstrual_period']) || isset($pg['prev_menstrual_period'])
+                || isset($pg['age_of_menarche']) || isset($pg['age_of_menopausal']) || isset($pg['is_birth_control']) || isset($pg['bc_type'])
+                || isset($pg['pap_smear']) || isset($pg['mammography']) || isset($pg['is_dysmenorrhea']) || isset($pg['is_viginal_discharge'])
+                || isset($pg['is_pain_viginal_sex']) || isset($pg['is_vaginal_lesions_mass_warts'])
+
+                ) {
+
+                    $pg['patient_id'] = $patient->id;
+                    $pg['created_by'] = $patient->created_by;
+                    PatientObGyneHistory::create($pg);
+                }
+
+
                 // Patient Vaccine
                 foreach ($ph as $vac) {
                     $vac['patient_id'] = $patient->id;
-                    PatientVacinationHistory::create($vac); 
+                    PatientVacinationHistory::create($vac);
                 }
 
                 // patient pressent illness

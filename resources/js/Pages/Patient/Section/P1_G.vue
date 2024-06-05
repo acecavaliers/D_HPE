@@ -32,6 +32,7 @@
         </div>
         <div class="w-full">
           <input
+            v-model="pg.gyne_surgery"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             type="text"/>
         </div>
@@ -194,7 +195,6 @@
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
-              v-model="pg.pap_smear"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -205,17 +205,16 @@
         </div>
         <div class="w-full">
           <input
-
+            v-model="pg.pap_smear"
             placeholder="(Date last done)"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            type="text"/>
+            type="date"/>
         </div>
       </div>
 
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
-              v-model="pg.mammography"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
@@ -226,9 +225,10 @@
         </div>
         <div class="w-full">
           <input
+            v-model="pg.mammography"
             placeholder="(Date last done)"
             class="w-full text-sm text-gray-900 bg-transparent bg-transparent border-0 border-b  pb-0 mt-0.5  border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            type="text"/>
+            type="date"/>
         </div>
       </div>
 
