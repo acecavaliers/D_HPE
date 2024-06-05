@@ -64,8 +64,8 @@
 
 
                     <div v-if="currentStep === 5" class="border mx-auto bg-white rounded-lg">
-                        <div class="bg-gray-200 flex justify-start">
-                            <div  class="bg-gray-800 text-md font-black text-white p-2">PART II: PHYSICAL EXAMINATION</div>
+                        <div class="bg-gray-200 flex justify-start rounded-t-lg">
+                            <div  class="bg-gray-800 text-md font-black text-white rounded-tl-lg p-2">PART II: PHYSICAL EXAMINATION</div>
                             <div class="p-2 text-sm"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</div>
                         </div>
                         <div class="grid grid-cols-1 ">

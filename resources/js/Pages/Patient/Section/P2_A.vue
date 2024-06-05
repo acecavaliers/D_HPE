@@ -1,6 +1,6 @@
 <template>
-    <div class="grid md:grid-cols-6 border">
-        <div class="text-center border-r">
+    <div class="grid md:grid-cols-6 border-b">
+        <div class="text-center">
             <div class=" border-b py-1 bg-gray-300">
                 <label class="text-sm font-bold text-gray-900 w-full">VISUAL ACUITY</label>
             </div>
@@ -9,7 +9,7 @@
             </p>
         </div>
 
-        <div class="text-center border-r">
+        <div class="text-center border-x">
             <div class=" border-b py-1 bg-gray-300">
                 <label class="text-sm font-bold text-gray-900 w-full">FAR VISION</label>
             </div>
@@ -117,15 +117,15 @@
     </div>
 
     <!-- 2nd row -->
-    <div class="grid md:grid-cols-6 border">
-        <div class="text-center border-r">
+    <div class="grid md:grid-cols-6 border-b">
+        <div class="text-center ">
             <p class="text-sm text-left px-2 pt-2 py-0">
                 CORRECTED (w/ glasses/contact lenses)
 
             </p>
         </div>
 
-        <div class="text-center border-r">
+        <div class="text-center border-x">
             <div class="">
                 <div class="flex justify-between py-1 px-2 space-x-2">
                     <label class="block text-sm font-medium text-gray-900 mt-1.5 whitespace-nowrap">OD 20/</label>
@@ -215,121 +215,91 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="grid md:grid-cols-2 border">
-        <div class="text-left border">
-            <div class=" border-b py-1 bg-gray-300">
-                <label class="text-sm font-bold text-gray-900 w-full px-5">HEARING</label>
+    <!-- PE -->
+    <div class="grid md:grid-cols-6 border-b ">
+        <div class="col-span-1  text-left">
+            <div class="py-2">
+                <label class="text-sm font-bold text-gray-900 w-full px-5">SKIN</label>
             </div>
-            <div class="">
-                <div class="flex justify-between">
-                    <div class="text-center w-24 border-r p-2">
-                        <p>AD</p>
-                    </div>
-                    <div class="flex justify-start py-1 w-full">
-                        <div class="px-5">
-                            <input
-                            class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                            type="checkbox"
-                            />
-                            <label
-                            class="text-sm text-gray-800 "
-                            > Normal
-                            </label>
-                        </div>
-                        <div class="px-5">
-                            <input
-                            class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                            type="checkbox"
-                            />
-                            <label
-                            class="text-sm text-gray-800 "
-                            > Hearing Loss
-                            </label>
-                        </div>
-                    </div>
+        </div>
+        <div class="col-span-5 w-full flex justify-start p-2  border-x">
+            <div class="w-32 mt-2">
+                <input
+                type="checkbox"
+                class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                <label  class="px-2 text-sm text-gray-800  w-full">
+                    Normal
+                </label>
+            </div>
+            <div  class="w-56 mt-2">
+                <input
+                type="checkbox"
+                class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                <label  class="px-2 text-sm text-gray-800 w-full">
+                    Abnormal Findings:
+                </label>
+            </div>
+            <div class="w-full">
+                <textarea
+                rows="2"
+                class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Details:"></textarea>
+            </div>
+        </div>
+    </div>
 
+   <!-- SKIN -->
+   <div class="grid md:grid-cols-6 border-b ">
+        <div class="col-span-1  text-left">
+            <div class="py-2  bg-gray-300">
+                <label class="text-sm font-bold text-gray-900 w-full px-5"> PPD SKIN TEST</label>
+            </div>
+        </div>
+        <div class="col-span-5 w-full flex justify-start border-x bg-gray-300">
+            <label class="text-sm text-gray-900 py-2 w-full px-5"> <b>TO DMC LWC NURSE:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</label>
+        </div>
+    </div>
+
+   <div class="grid md:grid-cols-6 border-b ">
+        <div class="col-span-1  text-left">
+            <div class="py-2 ">
+                <div class="w-32 mt-2 p-2">
+                    <input
+                    type="checkbox"
+                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                    <label  class="px-2 text-sm text-gray-800  w-full">
+                        Normal
+                    </label>
                 </div>
-
-                <div class="flex justify-between border-t">
-                    <div class="text-center w-24 border-r p-2">
-                        <p>AS</p>
-                    </div>
-                    <div class="flex justify-start py-1 w-full">
-                        <div class="px-5">
-                            <input
-                            class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                            type="checkbox"
-                            />
-                            <label
-                            class="text-sm text-gray-800 "
-                            > Normal
-                            </label>
-                        </div>
-                        <div class="px-5">
-                            <input
-                            class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                            type="checkbox"
-                            />
-                            <label
-                            class="text-sm text-gray-800 "
-                            > Hearing Loss
-                            </label>
-                        </div>
-                    </div>
-
+                <div class="w-32 mt-2 p-2">
+                    <input
+                    type="checkbox"
+                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                    <label  class="px-2 text-sm text-gray-800  w-full">
+                        Normal
+                    </label>
+                </div>
+                <div class="w-32 mt-2 p-2">
+                    <input
+                    type="checkbox"
+                    class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500" />
+                    <label  class="px-2 text-sm text-gray-800  w-full">
+                        Normal
+                    </label>
                 </div>
             </div>
         </div>
-
-        <div class="text-left border">
-            <div class="py-1 bg-gray-300">
-                <label class="text-sm font-bold text-gray-900 w-full px-5">CLARITY OF SPEECH</label>
-            </div>
-            <div class="">
-                <div class="flex justify-between border-y p-2">
-                    <div class="flex-none">
-                        <input
-                        class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                        type="checkbox"
-                        />
-                        <label
-                        class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                        > Normal
-                        </label>
-                    </div>
+        <div class="col-span-5 w-full flex justify-start border-x">
+            <div class="flex justify-between">
+                <div>
+                    <label class="text-sm text-gray-900 py-2 w-full px-5"> <b>TO DMC LWC NURSE:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</label>
                 </div>
-                <div class="flex justify-between  p-2">
-                    <div class="flex-none">
-                        <input
-                        class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                        type="checkbox"
-                        />
-                        <label
-                        class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
-                        > Abnormal
-                        </label>
-                    </div>
-
+                <div>
+                    <label class="text-sm text-gray-900 py-2 w-full px-5"> <b>TO DMC LWC NURSE:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</label>
                 </div>
+
             </div>
         </div>
-        <div>
-            sadsa
-        </div>
-    </div> -->
-
-    <div>
-sadasdsadsad
-sadsad
-sad
-sad
-sadas
-dsa
-dsa
-dsad
-sad
-sa
     </div>
 
   </template>
