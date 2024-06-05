@@ -168,7 +168,7 @@
             </li>
             <li>
               <Link
-                href="/patient/view"
+                href="/physicalExam"
                 class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
               >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">

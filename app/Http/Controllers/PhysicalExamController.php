@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\PhysicalExam;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class PhysicalExamController extends Controller
 {
@@ -13,7 +15,7 @@ class PhysicalExamController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('PhysicalExam/PEMain');
     }
 
     /**
@@ -29,7 +31,11 @@ class PhysicalExamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $arr = $request->formdata;
+        $arr['created_by'] = Auth::user()->name;
+        $query = PhysicalExam::create($arr);
+
+        return 'success';
     }
 
     /**
@@ -62,5 +68,11 @@ class PhysicalExamController extends Controller
     public function destroy(PhysicalExam $physicalExam)
     {
         //
+    }
+    public function getlist(Request $request){
+        // $query = AccountType::where('is_active',1)->get();
+        $query = PhysicalExam::orderBy('id', 'desc')->paginate(10);
+        return $query;
+
     }
 }

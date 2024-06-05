@@ -8,7 +8,7 @@
                 <th scope="col" class="px-6 py-3 w-24">Id</th>
                 <th scope="col" class="px-6 py-3">
                     <div class="flex items-center">
-                        Vaccine Name
+                        Exam Name
                         <a href="#">
                             <svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             viewBox="0 0 24 24">
@@ -76,7 +76,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="(item, index) in records.data" :key="index" class="bg-white border-b hover:bg-gray-50">
+            <tr v-for="(item, index) in pe.data" :key="index" class="bg-white border-b hover:bg-gray-50">
                 <td class="px-6 py-4">{{ item.id.toString().padStart(6, '0') }}</td>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{{ item.name }}</th>
                 <td class="px-6 py-4">
@@ -110,11 +110,11 @@
       </div>
     </div>
     <div class="flex justify-end items-center p-4 bg-white">
-      <button :disabled="!records.prev_page_url" @click="fetchRecords(records.prev_page_url)" class="px-3 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600" :class="{'opacity-50': !records.prev_page_url}">
+      <button :disabled="!pe.prev_page_url" @click="fetchAccounts(pe.prev_page_url)" class="px-3 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600" :class="{'opacity-50': !pe.prev_page_url}">
         Previous
       </button>
-      <span class="mx-3">Page {{ records.current_page }} of {{ records.last_page }}</span>
-      <button :disabled="!records.next_page_url" @click="fetchRecords(records.next_page_url)" class="px-3 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600" :class="{'opacity-50': !records.next_page_url}">
+      <span class="mx-3">Page {{ pe.current_page }} of {{ pe.last_page }}</span>
+      <button :disabled="!pe.next_page_url" @click="fetchAccounts(pe.next_page_url)" class="px-3 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600" :class="{'opacity-50': !pe.next_page_url}">
         Next
       </button>
     </div>
@@ -124,7 +124,7 @@
   import { ref } from 'vue';
   import axios from 'axios';
 
-  const records = ref({
+  const pe = ref({
     data: [],
     current_page: 1,
     last_page: 1,
@@ -132,36 +132,36 @@
     prev_page_url: null,
   });
 
-  const fetchRecords = async (url = null) => {
+  const fetchAccounts = async (url = null) => {
     try {
-      const response = await axios.get(url || route('vaccine.getlist'));
-      records.value = response.data;
+      const response = await axios.get(url || route('physicalExam.getlist'));
+      pe.value = response.data;
     } catch (error) {
-      // console.error('Error fetching records:', error);
+      // console.error('Error fetching accounts:', error);
     }
   };
 
-  fetchRecords();
+  fetchAccounts();
   </script>
 
   <script>
   export default {
-    name: 'VaccineList',
+    name: 'AccountList',
     data() {
       return {
-        records: [],
+        pe: [],
       };
     },
     created() {
-      // this.fetchRecords();
+      // this.fetchAccounts();
     },
     methods: {
-      // async fetchRecords(url = null) {
+      // async fetchAccounts(url = null) {
       //   try {
       //     const response = await axios.get(url || route('account.getlist'));
-      //     this.records = response.data;
+      //     this.accounts = response.data;
       //   } catch (error) {
-      //     console.error('Error fetching records:', error);
+      //     console.error('Error fetching accounts:', error);
       //   }
       // },
     },

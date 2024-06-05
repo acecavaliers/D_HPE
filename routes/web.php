@@ -6,6 +6,7 @@ use App\Http\Controllers\IllnessController;
 use App\Http\Controllers\IllnessGroupController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\PhysicalExamController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VaccinationController;
 use App\Models\IdentificationType;
@@ -53,6 +54,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/account/getlist', [AccountTypeController::class, 'getlist'])->name('account.getlist');
     Route::get('/account/getAll', [AccountTypeController::class, 'getAll'])->name('account.getAll');
 
+
+    Route::get('/physicalExam/getlist', [PhysicalExamController::class, 'getlist'])->name('physicalExam.getlist');
+
     Route::get('/vaccine/getlist', [VaccinationController::class, 'getlist'])->name('vaccine.getlist');
     Route::get('/vaccine/getlistAdd', [VaccinationController::class, 'getlistAdd'])->name('vaccine.getlistAdd');
 
@@ -74,6 +78,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         'illnesschild' => IllnessController::class,
         'vaccine' => VaccinationController::class,
         'fh' => FamilyHistoryController::class,
+        'physicalExam' => PhysicalExamController::class,
     ]);
 
 
