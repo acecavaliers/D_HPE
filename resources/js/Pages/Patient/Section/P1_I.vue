@@ -152,7 +152,7 @@
                                 <th v-for="(pain, index) in painvalues" :key="index" class="text-center w-24  border-l border-gray-200 ">
 
                                     <button @click.prevent="pj.pain = index"
-                                    :class="{'text-gray-100 font-bold bg-blue-600 border-blue-600': pj.pain === index,  'text-gray-500 font-light border-gray-300': pj.pain !== index}"
+                                    :class="{'text-blue-600 font-bold border-0 border-b-4 border-blue-600': pj.pain === index,  'text-gray-500 font-light border-gray-300': pj.pain !== index}"
                                         class="w-full h-10 hover:bg-blue-200">
                                         {{ index }}
                                     </button>
@@ -164,15 +164,15 @@
                                 <tr class="text-center border">
                                 <!-- Cells with specified colspans -->
                                 <td colspan="1"
-                                :class="{'text-gray-100 font-bold bg-green-500': pj.pain === 0,  'text-gray-500 font-light border-gray-300':pj.pain>0}"
+                                :class="{'text-blue-400 font-bold': pj.pain === 0,  'font-light border-gray-300':pj.pain>0}"
                                 class="border-l">None</td>
                                 <td colspan="3"
-                                :class="{'text-gray-100 font-bold bg-gradient-to-r from-green-400 to-yellow-300': pj.pain <= 3 && pj.pain>0,  'text-gray-500 font-light border-gray-300':pj.pain>3}"
+                                :class="{'text-blue-400 font-bold': pj.pain <= 3 && pj.pain>0,  'font-light border-gray-300':pj.pain>3}"
                                 class="border-l">Mild</td>
                                 <td colspan="3"
-                                :class="{'text-gray-100 font-bold bg-gradient-to-r from-yellow-300 to-orange-400': pj.pain >= 4 && pj.pain <= 6,  'text-gray-500 font-light border-gray-300':pj.pain>6}" class="border-l">Moderate</td>
+                                :class="{'text-blue-400 font-bold': pj.pain >= 4 && pj.pain <= 6,  'font-light border-gray-300':pj.pain>6 && pj.pain<4}" class="border-l">Moderate</td>
                                 <td colspan="4"
-                                :class="{'text-gray-100 font-bold bg-gradient-to-r from-orange-400 to-red-700': pj.pain >= 7 && pj.pain <= 10,  'text-gray-500 font-light border-gray-300':pj.pain<7}"class="border-l">Severe</td>
+                                :class="{'text-blue-400 font-bold': pj.pain >= 7 && pj.pain <= 10,  'font-light border-gray-300':pj.pain<7}"class="border-l">Severe</td>
                                 </tr>
 
                                 <tr class="border text-gray-500">
@@ -216,18 +216,18 @@
 
                                 </td>
                                 <td colspan="1" class="flex justify-center py-2 hover:text-gray-800">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-16 h-16 bi bi-emoji-dizzy" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-16 h-16 bi bi-emoji-tear" viewBox="0 0 16 16">
                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                                        <path d="M9.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708m-5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708M10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>
+                                        <path d="M6.831 11.43A3.1 3.1 0 0 1 8 11.196c.916 0 1.607.408 2.25.826.212.138.424-.069.282-.277-.564-.83-1.558-2.049-2.532-2.049-.53 0-1.066.361-1.536.824q.126.27.232.535.069.174.135.373ZM6 11.333C6 12.253 5.328 13 4.5 13S3 12.254 3 11.333c0-.706.882-2.29 1.294-2.99a.238.238 0 0 1 .412 0c.412.7 1.294 2.284 1.294 2.99M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5m-1.5-3A.5.5 0 0 1 10 3c1.162 0 2.35.584 2.947 1.776a.5.5 0 1 1-.894.448C11.649 4.416 10.838 4 10 4a.5.5 0 0 1-.5-.5M7 3.5a.5.5 0 0 0-.5-.5c-1.162 0-2.35.584-2.947 1.776a.5.5 0 1 0 .894.448C4.851 4.416 5.662 4 6.5 4a.5.5 0 0 0 .5-.5"/>
                                     </svg>
                                 </td>
                                 <td colspan="1">
 
                                 </td>
                                 <td colspan="1" class="flex justify-center py-2 hover:text-gray-800">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-16 h-16 bi bi-emoji-tear" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-16 h-16 bi bi-emoji-dizzy" viewBox="0 0 16 16">
                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                                        <path d="M6.831 11.43A3.1 3.1 0 0 1 8 11.196c.916 0 1.607.408 2.25.826.212.138.424-.069.282-.277-.564-.83-1.558-2.049-2.532-2.049-.53 0-1.066.361-1.536.824q.126.27.232.535.069.174.135.373ZM6 11.333C6 12.253 5.328 13 4.5 13S3 12.254 3 11.333c0-.706.882-2.29 1.294-2.99a.238.238 0 0 1 .412 0c.412.7 1.294 2.284 1.294 2.99M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5m-1.5-3A.5.5 0 0 1 10 3c1.162 0 2.35.584 2.947 1.776a.5.5 0 1 1-.894.448C11.649 4.416 10.838 4 10 4a.5.5 0 0 1-.5-.5M7 3.5a.5.5 0 0 0-.5-.5c-1.162 0-2.35.584-2.947 1.776a.5.5 0 1 0 .894.448C4.851 4.416 5.662 4 6.5 4a.5.5 0 0 0 .5-.5"/>
+                                        <path d="M9.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708m-5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708M10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>
                                     </svg>
                                 </td>
                                 </tr>
