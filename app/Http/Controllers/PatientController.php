@@ -13,6 +13,7 @@ use App\Models\PatientPastIllness;
 use App\Models\PatientPersonalSocialHistory;
 use App\Models\PatientPresentIllness;
 use App\Models\PatientVacinationHistory;
+use App\Models\PatientVitalSignsPainScale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -51,6 +52,7 @@ class PatientController extends Controller
         $pg = $request->pgdata;
         $ph = $request->phdata;
         $pi = $request->pidata;
+        $pj = $request->pjdata;
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -138,6 +140,18 @@ class PatientController extends Controller
                         'patient_id' => $patient->id,
                         'details' => $pi['details'],
                     ]);
+                }
+
+                // patient pain scale
+                if (isset($pj['height']) || isset($pj['weight'])
+                || isset($pj['bmi']) || isset($pj['sthenic']) || isset($pj['asthenic']) || isset($pj['hypersthenic'])
+                || isset($pj['blood_pressure']) || isset($pj['pulse_rate']) || isset($pj['respiration_rate']) || isset($pj['Temperature'])
+                || isset($pj['pain'])
+                ) {
+
+                    $pj['patient_id'] = $patient->id;
+                    $pj['created_by'] = $patient->created_by;
+                    PatientVitalSignsPainScale::create($pj);
                 }
             }
 

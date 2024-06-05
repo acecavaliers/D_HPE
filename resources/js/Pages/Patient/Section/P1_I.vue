@@ -48,18 +48,18 @@
                 <div class="grid md:grid-cols-4">
                     <div class="flex justify-between border py-2">
                         <label class="block text-sm font-medium text-gray-900 mt-2 px-2 whitespace-nowrap">HEIGHT (cm)</label>
-                        <input type="text"  class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
+                        <input v-model="pj.height" type="text"  class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
                     </div>
 
                     <div class="flex justify-between border py-2">
                         <label class="block text-sm font-medium text-gray-900 mt-2 px-2 whitespace-nowrap">WEIGHT (kg)</label>
-                        <input type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
+                        <input v-model="pj.weight"  type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
                     </div>
 
 
                     <div class="flex justify-between border py-2">
                         <label class="block text-sm font-medium text-gray-900 mt-2 px-2 whitespace-nowrap">BODY MASS INDEX (kg/m2)</label>
-                        <input type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
+                        <input v-model="pj.bmi"  type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
                     </div>
 
                     <div class="flex justify-between border py-2">
@@ -114,23 +114,23 @@
                 <div class="grid md:grid-cols-4">
                     <div class="flex justify-between border py-2">
                         <label class="block text-sm font-medium text-gray-900 mt-2 px-2 whitespace-nowrap">BLOOD PRESSURE (mmHg)</label>
-                        <input type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
+                        <input v-model="pj.blood_pressure"  type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
                     </div>
 
                     <div class="flex justify-between border py-2">
                         <label class="block text-sm font-medium text-gray-900 mt-2 px-2 whitespace-nowrap">PULSE RATE (bpm)</label>
-                        <input type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
+                        <input v-model="pj.pulse_rate"  type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
                     </div>
 
 
                     <div class="flex justify-between border py-2">
                         <label class="block text-sm font-medium text-gray-900 mt-2 px-2 whitespace-nowrap">RESPIRATION RATE (cpm)</label>
-                        <input type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
+                        <input v-model="pj.respiration_rate"  type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
                     </div>
 
                     <div class="flex justify-between border py-2">
                         <label class="block text-sm font-medium text-gray-900 mt-2 px-2 whitespace-nowrap">TEMPERATURE (C):</label>
-                        <input type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
+                        <input v-model="pj.Temperature"  type="text" class="mr-2 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" />
                     </div>
                 </div>
 
@@ -141,6 +141,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-12">
                     <div class="border-r text-center col-span-12 sm:col-span-2 flex items-center justify-center">
                         <h1 class="text-xl font-bold text-gray-700">PAIN</h1>
+                        <input type="text" v-model="pj.pain" hidden>
                     </div>
                     <div class="col-span-12 sm:col-span-10 border">
                         <div>
@@ -150,7 +151,11 @@
                                 <!-- Headers based on painvalues -->
                                 <th v-for="(pain, index) in painvalues" :key="index" class="text-center w-24  border-l border-gray-200 ">
 
-                                    <button class="w-full h-10 hover:bg-gray-200">{{ index }}</button>
+                                    <button @click.prevent="pj.pain = index"
+                                    :class="{'text-gray-100 font-bold bg-blue-600 border-blue-600': pj.pain === index,  'text-gray-500 font-light border-gray-300': pj.pain !== index}"
+                                        class="w-full h-10 hover:bg-blue-200">
+                                        {{ index }}
+                                    </button>
 
                                 </th>
                                 </tr>
@@ -158,10 +163,16 @@
                             <tbody>
                                 <tr class="text-center border">
                                 <!-- Cells with specified colspans -->
-                                <td colspan="1" class="border-l">None</td>
-                                <td colspan="3" class="border-l">Mild</td>
-                                <td colspan="3" class="border-l">Moderate</td>
-                                <td colspan="4" class="border-l">Severe</td>
+                                <td colspan="1"
+                                :class="{'text-gray-100 font-bold bg-green-500': pj.pain === 0,  'text-gray-500 font-light border-gray-300':pj.pain>0}"
+                                class="border-l">None</td>
+                                <td colspan="3"
+                                :class="{'text-gray-100 font-bold bg-gradient-to-r from-green-400 to-yellow-300': pj.pain <= 3 && pj.pain>0,  'text-gray-500 font-light border-gray-300':pj.pain>3}"
+                                class="border-l">Mild</td>
+                                <td colspan="3"
+                                :class="{'text-gray-100 font-bold bg-gradient-to-r from-yellow-300 to-orange-400': pj.pain >= 4 && pj.pain <= 6,  'text-gray-500 font-light border-gray-300':pj.pain>6}" class="border-l">Moderate</td>
+                                <td colspan="4"
+                                :class="{'text-gray-100 font-bold bg-gradient-to-r from-orange-400 to-red-700': pj.pain >= 7 && pj.pain <= 10,  'text-gray-500 font-light border-gray-300':pj.pain<7}"class="border-l">Severe</td>
                                 </tr>
 
                                 <tr class="border text-gray-500">
@@ -263,6 +274,7 @@
         return {
           i_noneChecked: false,
           painvalues:[],
+          patientpain:0,
         };
       },
       mounted() {
