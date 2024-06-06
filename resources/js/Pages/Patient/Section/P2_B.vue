@@ -38,7 +38,8 @@
             rows="2"
             v-model="pex.findings"
             :disabled="pex.isNormal"
-            class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+            :class="{'bg-gray-100':pex.isNormal=== true, 'bg-white':pex.isNormal!== true }"
+            class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Details:"
             @blur="updateCheckedPe(pex)"
           ></textarea>
