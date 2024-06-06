@@ -13,6 +13,7 @@ use App\Models\PatientPastIllness;
 use App\Models\PatientPersonalSocialHistory;
 use App\Models\PatientPresentIllness;
 use App\Models\PatientVacinationHistory;
+use App\Models\PatientVisualHearinSpeech;
 use App\Models\PatientVitalSignsPainScale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,6 +54,8 @@ class PatientController extends Controller
         $ph = $request->phdata;
         $pi = $request->pidata;
         $pj = $request->pjdata;
+
+        $p2a = $request->p2adata;
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -152,6 +155,16 @@ class PatientController extends Controller
                     $pj['patient_id'] = $patient->id;
                     $pj['created_by'] = $patient->created_by;
                     PatientVitalSignsPainScale::create($pj);
+                }
+
+                // patient visual hearing speech
+                if (isset($p2a['uncorrected_fv_od20']) || isset($p2a['uncorrected_fv_os20']) || isset($p2a['uncorrected_nv_odj']) || isset($p2a['uncorrected_nv_osj'])
+                || isset($p2a['corrected_fv_od20']) || isset($p2a['corrected_fv_os20']) || isset($p2a['corrected_nv_odj']) || isset($p2a['corrected_nv_osj'])
+                || isset($p2a['ishihara']) || isset($p2a['speech']) || isset($p2a['ad_hearing']) || isset($p2a['as_hearing'])
+                ) {
+
+                    $p2a['patient_id'] = $patient->id;
+                    PatientVisualHearinSpeech::create($p2a);
                 }
             }
 

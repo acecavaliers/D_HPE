@@ -70,6 +70,7 @@
                         </div>
                         <div class="grid grid-cols-1 ">
                             <P2_A :p2a="p2a"/>
+                            <P2_B :p2b="p2b"/>
                         </div>
                     </div>
 
@@ -138,11 +139,12 @@ import P1_G from './Section/P1_G.vue';
 import P1_H from './Section/P1_H.vue';
 import P1_I from './Section/P1_I.vue';
 import P2_A from './Section/P2_A.vue';
+import P2_B from './Section/P2_B.vue';
 import Personal_Info from './Section/Personal_Info.vue';
 
   export default {
     components: {
-        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,P1_I,P2_A,
+        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,P1_I,P2_A,P2_B,
   },
     data() {
         return {
@@ -189,6 +191,8 @@ import Personal_Info from './Section/Personal_Info.vue';
             phdata:this.ph,
             pidata:this.pi,
             pjdata:this.pj,
+
+            p2adata:this.p2a,
 
           }
          )

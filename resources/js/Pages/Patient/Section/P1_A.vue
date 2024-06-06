@@ -267,7 +267,7 @@ export default {
       try {
         const response = await axios.get(route('illness.getlistSympV2'));
         this.records = response.data;
-        console.log('Response data:', this.records);
+        console.log('RXXXX:', this.records);
       } catch (error) {
         console.error('Error fetching records:', error);
       }
