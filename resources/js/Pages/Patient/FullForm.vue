@@ -119,8 +119,8 @@ const steps = ref([
   { name: 'P1-B to E' },
   { name: 'P1-F to H' },
   { name: 'P1-I Present Illness' },
-  { name: 'P2 Physical Examination' },
-  { name: 'Part II' }
+  { name: 'Part 2 Physical Examination' },
+  { name: 'Part 3: ASSESSMENT & RECOMMENDATION' }
 ]);
 
 </script>

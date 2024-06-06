@@ -9,23 +9,25 @@
     <div class="p-2 pb-5">
       <div class="flex-none mt-1.5">
             <input
+              id="g_none"
               v-model="g_none"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="g_none"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > None
             </label>
         </div>
-      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between" v-if="!g_none">
+      <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
+                id="gyne_surgery"
               v-model="pg.gyne_surgery"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="gyne_surgery"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Gyne Surgery:
             </label>
@@ -42,11 +44,12 @@
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
+            id="is_pregnant"
               v-model="pg.is_pregnant"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="is_pregnant"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Pregnant:
             </label>
@@ -174,11 +177,12 @@
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
+                id="is_birth_control"
               v-model="pg.is_birth_control"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="is_birth_control"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Birth Control:
             </label>
@@ -195,10 +199,11 @@
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
+            id="pap_smear"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="pap_smear"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Pap smear:
             </label>
@@ -215,10 +220,11 @@
       <div class="right-0 w-full pb-3 flex sm:items-left sm:justify-between">
         <div class="flex-none mt-1.5">
             <input
+            id="mammography"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="mammography"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Mammography :
             </label>
@@ -235,22 +241,24 @@
       <div class="grid grid-cols-1 md:grid-cols-2 ">
         <div class="flex-none mt-1.5">
             <input
+            id="is_dysmenorrhea"
               v-model="pg.is_dysmenorrhea"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="is_dysmenorrhea"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Dysmenorrhea
             </label>
         </div>
         <div class="flex-none mt-1.5">
             <input
+            id="is_pain_viginal_sex"
               v-model="pg.is_pain_viginal_sex"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="is_pain_viginal_sex"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Painful Vaginal Sexual Intercourse
             </label>
@@ -260,22 +268,24 @@
       <div class="grid grid-cols-1 md:grid-cols-2 ">
         <div class="flex-none mt-1.5">
             <input
+            id="is_viginal_discharge"
               v-model="pg.is_viginal_discharge"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="is_viginal_discharge"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Vaginal Discharge
             </label>
         </div>
         <div class="flex-none mt-1.5">
             <input
+            id="is_vaginal_lesions_mass_warts"
               v-model="pg.is_vaginal_lesions_mass_warts"
               class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               type="checkbox"
             />
-            <label
+            <label for="is_vaginal_lesions_mass_warts"
               class="text-sm text-gray-800 uration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
               > Vaginal Lesions/Mass/Warts
             </label>
