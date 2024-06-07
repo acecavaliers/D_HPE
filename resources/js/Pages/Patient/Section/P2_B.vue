@@ -3,7 +3,7 @@
     <div v-for="(pex, index) in records_pe" :key="pex.id" class="grid md:grid-cols-6 border-b">
       <div class="col-span-1 text-left">
         <div class="py-2">
-          <label class="text-sm font text-gray-900 w-full px-5">{{ index + 1 }}. {{ pex.name }} - {{ pex.id }}</label>
+          <label class="text-sm font text-gray-900 w-full px-5">{{ index + 1 }}. {{ pex.name }}</label>
         </div>
       </div>
       <div class="col-span-5 w-full flex justify-start p-2 border-x">

@@ -12,6 +12,7 @@ use App\Models\PatientObGyneHistory;
 use App\Models\PatientPastIllness;
 use App\Models\PatientPersonalSocialHistory;
 use App\Models\PatientPhysicalExam;
+use App\Models\PatientPpdSkinTest;
 use App\Models\PatientPresentIllness;
 use App\Models\PatientVacinationHistory;
 use App\Models\PatientVisualHearinSpeech;
@@ -58,6 +59,7 @@ class PatientController extends Controller
 
         $p2a = $request->p2adata;
         $p2b = $request->p2bdata;
+        $p2c = $request->p2cdata;
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -175,6 +177,17 @@ class PatientController extends Controller
                     $pex['created_by'] = $patient->created_by;
                     PatientPhysicalExam::create($pex);
                 }
+
+                // patient ppd test
+                if (isset($p2c['is_applied']) || isset($p2c['fst_ppd_datetime_administered']) || isset($p2c['fst_ppd_administered_by']) || isset($p2c['fst_ppd_result'])
+                || isset($p2c['fst_ppd_interpreted_by']) || isset($p2c['snd_ppd_datetime_administered']) || isset($p2c['snd_ppd_administered_by'])
+                || isset($p2c['snd_ppd_result']) || isset($p2c['snd_ppd_interpreted_by'])
+                ) {
+
+                    $p2c['patient_id'] = $patient->id;
+                    PatientPpdSkinTest::create($p2c);
+                }
+
             }
 
             // Commit the transaction if everything is successful

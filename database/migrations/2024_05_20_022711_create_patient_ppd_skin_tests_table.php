@@ -16,15 +16,15 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Patient::class)->constrained('patients');
             $table->tinyInteger('is_applied')->default(0);
-            $table->string('1st_ppd_datetime_administered')->nullable();
-            $table->string('1st_ppd_administered_by')->nullable();
-            $table->tinyInteger('1st_ppd_result')->default(0);
-            $table->string('1st_ppd_interpreted_by')->nullable();
+            $table->string('fst_ppd_datetime_administered')->nullable();
+            $table->string('fst_ppd_administered_by')->nullable();
+            $table->tinyInteger('fst_ppd_result')->default(0);
+            $table->string('fst_ppd_interpreted_by')->nullable();
 
-            $table->string('2nd_ppd_datetime_administered')->nullable();
-            $table->string('2nd_ppd_administered_by')->nullable();
-            $table->tinyInteger('2nd_ppd_result')->default(0);
-            $table->string('2nd_ppd_interpreted_by')->nullable();
+            $table->string('snd_ppd_datetime_administered')->nullable();
+            $table->string('snd_ppd_administered_by')->nullable();
+            $table->tinyInteger('snd_ppd_result')->default(0);
+            $table->string('snd_ppd_interpreted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

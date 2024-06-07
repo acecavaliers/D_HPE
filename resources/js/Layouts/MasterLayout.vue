@@ -73,7 +73,7 @@
           </div>
         </div>
       </nav>
-
+      {{ usessss }}
       <aside
         id="logo-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
@@ -203,8 +203,17 @@
 import { Link } from '@inertiajs/vue3';
 
 </script>
+
+
+
 <script>
 export default {
+    props: {
+    usessss: {
+      type: String,
+      required: true,
+    },
+  },
     data(){
         return{
             isModalVisible: false,

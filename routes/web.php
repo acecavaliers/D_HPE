@@ -12,6 +12,7 @@ use App\Http\Controllers\VaccinationController;
 use App\Models\IdentificationType;
 use App\Models\IllnessGroup;
 use App\Models\SalaryGrade;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -41,7 +42,8 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        $usessss=Auth::user()->name;
+        return Inertia::render('Dashboard', ['usessss' => $usessss]);
         // return view('welcome');
     })->name('dashboard');
 

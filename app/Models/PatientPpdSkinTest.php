@@ -17,15 +17,15 @@ class PatientPpdSkinTest extends Model
 
         'patient_id',
         'is_applied',
-        '1st_ppd_datetime_administered',
-        '1st_ppd_administered_by',
-        '1st_ppd_result',
-        '1st_ppd_interpreted_by',
+        'fst_ppd_datetime_administered',
+        'fst_ppd_administered_by',
+        'fst_ppd_result',
+        'fst_ppd_interpreted_by',
 
-        '2nd_ppd_datetime_administered',
-        '2nd_ppd_administered_by',
-        '2nd_ppd_result',
-        '2nd_ppd_interpreted_by',
+        'snd_ppd_datetime_administered',
+        'snd_ppd_administered_by',
+        'snd_ppd_result',
+        'snd_ppd_interpreted_by',
     ];
     public function getForeignKeys(){
         return $this->foreignKeys;
