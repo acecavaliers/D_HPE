@@ -33,7 +33,7 @@
             <h3 class="mb-3">Illness Category</h3>
 
             <button type="button" @click="addSymptom" class="text-white bg-blue-700 hover:bg-blue-400 rounded text-sm w-full sm:w-auto px-5 py-2.5 text-center hover:text-gray-900 mb-3">
-            Add Symptom
+            Add Symptom / Diagnosis
             </button>
         </div>
 
@@ -47,7 +47,7 @@
                     type="text"
                     id =index
                     v-model="symptom.name"
-                    class="block pt-2 ps-7 text-sm text-gray-900 w-full border border-gray-300 rounded w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Symptom Name">
+                    class="block pt-2 ps-7 text-sm text-gray-900 w-full border border-gray-300 rounded w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Symptom / Diagnosis">
                 </div>
 
                 <!-- <button type="button" class="text-black bg-gray-200 font-medium rounded text-sm w-full sm:w-auto px-5 py-2.5 text-left">

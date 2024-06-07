@@ -50,6 +50,7 @@
 <script>
 export default {
   props: { p2b: Array },
+  emits: ['update-p2b'],
   data() {
     return {
       records_pe: [],
@@ -73,9 +74,8 @@ export default {
       if (pex.isNormal) {
         pex.findings = '';
         this.checked_pe = this.checked_pe.filter(item => item.physical_exam_id !== pex.id);
-        this.p2b.p2b = this.checked_pe;
-      this.$emit('update-p2b', this.checked_pe);
       }
+      this.$emit('update-p2b', this.checked_pe);
     },
     handleAbnormalChange(pex, is_abnormal) {
       if (!pex.isNormal) {
@@ -85,7 +85,7 @@ export default {
       } else {
         this.checked_pe = this.checked_pe.filter(item => item.physical_exam_id !== pex.id);
       }
-      this.p2b.p2b = this.checked_pe;
+
       this.$emit('update-p2b', this.checked_pe);
     },
     updateCheckedPe(pex) {
@@ -93,7 +93,7 @@ export default {
       if (item) {
         item.findings = pex.findings;
       }
-      this.p2b.p2b = this.checked_pe;
+
       this.$emit('update-p2b', this.checked_pe);
     }
   },

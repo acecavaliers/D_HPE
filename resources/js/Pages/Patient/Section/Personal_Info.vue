@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p class="text-sm text-gray-900 mb-6 bg-gray-200 p-2">
+        <p class="text-sm text-gray-900 mb-6 bg-gray-400 rounded-t-lg p-2">
             <b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX. MINOR PATIENT TO BE ASSISTED BY A PARENT OR GUARDIAN.
         </p>
     </div>
@@ -63,7 +63,6 @@
             </div>
             <div class="relative">
             <select
-                type="number"
                 id="sex"
                 v-model="form.gender"
                 class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
@@ -236,7 +235,6 @@
 
             <div class="relative">
             <select
-                type="number"
                 id="acctypt"
                 v-model="form.account_type_id"
                 class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">

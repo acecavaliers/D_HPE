@@ -1,7 +1,7 @@
 <template>
     <!-- Section A -->
     <div>
-      <div class="bg-gray-400 border border-gray-400 p-2">
+      <div class="bg-gray-300 border border-gray-300 p-2">
         <div>
           <span class="text-xm text-black">A. PAST ILLNESSES</span>
         </div>

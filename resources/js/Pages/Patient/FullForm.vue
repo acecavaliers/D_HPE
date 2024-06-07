@@ -25,7 +25,7 @@
                     </div>
 
                     <div v-if="currentStep === 1" class="border mx-auto bg-white rounded-lg">
-                        <div class="bg-gray-200 flex justify-start">
+                        <div class="bg-gray-400 rounded-t-lg flex justify-start">
                             <div  class="bg-gray-800 rounded-tl-lg text-md font-black text-white p-2">
                                 PART I : PATIENT CLINICAL INFORMATIONss
                             </div>
@@ -67,13 +67,13 @@
 
 
                     <div v-if="currentStep === 5" class="border mx-auto bg-white rounded-lg">
-                        <div class="bg-gray-200 flex justify-start rounded-t-lg">
+                        <div class="bg-gray-400 flex justify-start rounded-t-lg">
                             <div  class="bg-gray-800 text-md font-black text-white rounded-tl-lg p-2">PART II: PHYSICAL EXAMINATION</div>
                             <div class="p-2 text-sm"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</div>
                         </div>
                         <div class="grid grid-cols-1 ">
                             <P2_A :p2a="p2a"/>
-                            <P2_B :p2b="p2b" @update-p2b="updateP2B"/>
+                            <P2_B @update-p2b="updateP2B"/>
                         </div>
                     </div>
 

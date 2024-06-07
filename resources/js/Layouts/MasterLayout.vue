@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen bg-gray-100">
+    <div class="">
       <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
           <div class="flex items-center justify-between">
@@ -74,7 +74,7 @@
         </div>
       </nav>
 
-      <div
+      <aside
         id="logo-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
         aria-label="Sidebar"
@@ -125,7 +125,7 @@
                 <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
                 </svg>
 
-                <span class="ms-3">Illnesses</span>
+                <span class="ms-3">Preview Sytem</span>
               </Link>
             </li>
             <li>
@@ -183,18 +183,15 @@
             </li>
           </ul>
         </div>
-      </div>
+      </aside>
 
       <main class="bg-gray-100">
         <div class="p-2 sm:ml-64">
           <div class="mx-auto px-4 sm:px-6 md:px-8 py-5 navbar_bg_color">
-            <h1 class="text-2xl font-semibold navbar_txt_color">
-              <slot name="header" />
-            </h1>
+
           </div>
 
           <div class="mt-14">
-            <div><h1>HEADER</h1></div>
             <slot />
           </div>
         </div>
@@ -203,11 +200,7 @@
   </template>
 
 <script setup>
-import MasterLayout from '@/Layouts/MasterLayout.vue';
-import PatientList from '@/Pages/Patient/PatientList.vue'
-import { Head } from '@inertiajs/vue3';
 import { Link } from '@inertiajs/vue3';
-import Form from '@/Pages/Patient/Form.vue'
 
 </script>
 <script>

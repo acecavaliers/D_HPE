@@ -1,7 +1,7 @@
 <template>
     <div class="grid md:grid-cols-6 border-b">
         <div class="text-center">
-            <div class=" border-b py-1 bg-gray-300">
+            <div class=" border-b py-1 ">
                 <label class="text-sm font-bold text-gray-900 w-full">VISUAL ACUITY</label>
             </div>
             <p class="text-sm text-left px-2 pt-2 py-0">
@@ -10,7 +10,7 @@
         </div>
 
         <div class="text-center border-x">
-            <div class=" border-b py-1 bg-gray-300">
+            <div class=" border-b py-1 ">
                 <label class="text-sm font-bold text-gray-900 w-full">FAR VISION</label>
             </div>
             <div class="">
@@ -26,7 +26,7 @@
 
 
         <div class="text-center border-r">
-            <div class=" border-b py-1 bg-gray-300">
+            <div class=" border-b py-1 ">
                 <label class="text-sm font-bold text-gray-900 w-full">NEAR VISION</label>
             </div>
             <div class="">
@@ -41,7 +41,7 @@
         </div>
 
         <div class="text-center border-r">
-            <div class=" border-b py-1 bg-gray-300">
+            <div class=" border-b py-1 ">
                 <label class="text-sm font-bold text-gray-900 w-full">ISHIHARA</label>
             </div>
             <div class="">
@@ -64,7 +64,7 @@
         </div>
 
         <div class="text-left border-r">
-            <div class=" text-center border-b py-1 bg-gray-300">
+            <div class=" text-center border-b py-1 ">
                 <label class="text-sm font-bold text-gray-900 w-full">HEARING</label>
             </div>
             <div class="">
@@ -105,7 +105,7 @@
         </div>
 
         <div class="text-center border-r">
-            <div class=" border-b py-1 bg-gray-300">
+            <div class=" border-b py-1 ">
                 <label class="text-sm font-bold text-gray-900 w-full">CLARITY OF SPEECH</label>
             </div>
             <div class="">

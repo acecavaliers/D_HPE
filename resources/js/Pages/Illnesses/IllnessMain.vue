@@ -51,8 +51,8 @@
 
                 <div class="px-5">
                     <div>
-                        <button @click="showModal = true" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Add Illness</button>
-                        <Modal :title="'Add Illness'" :isVisible="showModal" @close="handleModalClose">
+                        <button @click="showModal = true" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Add Preview Sytem</button>
+                        <Modal :title="'Add Preview Sytem'" :isVisible="showModal" @close="handleModalClose">
                             <AddIllness @formSubmitted="handleFormSubmitted"/>
                         </Modal>
                     </div>

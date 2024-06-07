@@ -19,7 +19,7 @@
 </template>
 <script>
 export default{
-    props: { pc: Array  },
+    props: { pc: Object  },
 }
 </script>
 
