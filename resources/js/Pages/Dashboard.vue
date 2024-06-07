@@ -2,7 +2,7 @@
 <template>
     <Head title="Dashboard" />
     <MasterLayout>
-        <Form></Form>
+
     </MasterLayout>
 
 

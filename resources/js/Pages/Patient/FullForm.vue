@@ -5,12 +5,15 @@
             <!-- Completed Step -->
                 <a href="#" @click="currentStep = index"
                 :class="{'text-blue-600 font-bold border-blue-600': currentStep == index, 'text-blue-500 font-light border-blue-500': currentStep > index, 'text-gray-500 font-light border-gray-300': currentStep < index}"
-                class="group flex flex-col border-l-4 py-2 pl-4 hover:border-blue-400 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-0">
+                class="group flex flex-col border-l-4 py-2 pl-4 hover:border-blue-400 md:border-l-0 md:border-t-8 md:pb-0 md:pl-0 md:pt-0">
                     <span class="text-sm group-hover:text-blue-800">Step {{ index+1 }}</span>
                     <span class="text-sm">{{ step.name }}</span>
                 </a>
             </li>
         </ol>
+
+
+
         <div class="transition-colors duration-300">
 
                 <form @submit.prevent="submitForm">
@@ -70,7 +73,7 @@
                         </div>
                         <div class="grid grid-cols-1 ">
                             <P2_A :p2a="p2a"/>
-                            <P2_B :p2b="p2b"/>
+                            <P2_B :p2b="p2b" @update-p2b="updateP2B"/>
                         </div>
                     </div>
 
@@ -162,6 +165,7 @@ import Personal_Info from './Section/Personal_Info.vue';
       pi: {},
       pj: {},
       p2a:{},
+      p2b:[],
     //   errors: {}
     };
     },
@@ -174,6 +178,10 @@ import Personal_Info from './Section/Personal_Info.vue';
         },
         updatePH(newPh) {
             this.ph = newPh;
+        },
+        updateP2B(newP2b) {
+            this.p2b = newP2b;
+            console.log('22b2b2b22b2bb2:', this.p2b);
         },
 
       submitForm() {
@@ -193,6 +201,7 @@ import Personal_Info from './Section/Personal_Info.vue';
             pjdata:this.pj,
 
             p2adata:this.p2a,
+            p2bdata:this.p2b,
 
           }
          )
@@ -214,4 +223,5 @@ import Personal_Info from './Section/Personal_Info.vue';
     // },
   };
 </script>
+
 

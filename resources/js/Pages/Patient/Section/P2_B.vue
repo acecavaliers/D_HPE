@@ -1,5 +1,5 @@
 <template>
-    {{ checked_pe }}
+
     <div v-for="(pex, index) in records_pe" :key="pex.id" class="grid md:grid-cols-6 border-b">
       <div class="col-span-1 text-left">
         <div class="py-2">
@@ -27,7 +27,7 @@
             class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
             :value="false"
             v-model="pex.isNormal"
-            @change="handleAbnormalChange(pex)"
+            @change="handleAbnormalChange(pex, 1)"
           />
           <label :for="`abnrml-${pex.id}`" class="px-2 text-sm text-gray-800 w-full">
             Abnormal Findings:
@@ -49,7 +49,7 @@
   </template>
 <script>
 export default {
-  props: { p2b: Object },
+  props: { p2b: Array },
   data() {
     return {
       records_pe: [],
@@ -72,23 +72,29 @@ export default {
     handleNormalChange(pex) {
       if (pex.isNormal) {
         pex.findings = '';
-        this.checked_pe = this.checked_pe.filter(item => item.id !== pex.id);
+        this.checked_pe = this.checked_pe.filter(item => item.physical_exam_id !== pex.id);
+        this.p2b.p2b = this.checked_pe;
+      this.$emit('update-p2b', this.checked_pe);
       }
     },
-    handleAbnormalChange(pex) {
+    handleAbnormalChange(pex, is_abnormal) {
       if (!pex.isNormal) {
-        if (!this.checked_pe.find(item => item.id === pex.id)) {
-          this.checked_pe.push({ id: pex.id, findings: pex.findings });
+        if (!this.checked_pe.find(item => item.physical_exam_id === pex.id)) {
+          this.checked_pe.push({ physical_exam_id: pex.id, normal:is_abnormal, findings: pex.findings });
         }
       } else {
-        this.checked_pe = this.checked_pe.filter(item => item.id !== pex.id);
+        this.checked_pe = this.checked_pe.filter(item => item.physical_exam_id !== pex.id);
       }
+      this.p2b.p2b = this.checked_pe;
+      this.$emit('update-p2b', this.checked_pe);
     },
     updateCheckedPe(pex) {
-      const item = this.checked_pe.find(item => item.id === pex.id);
+      const item = this.checked_pe.find(item => item.physical_exam_id === pex.id);
       if (item) {
         item.findings = pex.findings;
       }
+      this.p2b.p2b = this.checked_pe;
+      this.$emit('update-p2b', this.checked_pe);
     }
   },
   mounted() {

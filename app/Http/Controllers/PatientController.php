@@ -11,6 +11,7 @@ use App\Models\PatientMedIllnessPrevHosptlznSurgery;
 use App\Models\PatientObGyneHistory;
 use App\Models\PatientPastIllness;
 use App\Models\PatientPersonalSocialHistory;
+use App\Models\PatientPhysicalExam;
 use App\Models\PatientPresentIllness;
 use App\Models\PatientVacinationHistory;
 use App\Models\PatientVisualHearinSpeech;
@@ -56,6 +57,7 @@ class PatientController extends Controller
         $pj = $request->pjdata;
 
         $p2a = $request->p2adata;
+        $p2b = $request->p2bdata;
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -165,6 +167,13 @@ class PatientController extends Controller
 
                     $p2a['patient_id'] = $patient->id;
                     PatientVisualHearinSpeech::create($p2a);
+                }
+
+                // patient physical exam
+                foreach ($p2b as $pex) {
+                    $pex['patient_id'] = $patient->id;
+                    $pex['created_by'] = $patient->created_by;
+                    PatientPhysicalExam::create($pex);
                 }
             }
 
