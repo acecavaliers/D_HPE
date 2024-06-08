@@ -239,16 +239,16 @@
             </div>
 
             <div class="flex justify-end mt-5 p-2 pb-5">
-                <div class="mr-4">
-                    <input id="nursename" type="text" class="w-full text-blue-600 border-0 border-b border-gray-300 rounded focus:ring-blue-500">
-                    <label for="nursename" class="block text-center">
+                <div class="mr-4 w-1/4">
+                    <input @focusout="updateDateTime" v-model="nursename" id="nursename" type="text" class="text-center w-full font-bold border-0 border-b  focus:ring-blue-500">
+                    <label for="nursename" class="block text-center text-sm">
                         Nurse's Signature Above Printed Name
                     </label>
                 </div>
 
                 <div>
-                    <input id="nurse_date" type="datetime-local" class="border-0 border-b w-full">
-                    <label for="nurse_date" class="block text-center">
+                    <input id="nurse_date" v-model="nurseDate" type="datetime-local" class="border-0 border-b w-full" disabled>
+                    <label for="nurse_date" class="block text-center text-sm">
                         Date (MM/DD/YYYY) and Time
                     </label>
                 </div>
@@ -275,7 +275,9 @@
           i_noneChecked: false,
           painvalues:[],
           patientpain:0,
-        };
+          nursename: '',
+          nurseDate: '',
+      };
       },
       mounted() {
         // Initialize pain values from 0 to 10 with null values
@@ -284,6 +286,18 @@
         }
       },
       methods: {
+        updateDateTime() {
+            if (this.nursename) {
+                this.setCurrentDateTime();
+            }
+        },
+        setCurrentDateTime() {
+          var currentDateTime = new Date();
+          var offset = currentDateTime.getTimezoneOffset(); // Gets local timezone offset in minutes
+          var philippinesOffset = 960; // Philippine time offset in minutes (UTC+8)
+          currentDateTime.setMinutes(currentDateTime.getMinutes() + offset + philippinesOffset); // Adjusts time to Philippine time
+          this.nurseDate = currentDateTime.toISOString().slice(0, 16);
+        },
         handleNoneChange() {
           if (this.i_noneChecked) {
             this.pi.details = "";
