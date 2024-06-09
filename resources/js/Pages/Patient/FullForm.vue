@@ -78,6 +78,16 @@
                         </div>
                     </div>
 
+                    <div v-if="currentStep === 6" class="border mx-auto bg-white rounded-lg">
+                        <div class="bg-gray-400 flex justify-start rounded-t-lg">
+                            <div  class="bg-gray-800 text-md font-black text-white rounded-tl-lg p-2">PART III:  ASSESSMENT AND RECOMMENDATION</div>
+                            <div class="p-2 text-sm"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION.</div>
+                        </div>
+                        <div class="grid grid-cols-1 ">
+                            <P3  />
+                        </div>
+                    </div>
+
                     <div class="flex justify-between mt-5">
                         <button
                         type="button"
@@ -145,11 +155,12 @@ import P1_I from './Section/P1_I.vue';
 import P2_A from './Section/P2_A.vue';
 import P2_B from './Section/P2_B.vue';
 import P2_C from './Section/P2_C.vue';
+import P3 from './Section/P3.vue';
 import Personal_Info from './Section/Personal_Info.vue';
 
   export default {
     components: {
-        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,P1_I,P2_A,P2_B,P2_C,
+        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,P1_I,P2_A,P2_B,P2_C,P3,
   },
     data() {
         return {
