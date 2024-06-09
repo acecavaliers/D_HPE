@@ -2,15 +2,15 @@
     <!-- Section A -->
     <div>
       <div class="flex justify-between border border-gray-200 bg-gray-300">
-        <div class="border-r border-gray-200 w-full  p-2">
+        <div class="border-r border-gray-200 w-full">
           <span class="text-xm text-black px-2"> A. ASSESSMENT </span>
         </div>
-        <div class="w-full  p-2">
+        <div class="w-full">
           <span class="text-xm text-black px-2"> B. RECOMMENDATIONS </span>
         </div>
       </div>
-      <div class="flex justify-between p-2">
-        <div class="p-2 w-full">
+      <div class="flex justify-between px-2 border-b">
+        <div class="border-r border-gray-200 p-2 w-full">
         <textarea
             rows="3"
             class="block p-2.5 w-full text-sm text-gray-900 rounded-lg  focus:ring-blue-500 focus:border-blue-500"
