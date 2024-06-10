@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Patient;
 use App\Http\Controllers\Controller;
 use App\Models\PatientAllergy;
+use App\Models\PatientAssesmentRecommendation;
 use App\Models\PatientCurrAndMaintnceMedication;
 use App\Models\PatientFamHistory;
 use App\Models\PatientMedIllnessPrevHosptlznSurgery;
@@ -60,6 +61,8 @@ class PatientController extends Controller
         $p2a = $request->p2adata;
         $p2b = $request->p2bdata;
         $p2c = $request->p2cdata;
+
+        $p3 = $request->p3data;
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -186,6 +189,15 @@ class PatientController extends Controller
 
                     $p2c['patient_id'] = $patient->id;
                     PatientPpdSkinTest::create($p2c);
+                }
+
+                // patient assesment_recommendations
+                if (isset($p3['assessment']) || isset($p3['recommendation']) || isset($p3['physician']) || isset($p3['exam_date_time'])
+
+                ) {
+                    $p3['patient_id'] = $patient->id;
+                    $p3['created_by'] = $patient->created_by;
+                    PatientAssesmentRecommendation::create($p3);
                 }
 
             }

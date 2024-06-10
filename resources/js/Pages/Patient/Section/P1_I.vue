@@ -240,14 +240,14 @@
 
             <div class="flex justify-end mt-5 p-2 pb-5">
                 <div class="mr-4 w-1/4">
-                    <input @focusout="updateDateTime" v-model="nursename" id="nursename" type="text" class="text-center w-full font-bold border-0 border-b  focus:ring-blue-500">
+                    <input @focusout="updateDateTime" v-model="nursename" id="nursename" type="text" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center">
                     <label for="nursename" class="block text-center text-sm">
                         Nurse's Signature Above Printed Name
                     </label>
                 </div>
 
                 <div>
-                    <input id="nurse_date" v-model="nurseDate" type="datetime-local" class="border-0 border-b w-full" disabled>
+                    <input id="nurse_date" v-model="nurseDate" type="datetime-local" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center" disabled>
                     <label for="nurse_date" class="block text-center text-sm">
                         Date (MM/DD/YYYY) and Time
                     </label>

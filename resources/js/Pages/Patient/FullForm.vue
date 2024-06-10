@@ -84,7 +84,7 @@
                             <div class="p-2 text-sm"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION.</div>
                         </div>
                         <div class="grid grid-cols-1 ">
-                            <P3  />
+                            <P3 :p3="p3" />
                         </div>
                     </div>
 
@@ -180,6 +180,7 @@ import Personal_Info from './Section/Personal_Info.vue';
       p2a:{},
       p2b:[],
       p2c:{},
+      p3:{},
     //   errors: {}
     };
     },
@@ -213,10 +214,10 @@ import Personal_Info from './Section/Personal_Info.vue';
             phdata:this.ph,
             pidata:this.pi,
             pjdata:this.pj,
-
             p2adata:this.p2a,
             p2bdata:this.p2b,
             p2cdata:this.p2c,
+            p3data:this.p3,
 
           }
          )
