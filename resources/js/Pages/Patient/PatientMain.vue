@@ -46,11 +46,10 @@
 </template>
 
 <script setup>
-import MasterLayout from '@/Layouts/MasterLayout.vue';
-import { Head } from '@inertiajs/vue3';
-import Form22 from '@/Pages/Patient/Form22.vue'
-import Form from '@/Pages/Patient/Form.vue'
-import FullForm from '@/Pages/Patient/FullForm.vue'
+
+    import MasterLayout from '@/Layouts/MasterLayout.vue';
+    import { Head } from '@inertiajs/vue3';
+    import FullForm from '@/Pages/Patient/FullForm.vue'
 
 </script>
 
