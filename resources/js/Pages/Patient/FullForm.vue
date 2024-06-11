@@ -71,24 +71,23 @@
                                     <img :src="signatureData" alt="Signature" class="w-full h-auto border"/>
                                 </div>
 
-                                <input @focusout="updateDateTime" v-model="form.nursename" id="nursename" type="text" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center capitalize" readonly>
+                                <input v-model="form.nursename" id="nursename" type="text" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center capitalize" readonly>
                                 <label for="nursename" class="block text-center text-sm">
                                     Nurse's Signature Above Printed Name
                                 </label>
                                 <div >
                                     <button @click="openSignaturePad"  type="button" class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Signature Pad</button>
-                                    <Vue3Signature @focusout="updateDateTime" ref="signaturePad" @end="saveSignature" class="border mt-2">
-
+                                    <Vue3Signature>
                                     </Vue3Signature>
                                 </div>
                             </div>
 
-                            <div>
+                            <!-- <div>
                                 <input id="nurse_date" v-model="form.nurseDate" type="datetime-local" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center" disabled>
                                 <label for="nurse_date" class="block text-center text-sm">
                                     Date (MM/DD/YYYY) and Time
                                 </label>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -166,15 +165,7 @@ const steps = ref([
 //   { name: 'Part 3: ASSESSMENT & RECOMMENDATION' }
 ]);
 
-const signatureData = ref(null);
-const signaturePad = ref(null);
 
-
-const saveSignature = () => {
-  if (signaturePad.value) {
-    signatureData.value = signaturePad.value.save();
-  }
-};
 
 </script>
 
@@ -253,18 +244,18 @@ import Personal_Info from './Section/Personal_Info.vue';
                 console.error('Error fetching nursename:', error);
             }
         },
-        updateDateTime() {
-            if (this.form.nursename) {
-                this.setCurrentDateTime();
-            }
-        },
-        setCurrentDateTime() {
-          var currentDateTime = new Date();
-          var offset = currentDateTime.getTimezoneOffset(); // Gets local timezone offset in minutes
-          var philippinesOffset = 960; // Philippine time offset in minutes (UTC+8)
-          currentDateTime.setMinutes(currentDateTime.getMinutes() + offset + philippinesOffset); // Adjusts time to Philippine time
-          this.form.nurseDate = currentDateTime.toISOString().slice(0, 16);
-        },
+        // updateDateTime() {
+        //     if (this.form.nursename) {
+        //         this.setCurrentDateTime();
+        //     }
+        // },
+        // setCurrentDateTime() {
+        //   var currentDateTime = new Date();
+        //   var offset = currentDateTime.getTimezoneOffset(); // Gets local timezone offset in minutes
+        //   var philippinesOffset = 960; // Philippine time offset in minutes (UTC+8)
+        //   currentDateTime.setMinutes(currentDateTime.getMinutes() + offset + philippinesOffset); // Adjusts time to Philippine time
+        //   this.form.nurseDate = currentDateTime.toISOString().slice(0, 16);
+        // },
 
       submitForm() {
 

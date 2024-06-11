@@ -18,6 +18,7 @@ use App\Models\PatientPresentIllness;
 use App\Models\PatientVacinationHistory;
 use App\Models\PatientVisualHearinSpeech;
 use App\Models\PatientVitalSignsPainScale;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -58,11 +59,15 @@ class PatientController extends Controller
         $pi = $request->pidata;
         $pj = $request->pjdata;
 
-        $p2a = $request->p2adata;
-        $p2b = $request->p2bdata;
-        $p2c = $request->p2cdata;
+        // $p2a = $request->p2adata;
+        // $p2b = $request->p2bdata;
+        // $p2c = $request->p2cdata;
 
-        $p3 = $request->p3data;
+        // $p3 = $request->p3data;
+        $parsedDateTime = Carbon::now('Asia/Manila');
+
+        // Convert to SQL datetime format
+        $arr['nurseDate']= $parsedDateTime->toDateTimeString();
 
         $arr['created_by'] = Auth::user()->name;
 
@@ -164,41 +169,41 @@ class PatientController extends Controller
                     PatientVitalSignsPainScale::create($pj);
                 }
 
-                // patient visual hearing speech
-                if (isset($p2a['uncorrected_fv_od20']) || isset($p2a['uncorrected_fv_os20']) || isset($p2a['uncorrected_nv_odj']) || isset($p2a['uncorrected_nv_osj'])
-                || isset($p2a['corrected_fv_od20']) || isset($p2a['corrected_fv_os20']) || isset($p2a['corrected_nv_odj']) || isset($p2a['corrected_nv_osj'])
-                || isset($p2a['ishihara']) || isset($p2a['speech']) || isset($p2a['ad_hearing']) || isset($p2a['as_hearing'])
-                ) {
+                // // patient visual hearing speech
+                // if (isset($p2a['uncorrected_fv_od20']) || isset($p2a['uncorrected_fv_os20']) || isset($p2a['uncorrected_nv_odj']) || isset($p2a['uncorrected_nv_osj'])
+                // || isset($p2a['corrected_fv_od20']) || isset($p2a['corrected_fv_os20']) || isset($p2a['corrected_nv_odj']) || isset($p2a['corrected_nv_osj'])
+                // || isset($p2a['ishihara']) || isset($p2a['speech']) || isset($p2a['ad_hearing']) || isset($p2a['as_hearing'])
+                // ) {
 
-                    $p2a['patient_id'] = $patient->id;
-                    PatientVisualHearinSpeech::create($p2a);
-                }
+                //     $p2a['patient_id'] = $patient->id;
+                //     PatientVisualHearinSpeech::create($p2a);
+                // }
 
-                // patient physical exam
-                foreach ($p2b as $pex) {
-                    $pex['patient_id'] = $patient->id;
-                    $pex['created_by'] = $patient->created_by;
-                    PatientPhysicalExam::create($pex);
-                }
+                // // patient physical exam
+                // foreach ($p2b as $pex) {
+                //     $pex['patient_id'] = $patient->id;
+                //     $pex['created_by'] = $patient->created_by;
+                //     PatientPhysicalExam::create($pex);
+                // }
 
-                // patient ppd test
-                if (isset($p2c['is_applied']) || isset($p2c['fst_ppd_datetime_administered']) || isset($p2c['fst_ppd_administered_by']) || isset($p2c['fst_ppd_result'])
-                || isset($p2c['fst_ppd_interpreted_by']) || isset($p2c['snd_ppd_datetime_administered']) || isset($p2c['snd_ppd_administered_by'])
-                || isset($p2c['snd_ppd_result']) || isset($p2c['snd_ppd_interpreted_by'])
-                ) {
+                // // patient ppd test
+                // if (isset($p2c['is_applied']) || isset($p2c['fst_ppd_datetime_administered']) || isset($p2c['fst_ppd_administered_by']) || isset($p2c['fst_ppd_result'])
+                // || isset($p2c['fst_ppd_interpreted_by']) || isset($p2c['snd_ppd_datetime_administered']) || isset($p2c['snd_ppd_administered_by'])
+                // || isset($p2c['snd_ppd_result']) || isset($p2c['snd_ppd_interpreted_by'])
+                // ) {
 
-                    $p2c['patient_id'] = $patient->id;
-                    PatientPpdSkinTest::create($p2c);
-                }
+                //     $p2c['patient_id'] = $patient->id;
+                //     PatientPpdSkinTest::create($p2c);
+                // }
 
-                // patient assesment_recommendations
-                if (isset($p3['assessment']) || isset($p3['recommendation']) || isset($p3['physician']) || isset($p3['exam_date_time'])
+                // // patient assesment_recommendations
+                // if (isset($p3['assessment']) || isset($p3['recommendation']) || isset($p3['physician']) || isset($p3['exam_date_time'])
 
-                ) {
-                    $p3['patient_id'] = $patient->id;
-                    $p3['created_by'] = $patient->created_by;
-                    PatientAssesmentRecommendation::create($p3);
-                }
+                // ) {
+                //     $p3['patient_id'] = $patient->id;
+                //     $p3['created_by'] = $patient->created_by;
+                //     PatientAssesmentRecommendation::create($p3);
+                // }
 
             }
 
