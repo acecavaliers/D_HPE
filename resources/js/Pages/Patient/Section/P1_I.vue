@@ -238,9 +238,9 @@
                 </div>
             </div>
 
-            <div class="flex justify-end mt-5 p-2 pb-5">
+            <!-- <div class="flex justify-end mt-5 p-2 pb-5">
                 <div class="mr-4 w-1/4">
-                    <input @focusout="updateDateTime" v-model="nursename" id="nursename" type="text" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center">
+                    <input @focusout="updateDateTime" v-model="nursename" id="nursename" type="text" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center capitalize" readonly>
                     <label for="nursename" class="block text-center text-sm">
                         Nurse's Signature Above Printed Name
                     </label>
@@ -252,7 +252,7 @@
                         Date (MM/DD/YYYY) and Time
                     </label>
                 </div>
-            </div>
+            </div> -->
       </div>
 
     </div>
@@ -268,6 +268,7 @@
   </template>
 
   <script>
+  import axios from 'axios';
     export default {
       props: { pi: Object ,pj: Object },
       data() {
@@ -285,19 +286,22 @@
           this.painvalues.push(0);
         }
       },
+      created(){
+
+      },
       methods: {
-        updateDateTime() {
-            if (this.nursename) {
-                this.setCurrentDateTime();
-            }
-        },
-        setCurrentDateTime() {
-          var currentDateTime = new Date();
-          var offset = currentDateTime.getTimezoneOffset(); // Gets local timezone offset in minutes
-          var philippinesOffset = 960; // Philippine time offset in minutes (UTC+8)
-          currentDateTime.setMinutes(currentDateTime.getMinutes() + offset + philippinesOffset); // Adjusts time to Philippine time
-          this.nurseDate = currentDateTime.toISOString().slice(0, 16);
-        },
+        // updateDateTime() {
+        //     if (this.nursename) {
+        //         this.setCurrentDateTime();
+        //     }
+        // },
+        // setCurrentDateTime() {
+        //   var currentDateTime = new Date();
+        //   var offset = currentDateTime.getTimezoneOffset(); // Gets local timezone offset in minutes
+        //   var philippinesOffset = 960; // Philippine time offset in minutes (UTC+8)
+        //   currentDateTime.setMinutes(currentDateTime.getMinutes() + offset + philippinesOffset); // Adjusts time to Philippine time
+        //   this.nurseDate = currentDateTime.toISOString().slice(0, 16);
+        // },
         handleNoneChange() {
           if (this.i_noneChecked) {
             this.pi.details = "";

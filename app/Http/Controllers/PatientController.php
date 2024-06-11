@@ -287,4 +287,14 @@ class PatientController extends Controller
 
 
     }
+
+
+    public function getUser(Request $request){
+
+        // $query = AccountType::where('is_active',1)->get();
+        $user = Auth::user()->name;
+        return $user;
+
+
+    }
 }

@@ -63,37 +63,10 @@
                         <div class="grid grid-cols-1 ">
                             <P1_I :pi="pi" :pj="pj"/>
                         </div>
-
-                        <div class="flex justify-end mt-5 p-2 pb-5">
-                            <div class="mr-4 w-1/4">
-                                 <!-- Display Captured Signature -->
-                                <div v-if="signatureData" class="mb-2">
-                                    <img :src="signatureData" alt="Signature" class="w-full h-auto border"/>
-                                </div>
-
-                                <input @focusout="updateDateTime" v-model="form.nursename" id="nursename" type="text" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center capitalize" readonly>
-                                <label for="nursename" class="block text-center text-sm">
-                                    Nurse's Signature Above Printed Name
-                                </label>
-                                <div >
-                                    <button @click="openSignaturePad"  type="button" class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Signature Pad</button>
-                                    <Vue3Signature @focusout="updateDateTime" ref="signaturePad" @end="saveSignature" class="border mt-2">
-
-                                    </Vue3Signature>
-                                </div>
-                            </div>
-
-                            <div>
-                                <input id="nurse_date" v-model="form.nurseDate" type="datetime-local" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center" disabled>
-                                <label for="nurse_date" class="block text-center text-sm">
-                                    Date (MM/DD/YYYY) and Time
-                                </label>
-                            </div>
-                        </div>
                     </div>
 
 
-                    <!-- <div v-if="currentStep === 5" class="border mx-auto bg-white rounded-lg">
+                    <div v-if="currentStep === 5" class="border mx-auto bg-white rounded-lg">
                         <div class="bg-gray-400 flex justify-start rounded-t-lg">
                             <div  class="bg-gray-800 text-md font-black text-white rounded-tl-lg p-2">PART II: PHYSICAL EXAMINATION</div>
                             <div class="p-2 text-sm"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION. CHECK (✓) THE APPROPRIATE TICK BOX.</div>
@@ -103,9 +76,9 @@
                             <P2_B @update-p2b="updateP2B"/>
                             <P2_C :p2c="p2c"/>
                         </div>
-                    </div> -->
+                    </div>
 
-                    <!-- <div v-if="currentStep === 6" class="border mx-auto bg-white rounded-lg">
+                    <div v-if="currentStep === 6" class="border mx-auto bg-white rounded-lg">
                         <div class="bg-gray-400 flex justify-start rounded-t-lg">
                             <div  class="bg-gray-800 text-md font-black text-white rounded-tl-lg p-2">PART III:  ASSESSMENT AND RECOMMENDATION</div>
                             <div class="p-2 text-sm"><b>TO DMC LWC PHYSICIAN:</b> ENTER REQUIRED INFORMATION.</div>
@@ -113,7 +86,7 @@
                         <div class="grid grid-cols-1 ">
                             <P3 :p3="p3" />
                         </div>
-                    </div> -->
+                    </div>
 
                     <div class="flex justify-between mt-5">
                         <button
@@ -154,7 +127,6 @@
 <script setup>
 import { ref } from 'vue';
 
-
 const currentStep = ref(0);
 const steps = ref([
   { name: 'Patient Information' },
@@ -162,19 +134,9 @@ const steps = ref([
   { name: 'P1-B to E' },
   { name: 'P1-F to H' },
   { name: 'P1-I Present Illness' },
-//   { name: 'Part 2 Physical Examination' },
-//   { name: 'Part 3: ASSESSMENT & RECOMMENDATION' }
+  { name: 'Part 2 Physical Examination' },
+  { name: 'Part 3: ASSESSMENT & RECOMMENDATION' }
 ]);
-
-const signatureData = ref(null);
-const signaturePad = ref(null);
-
-
-const saveSignature = () => {
-  if (signaturePad.value) {
-    signatureData.value = signaturePad.value.save();
-  }
-};
 
 </script>
 
@@ -190,16 +152,15 @@ import P1_F from './Section/P1_F.vue';
 import P1_G from './Section/P1_G.vue';
 import P1_H from './Section/P1_H.vue';
 import P1_I from './Section/P1_I.vue';
-import Vue3Signature from './Section/Vue3Signature.vue';
-// import P2_A from './Section/P2_A.vue';
-// import P2_B from './Section/P2_B.vue';
-// import P2_C from './Section/P2_C.vue';
-// import P3 from './Section/P3.vue';
+import P2_A from './Section/P2_A.vue';
+import P2_B from './Section/P2_B.vue';
+import P2_C from './Section/P2_C.vue';
+import P3 from './Section/P3.vue';
 import Personal_Info from './Section/Personal_Info.vue';
 
   export default {
     components: {
-        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,P1_I,Vue3Signature,
+        P1_A,P1_B,P1_C,P1_D,P1_E,P1_F,P1_G,P1_H,P1_I,P2_A,P2_B,P2_C,P3,
   },
     data() {
         return {
@@ -216,22 +177,14 @@ import Personal_Info from './Section/Personal_Info.vue';
       ph:[],
       pi: {},
       pj: {},
-    //   p2a:{},
-    //   p2b:[],
-    //   p2c:{},
-    //   p3:{},
+      p2a:{},
+      p2b:[],
+      p2c:{},
+      p3:{},
     //   errors: {}
     };
     },
-
-    created(){
-        this.getAuthenticatedUser();
-    },
     methods: {
-        openSignaturePad(){
-          this.emitter.emit('openSignaturePad', true)
-
-        },
         updatePa(newPa) {
             this.pa = newPa;
         },
@@ -241,29 +194,9 @@ import Personal_Info from './Section/Personal_Info.vue';
         updatePH(newPh) {
             this.ph = newPh;
         },
-        // updateP2B(newP2b) {
-        //     this.p2b = newP2b;
-        //     console.log('22b2b2b22b2bb2:', this.p2b);
-        // },
-        async getAuthenticatedUser() {
-            try {
-                const response = await axios.get(route('patient.getUser'));
-                this.form.nursename = response.data;
-            } catch (error) {
-                console.error('Error fetching nursename:', error);
-            }
-        },
-        updateDateTime() {
-            if (this.form.nursename) {
-                this.setCurrentDateTime();
-            }
-        },
-        setCurrentDateTime() {
-          var currentDateTime = new Date();
-          var offset = currentDateTime.getTimezoneOffset(); // Gets local timezone offset in minutes
-          var philippinesOffset = 960; // Philippine time offset in minutes (UTC+8)
-          currentDateTime.setMinutes(currentDateTime.getMinutes() + offset + philippinesOffset); // Adjusts time to Philippine time
-          this.form.nurseDate = currentDateTime.toISOString().slice(0, 16);
+        updateP2B(newP2b) {
+            this.p2b = newP2b;
+            console.log('22b2b2b22b2bb2:', this.p2b);
         },
 
       submitForm() {
@@ -281,10 +214,10 @@ import Personal_Info from './Section/Personal_Info.vue';
             phdata:this.ph,
             pidata:this.pi,
             pjdata:this.pj,
-            // p2adata:this.p2a,
-            // p2bdata:this.p2b,
-            // p2cdata:this.p2c,
-            // p3data:this.p3,
+            p2adata:this.p2a,
+            p2bdata:this.p2b,
+            p2cdata:this.p2c,
+            p3data:this.p3,
 
           }
          )

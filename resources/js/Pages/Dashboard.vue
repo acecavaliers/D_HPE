@@ -1,6 +1,6 @@
 
 <template>
-    <MasterLayout :usessss="usessss">
+    <MasterLayout >
         <div class="bg-white h-screen -mt-10 rounded-lg">
             <div class="flex justify-center items-center w-full">
                 <div class="flex justify-center items-center w-full">
@@ -12,7 +12,7 @@
             <div class="flex justify-center items-center w-full">
                 <div class="flex justify-center items-center w-full">
                     <h1 class="text-6xl font-bold">LIFESTYLE AND WELLNESS CENTER</h1>
-                    <p>{{ usessss}}</p>
+
                 </div>
             </div>
         </div>
@@ -24,16 +24,8 @@
 </template>
 
 <script setup>
+import { defineProps } from 'vue';
 import MasterLayout from '@/Layouts/MasterLayout.vue';
 
-</script>
-<script>
-export default {
-    data(){
-        return{
-            usessss:'',
-        }
-    }
-};
 </script>
 

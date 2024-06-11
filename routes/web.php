@@ -42,14 +42,16 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/dashboard', function () {
-        $usessss=Auth::user()->name;
-        return Inertia::render('Dashboard', ['usessss' => $usessss]);
+
+        return Inertia::render('Dashboard');
         // return view('welcome');
     })->name('dashboard');
 
     Route::get('/patient/view', function () {
         return Inertia::render('Patient/PatientView');
     })->name('patient');
+
+
 
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
@@ -73,6 +75,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/illness/getlistSympV2', [IllnessGroupController::class, 'getlistSympV2'])->name('illness.getlistSympV2');
 
     Route::get('/patient/getlist', [PatientController::class, 'getlist'])->name('patient.getlist');
+    Route::get('/patient/getUser', [PatientController::class, 'getUser'])->name('patient.getUser');
 
     Route::resources([
         'account' => AccountTypeController::class,
