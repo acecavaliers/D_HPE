@@ -35,6 +35,10 @@ return new class extends Migration
             $table->foreignIdFor(AccountType::class)->constrained('account_types');
             $table->string('account_detail')->nullable();
             $table->tinyInteger('is_pre_employment')->default(0);
+            $table->string('nursename')->nullable();
+            $table->datetime('nurseDate')->nullable();
+            $table->string('physician')->nullable();
+            $table->datetime('exam_date_time')->nullable();
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->string('deleted_by')->nullable();

@@ -34,6 +34,10 @@ class Patient extends Model
         'account_type_id',
         'account_detail',
         'is_pre_employment',
+        'nursename',
+        'nurseDate',
+        'physician',
+        'exam_date_time',
         'created_by',
         'updated_by',
         'deleted_by'
