@@ -71,7 +71,7 @@
                             class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                             type="checkbox"
                             v-model="pj.sthenic"
-                            @change="handleNoneChange"
+                            @change="handleBodyBuiltChange('sthenic')"
                             />
                             <label for="i_Sthenic"
                             class="text-sm text-gray-800 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
@@ -85,7 +85,7 @@
                             class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                             type="checkbox"
                             v-model="pj.asthenic"
-                            @change="handleNoneChange"
+                            @change="handleBodyBuiltChange('asthenic')"
                             />
                             <label for="i_Asthenic"
                             class="text-sm text-gray-800 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
@@ -99,7 +99,7 @@
                             class="text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                             type="checkbox"
                             v-model="pj.hypersthenic"
-                            @change="handleNoneChange"
+                            @change="handleBodyBuiltChange('hypersthenic')"
                             />
                             <label for="i_Hypersthenic"
                             class="text-sm text-gray-800 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
@@ -238,21 +238,6 @@
                 </div>
             </div>
 
-            <!-- <div class="flex justify-end mt-5 p-2 pb-5">
-                <div class="mr-4 w-1/4">
-                    <input @focusout="updateDateTime" v-model="nursename" id="nursename" type="text" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center capitalize" readonly>
-                    <label for="nursename" class="block text-center text-sm">
-                        Nurse's Signature Above Printed Name
-                    </label>
-                </div>
-
-                <div>
-                    <input id="nurse_date" v-model="nurseDate" type="datetime-local" class="w-full text-sm font-bold text-gray-900 pb-0.5 border-0 border-b   border-gray-600 appearance-none appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer text-center" disabled>
-                    <label for="nurse_date" class="block text-center text-sm">
-                        Date (MM/DD/YYYY) and Time
-                    </label>
-                </div>
-            </div> -->
       </div>
 
     </div>
@@ -290,18 +275,18 @@
 
       },
       methods: {
-        // updateDateTime() {
-        //     if (this.nursename) {
-        //         this.setCurrentDateTime();
-        //     }
-        // },
-        // setCurrentDateTime() {
-        //   var currentDateTime = new Date();
-        //   var offset = currentDateTime.getTimezoneOffset(); // Gets local timezone offset in minutes
-        //   var philippinesOffset = 960; // Philippine time offset in minutes (UTC+8)
-        //   currentDateTime.setMinutes(currentDateTime.getMinutes() + offset + philippinesOffset); // Adjusts time to Philippine time
-        //   this.nurseDate = currentDateTime.toISOString().slice(0, 16);
-        // },
+        handleBodyBuiltChange(type) {
+            if (type === 'sthenic') {
+                this.pj.asthenic = false;
+                this.pj.hypersthenic = false;
+            } else if (type === 'asthenic') {
+                this.pj.sthenic = false;
+                this.pj.hypersthenic = false;
+            } else if (type === 'hypersthenic') {
+                this.pj.sthenic = false;
+                this.pj.asthenic = false;
+            }
+        },
         handleNoneChange() {
           if (this.i_noneChecked) {
             this.pi.details = "";
