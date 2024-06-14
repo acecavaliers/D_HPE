@@ -37,7 +37,7 @@
 
         </div>
         <div class="">
-            <FullForm></FullForm>
+            <NurseForm></NurseForm>
             <!-- <Form></Form> -->
         </div>
     </MasterLayout>
@@ -49,7 +49,7 @@
 
     import MasterLayout from '@/Layouts/MasterLayout.vue';
     import { Head } from '@inertiajs/vue3';
-    import FullForm from '@/Pages/Patient/FullForm.vue'
+    import NurseForm from '@/Pages/Patient/NurseForm.vue'
 
 </script>
 

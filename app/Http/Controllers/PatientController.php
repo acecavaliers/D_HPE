@@ -218,42 +218,7 @@ class PatientController extends Controller
             return response()->json(['message' => 'Error occurred', 'error' => $e->getMessage()], 500);
         }
     }
-    // public function store(Request $request)
-    // {
-    //     $arr = $request->formdata;
-    //     $pa = $request->padata;
-    //     $pb = $request->pbdata;
 
-
-    //     $arr['created_by'] = Auth::user()->name;
-    //     $patient= Patient::create($arr);
-
-    //     if ($patient) {
-    //         foreach ($pa as $illness) {
-    //             $illness['patient_id'] = $patient->id;
-    //             // return  $illness;
-    //             // Create the Illness
-    //             PatientPastIllness::create($illness);
-
-    //         }
-    //     }
-
-    //     if (isset($pb['med_illness']) || isset($pb['hospt_surgery'])) {
-
-    //         PatientMedIllnessPrevHosptlznSurgery::create([
-    //             'patient_id' => $patient->id,
-    //             'med_illness' => $pb['med_illness'],
-    //             'hospt_surgery' => $pb['hospt_surgery'],
-
-    //         ]);
-    //     }
-
-    //     return 'success';
-    // }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Patient $patient)
     {
         //
